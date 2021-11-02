@@ -8,7 +8,7 @@ function Layout({ children }) {
   return (
     <div
       id="wrapper"
-      className="min-h-screen flex flex-col light:bg-gray-300 bg-black text-white "
+      className="min-h-screen flex flex-col bg-white dark:bg-black text-black dark:text-white transition-all"
     >
       <Header />
 

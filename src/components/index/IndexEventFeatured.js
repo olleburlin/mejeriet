@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react"
+import { Link } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export default function IndexEventFeatured({ post }) {
-  const { title, informationProgram, featuredImage, slug } = post;
+  const { title, informationProgram, featuredImage, slug } = post
 
-  const imageData = getImage(featuredImage.node.localFile);
+  const imageData = getImage(featuredImage.node.localFile)
   return (
-    <div className="flex flex-col w-full bg-gradient-to-t from-brandpurple via-pink-500 to-brandorange mb-4">
+    <div className="flex flex-col w-full bg-gradient-to-t from-brandpurple via-pink-500 to-brandorange mb-4 text-white">
       {/* Left */}
       <div className="w-full border-transparent border-8 bg-brandpurple bg-opacity-40 p-2">
         <Link to={`/program/${slug}`}>
@@ -21,7 +21,7 @@ export default function IndexEventFeatured({ post }) {
       {/* Right */}
       <div className="flex-grow flex flex-col justify-between bg-brandpurple bg-opacity-40 px-4 pb-4 space-y-2">
         <header className="flex flex-row  justify-between">
-          <div className="flex flex-row  text-brandorange font-bold">
+          <div className="flex flex-row  text-brandpink font-bold">
             <div className="">{informationProgram.startdatum}</div>
             <span>&nbsp;&bull;&nbsp;</span>
             <div>19:00</div>
@@ -47,5 +47,5 @@ export default function IndexEventFeatured({ post }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

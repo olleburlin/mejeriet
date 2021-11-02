@@ -1,9 +1,9 @@
-import { Link } from "gatsby";
-import React from "react";
+import { Link } from "gatsby"
+import React from "react"
 
 export default function Sodran() {
   return (
-    <div className="bg-brandpurple bg-opacity-75 p-4 space-y-4">
+    <div className="bg-brandpurple dark:bg-opacity-75 text-white p-4 space-y-4">
       <h4 className="uppercase text-2xl">Filmer på södran</h4>
       <ul>
         <li>15:30 Promising Young Woman</li>
@@ -18,5 +18,5 @@ export default function Sodran() {
         </Link>
       </p>
     </div>
-  );
+  )
 }

@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-use-dark-mode`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -9,7 +9,7 @@ module.exports = {
         "accent-7": "#333",
         success: "#0070f3",
         cyan: "#79FFE1",
-        brandorange: "rgb(224,53,115)",
+        brandorange: "#ed7102",
         brandteal: "#009ea6",
         brandpink: "#e13f79",
         brandpurple: "#2f255b",

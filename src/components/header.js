@@ -1,25 +1,25 @@
-import { Link } from "gatsby";
-import React, { useState } from "react";
-import Logo from "./common/Logo";
-import OverlayMenu from "./common/OverlayMenu";
-
+import { Link } from "gatsby"
+import React, { useState } from "react"
+import DarkModeToggle from "./common/DarkModeToggle"
+import Logo from "./common/Logo"
+import OverlayMenu from "./common/OverlayMenu"
+import { Squash as Hamburger } from "hamburger-react"
 function Header() {
-  const [isExpanded] = useState(false);
-
+  const [isExpanded, toggleExpansion] = useState(false)
   return (
     <header className="py-6">
       <div className="flex flex-wrap items-center justify-between max-w-screen-2xl px-4 md:px-8 mx-auto">
         <div className="flex flex-row items-center">
           <div className="w-32 mr-12">
             <Link href="/">
-              <Logo color="text-white" />
+              <Logo color="" />
             </Link>
           </div>
 
           <nav
             className={`${
               isExpanded ? `block` : `hidden`
-            } md:block md:items-center w-full md:w-auto space-x-8`}
+            } hidden md:block md:items-center w-full md:w-auto space-x-8`}
           >
             {[
               {
@@ -35,28 +35,111 @@ function Header() {
                 title: `Mat`,
               },
               {
-                route: `/aktuellt`,
-                title: `Aktuellt`,
-              },
-              {
                 route: `/om-mejeriet`,
                 title: `Om Mejeriet`,
               },
-            ].map((link) => (
+            ].map(link => (
               <Link
                 key={link.title}
                 href={link.route}
-                className="font-bold uppercase  md:inline-block text-white no-underline"
+                className="font-bold uppercase  md:inline-block  no-underline"
               >
                 {link.title}
               </Link>
             ))}
           </nav>
         </div>
-        <OverlayMenu />
+        <div className="flex flex-row items-center">
+          <div className="pt-1">
+            <DarkModeToggle />
+          </div>
+          <div className=" inline-block z-50">
+            <Hamburger
+              toggled={isExpanded}
+              toggle={toggleExpansion}
+              onClick={() => toggleExpansion(!isExpanded)}
+              size="24"
+              className="z-50 relative text-white"
+              style={{ padding: "0", margin: "0" }}
+            />
+          </div>
+        </div>
+        <div
+          className={`${
+            isExpanded ? `block` : `hidden`
+          } fixed top-0 inset-x-0 transition transform origin-top-right z-30`}
+        >
+          <div className="bg-white dark:bg-black text-black dark:text-white min-h-screen mobilemenu text-2xl pt-4">
+            <div
+              className="flex items-center justify-between px-4 h-full"
+              style={{ paddingTop: "10px" }}
+            >
+              <div className="w-32 mr-12">
+                <Link href="/">
+                  <Logo color="" />
+                </Link>
+              </div>
+            </div>
+            <div className="pt-2 pb-6 px-5 ">
+              <div className="mt-6 flex flex-col justify-between h-full">
+                <div>
+                  <div className="space-y-4 mt-4">
+                    {[
+                      {
+                        route: `/program`,
+                        title: `Program`,
+                      },
+                      {
+                        route: `/biljetter`,
+                        title: `Biljetter`,
+                      },
+                      {
+                        route: `/mat`,
+                        title: `Mat`,
+                      },
+                      {
+                        route: `/om-mejeriet`,
+                        title: `Om Mejeriet`,
+                      },
+                      {
+                        route: `/aktuellt`,
+                        title: `Aktuellt`,
+                      },
+                      {
+                        route: `/hyra-mejeriet`,
+                        title: `Hyra Mejeriet`,
+                      },
+                      {
+                        route: `/musikskolan`,
+                        title: `Musikskolan`,
+                      },
+                      {
+                        route: `/volontar-replokaler`,
+                        title: `Volontärer & Replokaler`,
+                      },
+                      {
+                        route: `/#`,
+                        title: `In English`,
+                      },
+                    ].map(menuItem => {
+                      return (
+                        <Link
+                          to={menuItem.route}
+                          className="block uppercase font-bold"
+                        >
+                          {menuItem.title}
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header

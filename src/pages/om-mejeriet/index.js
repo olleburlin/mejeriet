@@ -5,14 +5,14 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Link from "../../components/common/Link"
 import PageHeader from "../../components/common/PageHeader"
 
-export default function MatPage({ data }) {
+export default function OmMejerietPage({ data }) {
   const { content, title, underKategorier } = data.wpPage
   const subCategories = underKategorier?.underkategori
 
   return (
     <Layout>
       <div className="max-w-4xl mx-auto">
-        <PageHeader text="Mat" />
+        <PageHeader text="Om Mejeriet" />
         <div className="text-xl font-heavy px-8 text-center my-16">
           <div
             dangerouslySetInnerHTML={{ __html: content }}
@@ -31,7 +31,7 @@ export default function MatPage({ data }) {
 
 export const query = graphql`
   {
-    wpPage(slug: { eq: "mat" }) {
+    wpPage(databaseId: { eq: 8962 }) {
       slug
       title
       content
@@ -43,8 +43,18 @@ export const query = graphql`
               id
               slug
               link
+              featuredImage {
+                node {
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
+                }
+              }
             }
           }
+
           utvaldBild {
             localFile {
               childImageSharp {
@@ -74,11 +84,13 @@ function SubCategory({ category }) {
       <div className="w-full h-full bg-black relative">
         <div className="opacity-50 relative">
           <GatsbyImage
-            image={getImage(utvaldBild?.localFile.childImageSharp)}
+            image={getImage(
+              sidlank.featuredImage.node.localFile.childImageSharp
+            )}
           />
         </div>
         <div className="absolute top-0 w-full h-full flex items-center justify-center">
-          <h2 className="uppercase text-4xl text-white">{namn}</h2>
+          <h2 className="uppercase text-4xl text-white text-center">{namn}</h2>
         </div>
       </div>
     </Link>

@@ -9,14 +9,17 @@ body {
   font-weight: 500;
 }
 
-.futura-bold,
+.futura-heavy,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  font-family: futura-pt-bold, sans-serif;
+h6,
+.font-heavy {
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 button {

@@ -15,7 +15,7 @@ export default function ProgramPunktEvent({ post }) {
         </div>
         {/* Right */}
         <div className="flex-grow flex flex-col justify-between bg-brandpurple bg-opacity-50 p-4">
-          <header className="flex flex-row text-xs font-mono text-brandorange">
+          <header className="flex flex-row text-xs  text-brandpink">
             <div className="">{informationProgram.startdatum}</div>
             <span>&nbsp;&bull;&nbsp;</span>
             <div>19:00</div>
