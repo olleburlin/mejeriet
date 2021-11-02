@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import LongDate from "../common/LongDate"
 
 export default function IndexEventFeatured({ post }) {
   const { title, informationProgram, featuredImage, slug } = post
@@ -22,7 +23,9 @@ export default function IndexEventFeatured({ post }) {
       <div className="flex-grow flex flex-col justify-between bg-brandpurple bg-opacity-40 px-4 pb-4 space-y-2">
         <header className="flex flex-row  justify-between">
           <div className="flex flex-row  text-brandpink font-bold">
-            <div className="">{informationProgram.startdatum}</div>
+            <div className="">
+              <LongDate dateString={informationProgram.startdatum} />
+            </div>
             <span>&nbsp;&bull;&nbsp;</span>
             <div>19:00</div>
           </div>
