@@ -1,42 +1,62 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { Link } from "gatsby";
+import React, { useState } from "react";
+import Logo from "./common/Logo";
+import OverlayMenu from "./common/OverlayMenu";
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+function Header() {
+  const [isExpanded] = useState(false);
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+  return (
+    <header className="py-6">
+      <div className="flex flex-wrap items-center justify-between max-w-screen-2xl px-4 md:px-8 mx-auto">
+        <div className="flex flex-row items-center">
+          <div className="w-32 mr-12">
+            <Link href="/">
+              <Logo color="text-white" />
+            </Link>
+          </div>
+
+          <nav
+            className={`${
+              isExpanded ? `block` : `hidden`
+            } md:block md:items-center w-full md:w-auto space-x-8`}
+          >
+            {[
+              {
+                route: `/program`,
+                title: `Program`,
+              },
+              {
+                route: `/biljetter`,
+                title: `Biljetter`,
+              },
+              {
+                route: `/mat`,
+                title: `Mat`,
+              },
+              {
+                route: `/aktuellt`,
+                title: `Aktuellt`,
+              },
+              {
+                route: `/om-mejeriet`,
+                title: `Om Mejeriet`,
+              },
+            ].map((link) => (
+              <Link
+                key={link.title}
+                href={link.route}
+                className="font-bold uppercase  md:inline-block text-white no-underline"
+              >
+                {link.title}
+              </Link>
+            ))}
+          </nav>
+        </div>
+        <OverlayMenu />
+      </div>
+    </header>
+  );
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;

@@ -1,7 +1,2 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
-
-// You can delete this file if you're not using it
+import "./src/styles/global.css"
+// On page load or when changing themes, best to add inline in `head` to avoid FOUC

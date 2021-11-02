@@ -1,0 +1,26 @@
+import React from "react";
+import SearchFilter from "./SearchFilter";
+import { InstantSearch } from "react-instantsearch-dom";
+import algoliasearch from "algoliasearch/lite";
+import SearchResults from "./SearchResults";
+// Include only the reset
+
+const client = algoliasearch("ZZ3EKPQ1FK", "8edf878df22adcb41015155ae2cf1e7f");
+
+export default function ProgramPage() {
+  return (
+    <InstantSearch searchClient={client} indexName="mejeriet">
+      <section className="flex flex-col md:flex-row mb-8 md:space-x-8">
+        <div className="w-full md:w-3/4 ">
+          <SearchResults />
+        </div>
+
+        <div className="w-full md:w-1/4 order-first md:order-last mb-8 md:mb-0">
+          <div className="bg-brandpurple bg-opacity-50 p-4">
+            <SearchFilter />
+          </div>
+        </div>
+      </section>
+    </InstantSearch>
+  );
+}

@@ -1,31 +1,37 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React from "react";
+// import Instagram from "../components/common/Instagram";
+import IndexEvents from "../components/index/IndexEvents";
+import IndexMiniEvents from "../components/index/IndexMiniEvents";
+import IndexNews from "../components/index/IndexNews";
+import Pushar from "../components/index/Pushar";
+import Sodran from "../components/index/Sodran";
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link>
-    </p>
-  </Layout>
-)
+function IndexPage() {
+  return (
+    <Layout>
+      <SEO
+        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        title="Hem"
+      />
+      <div className="flex flex-col md:flex-row md:space-x-8">
+        <section className="flex-1">
+          <IndexEvents />
+        </section>
+        <section className="md:w-1/3">
+          <div className="max-w-full space-y-8">
+            <IndexMiniEvents />
+            {/* <Instagram /> */}
+            <Pushar />
+            <Sodran />
+            <IndexNews />
+          </div>
+        </section>
+      </div>
+    </Layout>
+  );
+}
 
-export default IndexPage
+export default IndexPage;
