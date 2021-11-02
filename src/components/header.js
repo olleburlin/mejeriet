@@ -1,17 +1,18 @@
-import { Link } from "gatsby"
 import React, { useState } from "react"
 import DarkModeToggle from "./common/DarkModeToggle"
+import useDarkMode from "use-dark-mode"
 import Logo from "./common/Logo"
-import OverlayMenu from "./common/OverlayMenu"
+import Link from "../components/common/Link"
 import { Squash as Hamburger } from "hamburger-react"
 function Header() {
+  const darkMode = useDarkMode()
   const [isExpanded, toggleExpansion] = useState(false)
   return (
     <header className="py-6">
       <div className="flex flex-wrap items-center justify-between max-w-screen-2xl px-4 md:px-8 mx-auto">
         <div className="flex flex-row items-center">
-          <div className="w-32 mr-12">
-            <Link href="/">
+          <div className="w-40 mr-12">
+            <Link to="/">
               <Logo color="" />
             </Link>
           </div>
@@ -23,34 +24,35 @@ function Header() {
           >
             {[
               {
-                route: `/program`,
+                route: `/program/`,
                 title: `Program`,
               },
               {
-                route: `/biljetter`,
+                route: `/biljetter/`,
                 title: `Biljetter`,
               },
               {
-                route: `/mat`,
+                route: `/mat/`,
                 title: `Mat`,
               },
               {
-                route: `/om-mejeriet`,
+                route: `/om-mejeriet/`,
                 title: `Om Mejeriet`,
               },
             ].map(link => (
               <Link
                 key={link.title}
-                href={link.route}
-                className="font-bold uppercase  md:inline-block  no-underline"
+                to={link.route}
+                className="font-bold uppercase md:inline-block  text-2xl pb-1 hover:border-b-4 border-white"
+                activeClassName="border-b-4  border-white"
               >
                 {link.title}
               </Link>
             ))}
           </nav>
         </div>
-        <div className="flex flex-row items-center">
-          <div className="pt-1">
+        <div className="flex flex-row items-center space-x-4 ">
+          <div className="pt-1 hidden md:block">
             <DarkModeToggle />
           </div>
           <div className=" inline-block z-50">
@@ -59,7 +61,8 @@ function Header() {
               toggle={toggleExpansion}
               onClick={() => toggleExpansion(!isExpanded)}
               size="24"
-              className="z-50 relative text-white"
+              color={darkMode.value === true ? "#ffffff" : "#000000"}
+              className="z-50 relative "
               style={{ padding: "0", margin: "0" }}
             />
           </div>

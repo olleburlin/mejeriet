@@ -1,7 +1,7 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import IndexEvent from "./IndexEvent";
-import IndexEventFeatured from "./IndexEventFeatured";
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import IndexEvent from "./IndexEvent"
+import IndexEventFeatured from "./IndexEventFeatured"
 
 export default function IndexEvents() {
   const data = useStaticQuery(graphql`
@@ -19,6 +19,9 @@ export default function IndexEvents() {
                   gatsbyImageData(
                     placeholder: DOMINANT_COLOR
                     layout: CONSTRAINED
+                    transformOptions: {
+                      duotone: { highlight: "#e198b2", shadow: "#111111" }
+                    }
                   )
                 }
               }
@@ -45,6 +48,9 @@ export default function IndexEvents() {
                 gatsbyImageData(
                   layout: CONSTRAINED
                   placeholder: DOMINANT_COLOR
+                  transformOptions: {
+                    duotone: { highlight: "#e198b2", shadow: "#333333" }
+                  }
                 )
               }
             }
@@ -61,20 +67,20 @@ export default function IndexEvents() {
         }
       }
     }
-  `);
-  const posts = data.allEvents.nodes;
-  const featuredPost = data.featuredEvent;
+  `)
+  const posts = data.allEvents.nodes
+  const featuredPost = data.featuredEvent
   return (
     <>
       <div className="">
         <IndexEventFeatured post={featuredPost} />
       </div>
 
-      <div className="space-y-8">
-        {posts.map((post) => {
-          return <IndexEvent key={post.id} post={post} />;
+      <div className="">
+        {posts.map(post => {
+          return <IndexEvent key={post.id} post={post} />
         })}
       </div>
     </>
-  );
+  )
 }

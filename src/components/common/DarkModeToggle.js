@@ -1,28 +1,21 @@
 import React from "react"
 import useDarkMode from "use-dark-mode"
 import { Switch } from "@headlessui/react"
-import Toggle from "./Toggle"
 
 const DarkModeToggle = () => {
-  const darkMode = useDarkMode(false, {
+  const darkMode = useDarkMode(true, {
     classNameDark: "dark",
     classNameLight: "light",
   })
 
   return (
     <div>
-      {/* <button type="button" onClick={darkMode.disable}>
-        ☀
-      </button>
-      <Toggle checked={darkMode.value} onChange={darkMode.toggle} />
-      <button type="button" onClick={darkMode.enable}>
-        ☾
-      </button> */}
-
       <Switch
         checked={darkMode.value}
         onChange={darkMode.toggle}
-        className={`${darkMode.value === true ? "bg-gray-700" : "bg-gray-300"}
+        className={`${
+          darkMode.value === true ? "bg-brandpurple" : "bg-brandorange"
+        }
           relative inline-flex flex-shrink-0 h-6  w-12 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
       >
         <span className="sr-only">Use setting</span>

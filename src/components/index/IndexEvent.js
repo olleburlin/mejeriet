@@ -7,41 +7,43 @@ export default function IndexEvent({ post }) {
 
   const imageData = getImage(featuredImage.node.localFile)
   return (
-    <Link to={`/program/${slug}`}>
-      <div className="flex flex-col md:flex-row w-full mb-4 bg-black">
-        {/* Left */}
-        <div className="flex-none w-full md:w-52 md:h-auto aspect-h-9 aspect-w-16 -mb-2 md:-mb-0">
-          <GatsbyImage image={imageData} alt={title} className="h-full " />
-        </div>
-        {/* Right */}
-        <div className="flex flex-col justify-center flex-grow bg-brandpurple hover:bg-opacity-50 dark:bg-opacity-75 text-white p-4 space-y-2">
-          <header className="space-y-1">
-            <div className="text-brandpink flex flex-row leading-none">
-              <date>{informationProgram.startdatum}</date>
-              <span>&nbsp;&bull;&nbsp;</span>
-              <div>19:00</div>
-            </div>
-
-            <h3 className="uppercase text-2xl leading-none">{title}</h3>
-          </header>
-
-          <p>{informationProgram.kortInfo}</p>
-          <div className="flex flex-row space-x-2 text-xs">
+    <div className="my-8">
+      <Link to={`/program/${slug}`}>
+        <div className="flex flex-col justify-between w-full mb-4 relative">
+          {/* Left */}
+          <div className="flex-none w-full  md:h-auto aspect-h-9 aspect-w-16 -mb-2 md:-mb-0 order-2 bg-black">
+            <GatsbyImage
+              image={imageData}
+              alt={title}
+              className="h-full opacity-80"
+            />
+          </div>
+          {/* Right */}
+          <div className="absolute flex p-8 h-full ">
             <div>
-              <Link to={`/program/${slug}`}>
-                <button className="bg-white text-black py-1 px-2">
-                  Läs mer
-                </button>
-              </Link>
-            </div>
-            <div>
-              <Link to="/">
-                <button className="bg-brandteal py-1 px-2">Köp biljett</button>
-              </Link>
+              <div className=" text-xl">
+                <header className="flex flex-col justify-start items-start space-y-2">
+                  <div className="bg-brandpink text-white p-2 flex flex-row text-sm">
+                    <span>{informationProgram.startdatum}</span>
+                  </div>
+                  <h3 className="uppercase text-5xl text-white ">{title}</h3>
+                </header>
+                <p className="text-white hidden">
+                  {informationProgram.kortInfo}
+                </p>
+              </div>
+              <div className="w-full h-full md:w-24 flex-none hidden">
+                <Link to="/">
+                  <button className="bg-brandpink text-white font-bold uppercase block w-full h-full py-2 ">
+                    Köp <br className="hidden md:block" />
+                    biljett
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   )
 }

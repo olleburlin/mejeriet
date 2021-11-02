@@ -14,7 +14,7 @@ export default function ProgramPunktEvent({ post }) {
           <GatsbyImage image={imageData} alt={title} className="h-full" />
         </div>
         {/* Right */}
-        <div className="flex-grow flex flex-col justify-between bg-brandpurple bg-opacity-50 p-4">
+        <div className="flex-grow flex flex-col justify-between bg-brandpurple dark:bg-opacity-50 p-4">
           <header className="flex flex-row text-xs  text-brandpink">
             <div className="">{informationProgram.startdatum}</div>
             <span>&nbsp;&bull;&nbsp;</span>
