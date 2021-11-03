@@ -43,8 +43,8 @@ function Header() {
               <Link
                 key={link.title}
                 to={link.route}
-                className="font-bold uppercase md:inline-block  text-2xl pb-1 hover:border-b-4 border-white"
-                activeClassName="border-b-4  border-white"
+                className="font-bold uppercase md:inline-block  text-2xl pb-1 border-b-4 border-transparent hover:border-black dark:hover:border-white "
+                activeClassName="border-b-4  dark:border-white border-black"
               >
                 {link.title}
               </Link>

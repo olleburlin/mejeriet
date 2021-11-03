@@ -1,21 +1,21 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React from "react"
+import { graphql } from "gatsby"
 
-import Layout from "../../components/layout";
-import ProgrampunktPage from "../../components/program/ProgrampunktPage";
+import Layout from "../../components/layout"
+import ProgrampunktPage from "../../components/program/ProgrampunktPage"
 
 export default function Programpunkt({ data }) {
-  const post = data.wpProgrampunkt;
-  console.table(post);
+  const post = data.wpProgrampunkt
+  console.table(post)
   return (
     <Layout>
       <ProgrampunktPage post={post} />
     </Layout>
-  );
+  )
 }
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     wpProgrampunkt(id: { eq: $id }) {
       title
       slug
@@ -33,10 +33,15 @@ export const query = graphql`
         kortInfo
         oppnar
         plats
-        samarbetspartner
+        samarbetspartner {
+          ... on WpSammarbetspartner {
+            id
+            title
+          }
+        }
         slutar
         startdatum
       }
     }
   }
-`;
+`

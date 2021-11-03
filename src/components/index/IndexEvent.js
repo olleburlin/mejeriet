@@ -6,11 +6,11 @@ import LongDate from "../common/LongDate"
 export default function IndexEvent({ post }) {
   const { title, informationProgram, featuredImage, slug } = post
 
-  const imageData = getImage(featuredImage.node.localFile)
+  const imageData = getImage(featuredImage?.node.localFile)
   return (
-    <div className="my-8">
+    <div className="">
       <Link to={`/program/${slug}`}>
-        <div className="flex flex-col justify-between w-full mb-4 relative">
+        <div className="flex flex-col justify-between w-full  relative">
           {/* Left */}
           <div className="flex-none w-full  md:h-auto aspect-h-9 aspect-w-16 -mb-2 md:-mb-0 order-2 bg-black">
             <GatsbyImage
@@ -20,18 +20,20 @@ export default function IndexEvent({ post }) {
             />
           </div>
           {/* Right */}
-          <div className="absolute flex p-8 h-full ">
-            <div>
-              <div className=" text-xl">
+          <div className="absolute flex items-center h-full ">
+            <div className=" p-4">
+              <div className="md:text-lg xl:text-xl">
                 <header className="flex flex-col justify-start items-start space-y-2">
-                  <div className="bg-brandpink text-white p-2 flex flex-row text-sm">
+                  <div className="bg-brandpink text-white px-2 py-1 font-bold flex flex-row text-sm">
                     <span>
                       <LongDate dateString={informationProgram.startdatum} />
                     </span>
                   </div>
-                  <h3 className="uppercase text-5xl text-white ">{title}</h3>
+                  <h3 className="uppercase lg:text-2xl xl:text-4xl text-white ">
+                    {title}
+                  </h3>
                 </header>
-                <p className="text-white hidden">
+                <p className="text-white w-10/12 leading-none">
                   {informationProgram.kortInfo}
                 </p>
               </div>

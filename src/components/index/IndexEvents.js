@@ -19,6 +19,7 @@ export default function IndexEvents() {
                   gatsbyImageData(
                     placeholder: DOMINANT_COLOR
                     layout: CONSTRAINED
+                    aspectRatio: 1.5
                     transformOptions: {
                       duotone: { highlight: "#e198b2", shadow: "#111111" }
                     }
@@ -32,7 +33,12 @@ export default function IndexEvents() {
             kortInfo
             oppnar
             plats
-            samarbetspartner
+            samarbetspartner {
+              ... on WpSammarbetspartner {
+                id
+                title
+              }
+            }
             slutar
             startdatum
           }
@@ -47,7 +53,7 @@ export default function IndexEvents() {
               childImageSharp {
                 gatsbyImageData(
                   layout: CONSTRAINED
-                  placeholder: DOMINANT_COLOR
+                  placeholder: BLURRED
                   transformOptions: {
                     duotone: { highlight: "#e198b2", shadow: "#333333" }
                   }
@@ -61,7 +67,12 @@ export default function IndexEvents() {
           kortInfo
           oppnar
           plats
-          samarbetspartner
+          samarbetspartner {
+            ... on WpSammarbetspartner {
+              id
+              title
+            }
+          }
           slutar
           startdatum
         }
@@ -76,7 +87,7 @@ export default function IndexEvents() {
         <IndexEventFeatured post={featuredPost} />
       </div>
 
-      <div className="">
+      <div className="grid lg:grid-cols-2 gap-4">
         {posts.map(post => {
           return <IndexEvent key={post.id} post={post} />
         })}
