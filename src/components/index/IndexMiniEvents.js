@@ -7,6 +7,7 @@ export default function IndexMiniEvents() {
     {
       allWpProgrampunkt(
         sort: { fields: informationProgram___startdatum, order: ASC }
+        limit: 8
       ) {
         nodes {
           title
@@ -26,7 +27,7 @@ export default function IndexMiniEvents() {
   return (
     <div className="bg-brandpurple dark:bg-opacity-75 p-4 text-white">
       <div>
-        <h5 className="uppercase text-2xl mb-2">Kommande evenemang</h5>
+        <h5 className="uppercase text-2xl mb-2">Närmsta evenemang</h5>
       </div>
       {posts.map(post => {
         return (
