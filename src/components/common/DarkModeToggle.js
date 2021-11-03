@@ -14,7 +14,7 @@ const DarkModeToggle = () => {
         checked={darkMode.value}
         onChange={darkMode.toggle}
         className={`${
-          darkMode.value === true ? "bg-brandpurple" : "bg-brandorange"
+          darkMode.value === true ? "bg-brandpurple" : "bg-brandpink"
         }
           relative inline-flex flex-shrink-0 h-6  w-12 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
       >
@@ -24,7 +24,7 @@ const DarkModeToggle = () => {
           className={`${
             darkMode.value === false ? "translate-x-6" : "translate-x-0"
           }
-            pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
+            pointer-events-none inline-block h-5 w-5 rounded-full bg-gray-700 dark:bg-blue-300 shadow-lg transform ring-0 transition ease-in-out duration-200`}
         >
           {" "}
           {darkMode.value === false ? <Moon /> : <Sun />}
@@ -41,7 +41,7 @@ function Moon() {
     <div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 text-gray-400"
+        className="h-5 w-5 text-yellow-300"
         viewBox="0 0 20 20"
         fill="currentColor"
       >

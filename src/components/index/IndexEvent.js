@@ -5,7 +5,7 @@ import LongDate from "../common/LongDate"
 
 export default function IndexEvent({ post }) {
   const { title, informationProgram, featuredImage, slug } = post
-
+  const { startdatum } = informationProgram
   const imageData = getImage(featuredImage?.node.localFile)
   return (
     <div className="">
@@ -22,11 +22,11 @@ export default function IndexEvent({ post }) {
           {/* Right */}
           <div className="absolute flex items-center h-full ">
             <div className=" p-4">
-              <div className="md:text-lg xl:text-xl">
+              <div className="md:text-lg xl:text-xl space-y-2">
                 <header className="flex flex-col justify-start items-start space-y-2">
                   <div className="bg-brandpink text-white px-2 py-1 font-bold flex flex-row text-sm">
                     <span>
-                      <LongDate dateString={informationProgram.startdatum} />
+                      <LongDate dateString={startdatum} />
                     </span>
                   </div>
                   <h3 className="uppercase lg:text-2xl xl:text-4xl text-white ">
