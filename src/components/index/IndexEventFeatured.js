@@ -8,15 +8,26 @@ export default function IndexEventFeatured({ post }) {
 
   const imageData = getImage(featuredImage.node.localFile)
   return (
-    <div className="flex flex-col w-full bg-gradient-to-t from-brandpurple via-pink-500 to-brandorange mb-4 text-white">
+    <div className="flex flex-col w-full bg-gradient-to-t from-brandpink to-brandorange dark:from-brandpurple mb-4 text-white">
       {/* Left */}
       <div className="w-full border-transparent border-8 bg-brandpurple bg-opacity-40 p-2">
         <Link to={`/program/${slug}`}>
-          <GatsbyImage
-            image={imageData}
-            alt={title}
-            className="object-cover w-full block"
-          />
+          <div className="relative">
+            <div className="relative">
+              <GatsbyImage
+                image={imageData}
+                alt={title}
+                className="object-cover w-full block"
+              />
+            </div>
+            <div>
+              <div className="absolute top-0 bg-brandorange">
+                <div className="bg-brandpurple bg-opacity-40 font-bold px-3 py-3 uppercase text-xl">
+                  Missa inte
+                </div>
+              </div>
+            </div>
+          </div>
         </Link>
       </div>
       {/* Right */}

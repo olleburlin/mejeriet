@@ -14,7 +14,7 @@ export default function ProgramPunktEvent({ post }) {
           <GatsbyImage image={imageData} alt={title} className="h-full" />
         </div>
         {/* Right */}
-        <div className="flex-grow flex flex-col justify-between bg-brandpurple dark:bg-opacity-50 p-4 text-white">
+        <div className="flex-grow flex flex-col justify-between dark:bg-opacity-50 p-4 text-brandpurple">
           <header className="flex flex-row text-xs  text-brandpink">
             <div className="">{informationProgram.startdatum}</div>
             <span>&nbsp;&bull;&nbsp;</span>
@@ -26,7 +26,7 @@ export default function ProgramPunktEvent({ post }) {
             </Link>
             <div className="mb-2 mt-1">{informationProgram.kortInfo}</div>
           </div>
-          <div className="flex flex-row space-x-2 text-xs">
+          {/* <div className="flex flex-row space-x-2 text-xs">
             <div>
               <Link to={`/program/${slug}`}>
                 <button className="bg-white text-gray-900 py-1 px-2">
@@ -39,7 +39,7 @@ export default function ProgramPunktEvent({ post }) {
                 <button className="bg-brandteal py-1 px-2">Köp biljett</button>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

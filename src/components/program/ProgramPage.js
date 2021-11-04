@@ -23,7 +23,12 @@ export default function ProgramPage() {
             node {
               localFile {
                 childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED)
+                  gatsbyImageData(
+                    placeholder: BLURRED
+                    transformOptions: {
+                      duotone: { highlight: "#e198b2", shadow: "#111111" }
+                    }
+                  )
                 }
               }
             }
@@ -94,7 +99,7 @@ export default function ProgramPage() {
   console.log(isSelected)
   return (
     <div>
-      <section className="flex flex-col md:flex-row mb-8 md:space-x-8">
+      <section className="flex flex-col mb-8">
         <div className="w-full md:w-3/4 ">
           {posts
             .filter(post => isSelected[post.informationProgram.genre?.slug])
@@ -102,10 +107,10 @@ export default function ProgramPage() {
               return <ProgrampunktPageEvent key={post.id} post={post} />
             })}
         </div>
-        <div className=" w-full md:w-1/4 order-first md:order-last mb-8 md:mb-0">
-          <div className="bg-brandpurple dark:bg-opacity-50 p-4 sticky sticky-filter text-white">
+        <div className=" w-full order-first  mb-8 sticky top-0">
+          <div className="bg-brandpink dark:bg-brandpurple dark:bg-opacity-50 p-4  text-white">
             <div className="flex flex-start">
-              <div className="grid grid-cols-1 gap-x-4">
+              <div className="flex flex-row gap-x-4">
                 {genres.map(category => {
                   return (
                     <div className="flex flex-row space-x-2 items-center">

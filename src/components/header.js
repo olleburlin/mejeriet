@@ -28,6 +28,10 @@ function Header() {
                 title: `Program`,
               },
               {
+                route: `/sodran/`,
+                title: `Bio`,
+              },
+              {
                 route: `/biljetter/`,
                 title: `Biljetter`,
               },
