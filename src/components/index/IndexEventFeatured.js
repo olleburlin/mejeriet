@@ -10,7 +10,7 @@ export default function IndexEventFeatured({ post }) {
   return (
     <div className="flex flex-col w-full bg-gradient-to-t from-brandpink to-brandorange dark:from-brandpurple mb-4 text-white">
       {/* Left */}
-      <div className="w-full border-transparent border-8 bg-brandpurple bg-opacity-40 p-2">
+      <div className="w-full border-transparent border-8  p-2">
         <Link to={`/program/${slug}`}>
           <div className="relative">
             <div className="relative">
@@ -22,7 +22,7 @@ export default function IndexEventFeatured({ post }) {
             </div>
             <div>
               <div className="absolute top-0 bg-brandorange">
-                <div className="bg-brandpurple bg-opacity-40 font-bold px-3 py-3 uppercase text-xl">
+                <div className="font-bold pr-3 pl-2 py-3 uppercase text-xl">
                   Missa inte
                 </div>
               </div>
@@ -31,7 +31,7 @@ export default function IndexEventFeatured({ post }) {
         </Link>
       </div>
       {/* Right */}
-      <div className="flex-grow flex flex-col justify-between bg-brandpurple bg-opacity-40 px-4 pb-4 space-y-2">
+      <div className="hidden flex-grow  flex-col justify-between  px-4 pb-4 space-y-2">
         <header className="flex flex-row  justify-between">
           <div className="flex flex-row  text-brandpink font-bold">
             <div className="">

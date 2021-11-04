@@ -8,7 +8,7 @@ function Header() {
   const darkMode = useDarkMode()
   const [isExpanded, toggleExpansion] = useState(false)
   return (
-    <header className="py-6">
+    <header className="pt-8 pb-2">
       <div className="flex flex-wrap items-center justify-between max-w-screen-2xl px-4 md:px-8 mx-auto">
         <div className="flex flex-row items-center">
           <div className="w-40 mr-12">
@@ -47,7 +47,7 @@ function Header() {
               <Link
                 key={link.title}
                 to={link.route}
-                className="font-bold uppercase md:inline-block  text-2xl pb-1 border-b-4 border-transparent hover:border-black dark:hover:border-white "
+                className="font-bold uppercase md:inline-block  text-xl pb-1 border-b-4 border-transparent hover:border-black dark:hover:border-white "
                 activeClassName="border-b-4  dark:border-white border-black"
               >
                 {link.title}
@@ -64,7 +64,7 @@ function Header() {
               toggled={isExpanded}
               toggle={toggleExpansion}
               onClick={() => toggleExpansion(!isExpanded)}
-              size="24"
+              size="32"
               color={darkMode.value === true ? "#ffffff" : "#000000"}
               className="z-50 relative "
               style={{ padding: "0", margin: "0" }}
@@ -82,7 +82,7 @@ function Header() {
               style={{ paddingTop: "10px" }}
             >
               <div className="w-32 mr-12">
-                <Link href="/">
+                <Link to="/">
                   <Logo color="" />
                 </Link>
               </div>

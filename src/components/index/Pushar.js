@@ -1,6 +1,6 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Push from "./Push";
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Push from "./Push"
 
 export default function Pushar() {
   const data = useStaticQuery(graphql`
@@ -12,7 +12,12 @@ export default function Pushar() {
             node {
               localFile {
                 childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED)
+                  gatsbyImageData(
+                    layout: CONSTRAINED
+                    transformOptions: {
+                      duotone: { highlight: "#e198b2", shadow: "#111111" }
+                    }
+                  )
                 }
               }
             }
@@ -33,13 +38,13 @@ export default function Pushar() {
         }
       }
     }
-  `);
-  const posts = data.allWpPush.nodes;
+  `)
+  const posts = data.allWpPush.nodes
   return (
     <div className="h-full w-full">
-      {posts.map((post) => {
-        return <Push key={post.id} post={post} />;
+      {posts.map(post => {
+        return <Push key={post.id} post={post} />
       })}
     </div>
-  );
+  )
 }

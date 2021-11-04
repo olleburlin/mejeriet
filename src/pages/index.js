@@ -1,13 +1,13 @@
-import React from "react";
+import React from "react"
 // import Instagram from "../components/common/Instagram";
-import IndexEvents from "../components/index/IndexEvents";
-import IndexMiniEvents from "../components/index/IndexMiniEvents";
-import IndexNews from "../components/index/IndexNews";
-import Pushar from "../components/index/Pushar";
-import Sodran from "../components/index/Sodran";
+import IndexEvents from "../components/index/IndexEvents"
+import IndexMiniEvents from "../components/index/IndexMiniEvents"
+import IndexNews from "../components/index/IndexNews"
+import Pushar from "../components/index/Pushar"
+import Sodran from "../components/index/Sodran"
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 function IndexPage() {
   return (
@@ -16,22 +16,22 @@ function IndexPage() {
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Hem"
       />
-      <div className="flex flex-col md:flex-row md:space-x-8">
+      <div className="flex flex-col md:flex-row md:space-x-4">
         <section className="flex-1">
           <IndexEvents />
         </section>
         <section className="md:w-1/3">
-          <div className="max-w-full space-y-8">
+          <div className="max-w-full space-y-4">
             <IndexMiniEvents />
-            {/* <Instagram /> */}
-            <Pushar />
-            <Sodran />
+
             <IndexNews />
+            {/* <Pushar /> */}
+            {/* <Sodran /> */}
           </div>
         </section>
       </div>
     </Layout>
-  );
+  )
 }
 
-export default IndexPage;
+export default IndexPage

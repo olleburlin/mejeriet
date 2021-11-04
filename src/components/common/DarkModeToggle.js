@@ -14,7 +14,9 @@ const DarkModeToggle = () => {
         checked={darkMode.value}
         onChange={darkMode.toggle}
         className={`${
-          darkMode.value === true ? "bg-brandpurple" : "bg-brandpink"
+          darkMode.value === true
+            ? "bg-brandpurple"
+            : "bg-brandpink bg-opacity-50"
         }
           relative inline-flex flex-shrink-0 h-6  w-12 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
       >
