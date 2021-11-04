@@ -22,6 +22,8 @@ module.exports = {
     extend: {
       backgroundColor: ["odd"],
       backgroundOpacity: ["odd"],
+      backgroundColor: ["checked"],
+      textColor: ["checked"],
     },
   },
   plugins: [],
