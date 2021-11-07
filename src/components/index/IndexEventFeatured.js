@@ -8,9 +8,9 @@ export default function IndexEventFeatured({ post }) {
 
   const imageData = getImage(featuredImage.node.localFile)
   return (
-    <div className="flex flex-col w-full bg-gradient-to-t from-brandpink to-brandorange dark:from-brandpurple mb-4 text-white">
+    <div className="flex flex-col w-full bg-gradient-to-t from-brandpink to-brandorange dark:from-brandpurple mb-2 text-white">
       {/* Left */}
-      <div className="w-full border-transparent border-8  p-2">
+      <div className="w-full border-transparent border-2  p-2">
         <Link to={`/program/${slug}`}>
           <div className="relative">
             <div className="relative">
@@ -22,7 +22,7 @@ export default function IndexEventFeatured({ post }) {
             </div>
             <div>
               <div className="absolute top-0 bg-brandorange">
-                <div className="font-bold pr-3 pl-2 py-3 uppercase text-xl">
+                <div className="font-bold pr-2 py-2 md:px-3 md:py-3 uppercase text-xs md:text-2xl">
                   Missa inte
                 </div>
               </div>

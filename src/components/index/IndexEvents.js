@@ -51,13 +51,7 @@ export default function IndexEvents() {
           node {
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  layout: CONSTRAINED
-                  placeholder: BLURRED
-                  transformOptions: {
-                    duotone: { highlight: "#e198b2", shadow: "#333333" }
-                  }
-                )
+                gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
               }
             }
           }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import ProgrampunktPageEvent from "./ProgramPunktPageEvent"
+import ProgramPageEvent from "./ProgramPageEvent"
 import SearchFilter from "./SearchFilter"
 
 export default function ProgramPage() {
@@ -25,8 +25,9 @@ export default function ProgramPage() {
                 childImageSharp {
                   gatsbyImageData(
                     placeholder: BLURRED
+                    aspectRatio: 1.7
                     transformOptions: {
-                      duotone: { highlight: "#e198b2", shadow: "#111111" }
+                      duotone: { highlight: "#e198b2", shadow: "#000000" }
                     }
                   )
                 }
@@ -45,9 +46,15 @@ export default function ProgramPage() {
               }
             }
             slutar
+            typAvArrangemang {
+              id
+              slug
+              name
+            }
             startdatum
             genre {
               slug
+              name
             }
           }
         }
@@ -56,12 +63,12 @@ export default function ProgramPage() {
   `)
   const genres = [
     {
-      slug: "elektroniskt-experimentellt",
-      name: "Elektroniskt / Experimentellt",
+      slug: "all",
+      name: "Allt",
     },
     {
-      slug: "humor-scen",
-      name: "Humor / Scen",
+      slug: "elektroniskt-experimentellt",
+      name: "Elektroniskt / Experimentellt",
     },
     {
       slug: "jazz-folk",
@@ -100,20 +107,23 @@ export default function ProgramPage() {
   return (
     <div>
       <section className="flex flex-col mb-8">
-        <div className="w-full md:w-3/4 ">
-          {posts
-            .filter(post => isSelected[post.informationProgram.genre?.slug])
-            .map(post => {
-              return <ProgrampunktPageEvent key={post.id} post={post} />
-            })}
+        <div className="w-full space-y-4">
+          {posts.map(post => {
+            return <ProgramPageEvent key={post.id} post={post} />
+          })}
         </div>
-        <div className=" w-full order-first  mb-8 sticky top-0">
-          <div className="bg-brandpink dark:bg-brandpurple dark:bg-opacity-50 p-4  text-white">
+        <div className="hidden md:block w-full order-first  mb-4 md:mb-8 ">
+          <div className="flex flex-row flex-wrap gap-1">
+            {genres.map(genre => {
+              return <Genre key={genre.slug} genre={genre} />
+            })}
+          </div>
+          <div className="hidden bg-brandpink dark:bg-brandpurple dark:bg-opacity-50 p-4  text-white">
             <div className="flex flex-start">
               <div className="flex flex-row gap-x-4">
                 {genres.map(category => {
                   return (
-                    <div className="flex flex-row space-x-2 items-center">
+                    <div className="flex flex-row flex-wrap space-x-2 items-center">
                       <input
                         type="checkbox"
                         defaultChecked={!isSelected[category.slug]}
@@ -136,5 +146,19 @@ export default function ProgramPage() {
         </div>
       </section>
     </div>
+  )
+}
+function Genre({ genre }) {
+  const [clicked, toggleClicked] = useState(false)
+  console.log(clicked)
+  return (
+    <button
+      onClick={() => toggleClicked(!clicked)}
+      className={`${
+        clicked ? `bg-opacity-50` : `bg-brandpink dark:bg-brandpurple`
+      } inline-block px-2 py-1 text-white text-xs bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50`}
+    >
+      {genre.name}
+    </button>
   )
 }

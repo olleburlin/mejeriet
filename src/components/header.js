@@ -11,7 +11,7 @@ function Header() {
     <header className="pt-8 pb-2">
       <div className="flex flex-wrap items-center justify-between max-w-screen-2xl px-4 md:px-8 mx-auto">
         <div className="flex flex-row items-center">
-          <div className="w-40 mr-12">
+          <div className="w-32 md:w-40 mr-12">
             <Link to="/">
               <Logo color="" />
             </Link>
@@ -77,68 +77,63 @@ function Header() {
           } fixed top-0 inset-x-0 transition transform origin-top-right z-30`}
         >
           <div className="bg-white dark:bg-black text-black dark:text-white min-h-screen mobilemenu text-2xl pt-4">
-            <div
-              className="flex items-center justify-between px-4 h-full"
-              style={{ paddingTop: "10px" }}
-            >
-              <div className="w-32 mr-12">
+            <div className="flex items-center justify-between px-4 h-full">
+              <div className="w-32 mr-12 pt-4">
                 <Link to="/">
                   <Logo color="" />
                 </Link>
               </div>
             </div>
             <div className="pt-2 pb-6 px-5 ">
-              <div className="mt-6 flex flex-col justify-between h-full">
-                <div>
-                  <div className="space-y-4 mt-4">
-                    {[
-                      {
-                        route: `/program`,
-                        title: `Program`,
-                      },
-                      {
-                        route: `/biljetter`,
-                        title: `Biljetter`,
-                      },
-                      {
-                        route: `/mat`,
-                        title: `Mat`,
-                      },
-                      {
-                        route: `/om-mejeriet`,
-                        title: `Om Mejeriet`,
-                      },
-                      {
-                        route: `/aktuellt`,
-                        title: `Aktuellt`,
-                      },
-                      {
-                        route: `/hyra-mejeriet`,
-                        title: `Hyra Mejeriet`,
-                      },
-                      {
-                        route: `/musikskolan`,
-                        title: `Musikskolan`,
-                      },
-                      {
-                        route: `/volontar-replokaler`,
-                        title: `Volontärer & Replokaler`,
-                      },
-                      {
-                        route: `/#`,
-                        title: `In English`,
-                      },
-                    ].map(menuItem => {
-                      return (
-                        <Link
-                          to={menuItem.route}
-                          className="block uppercase font-bold"
-                        >
-                          {menuItem.title}
-                        </Link>
-                      )
-                    })}
-                  </div>
+              <div className="mt-6 flex flex-col justify-center  text-center items-center h-full">
+                <div className="space-y-4 mt-4">
+                  {[
+                    {
+                      route: `/program`,
+                      title: `Program`,
+                    },
+                    {
+                      route: `/biljetter`,
+                      title: `Biljetter`,
+                    },
+                    {
+                      route: `/mat`,
+                      title: `Mat`,
+                    },
+                    {
+                      route: `/om-mejeriet`,
+                      title: `Om Mejeriet`,
+                    },
+                    {
+                      route: `/aktuellt`,
+                      title: `Aktuellt`,
+                    },
+                    {
+                      route: `/hyra-mejeriet`,
+                      title: `Hyra Mejeriet`,
+                    },
+                    {
+                      route: `/musikskolan`,
+                      title: `Musikskolan`,
+                    },
+                    {
+                      route: `/volontar-replokaler`,
+                      title: `Volontärer & Replokaler`,
+                    },
+                    {
+                      route: `/#`,
+                      title: `In English`,
+                    },
+                  ].map(menuItem => {
+                    return (
+                      <Link
+                        to={menuItem.route}
+                        className="block uppercase font-bold"
+                      >
+                        {menuItem.title}
+                      </Link>
+                    )
+                  })}
                 </div>
               </div>
             </div>
