@@ -1,18 +1,18 @@
-import React from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Link } from "gatsby";
-import YouTube from "react-youtube";
-import MomentDate from "../../utils/MomentDate";
+import React from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
+import YouTube from "react-youtube"
+import MomentDate from "../../utils/MomentDate"
 export default function ProgrampunktPage({ post }) {
-  const { title, informationProgram, featuredImage } = post;
-  const imageData = getImage(featuredImage.node.localFile);
+  const { title, informationProgram, featuredImage } = post
+  const imageData = getImage(featuredImage.node.localFile)
 
   return (
     <>
       <section className="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0">
         {/* Primary column */}
         <div className="flex-1">
-          <div className="bg-brandpurple bg-opacity-50 p-4">
+          <div className="bg-brandpurple dark:bg-opacity-50 p-4">
             <header className="flex flex-col my-2">
               <h1 className="uppercase text-5xl">{title}</h1>
 
@@ -106,5 +106,5 @@ export default function ProgrampunktPage({ post }) {
         </div>
       </section>
     </>
-  );
+  )
 }

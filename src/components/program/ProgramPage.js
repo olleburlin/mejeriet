@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import ProgramPageEvent from "./ProgramPageEvent"
+import ProgramPageEventGrid from "./ProgramPageEventGrid"
 import SearchFilter from "./SearchFilter"
 
 export default function ProgramPage() {
@@ -26,9 +26,9 @@ export default function ProgramPage() {
                   gatsbyImageData(
                     placeholder: BLURRED
                     aspectRatio: 1.7
-                    transformOptions: {
-                      duotone: { highlight: "#e198b2", shadow: "#000000" }
-                    }
+                    # transformOptions: {
+                    #   duotone: { highlight: "#e198b2", shadow: "#000000" }
+                    # }
                   )
                 }
               }
@@ -109,16 +109,18 @@ export default function ProgramPage() {
       <section className="flex flex-col mb-8">
         <div className="w-full space-y-4">
           {posts.map(post => {
-            return <ProgramPageEvent key={post.id} post={post} />
+            return <ProgramPageEventGrid key={post.id} post={post} />
           })}
         </div>
-        <div className="hidden md:block w-full order-first  mb-4 md:mb-8 ">
-          <div className="flex flex-row flex-wrap gap-1">
-            {genres.map(genre => {
-              return <Genre key={genre.slug} genre={genre} />
-            })}
+        <div className="hidden md:block order-first  mb-4 md:mb-8 ">
+          <div className="w-full">
+            <div className="flex flex-row w-full flex-wrap">
+              {genres.map(genre => {
+                return <Genre key={genre.slug} genre={genre} />
+              })}
+            </div>
           </div>
-          <div className="hidden bg-brandpink dark:bg-brandpurple dark:bg-opacity-50 p-4  text-white">
+          <div className="hidden bg-brandpink dark:bg-brandpurple dark:bg-opacity-50 p-4 text-white">
             <div className="flex flex-start">
               <div className="flex flex-row gap-x-4">
                 {genres.map(category => {
@@ -156,7 +158,7 @@ function Genre({ genre }) {
       onClick={() => toggleClicked(!clicked)}
       className={`${
         clicked ? `bg-opacity-50` : `bg-brandpink dark:bg-brandpurple`
-      } inline-block px-2 py-1 text-white text-xs bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50`}
+      } inline-block px-2 py-2 text-white text-sm whitespace-nowrap border border-white bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
     >
       {genre.name}
     </button>
