@@ -8,16 +8,12 @@ export default function IndexEvent({ post }) {
   const { startdatum } = informationProgram
   const imageData = getImage(featuredImage?.node.localFile)
   return (
-    <div className="">
+    <div className="group">
       <Link to={`/program/${slug}`}>
         <div className="flex flex-col justify-between w-full  relative">
           {/* Left */}
-          <div className="flex-none w-full  md:h-auto aspect-h-9 aspect-w-16 -mb-2 md:-mb-0 order-2 bg-black">
-            <GatsbyImage
-              image={imageData}
-              alt={title}
-              className="h-full opacity-80"
-            />
+          <div className="flex-none w-full  md:h-auto aspect-h-9 aspect-w-16 -mb-2 md:-mb-0 order-2 ">
+            <GatsbyImage image={imageData} alt={title} className="h-full  " />
           </div>
           {/* Right */}
           <div className="absolute flex items-center h-full ">

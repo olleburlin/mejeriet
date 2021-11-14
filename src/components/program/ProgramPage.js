@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import ProgramPageEventGrid from "./ProgramPageEventGrid"
+import ProgramPageEvent from "./ProgramPageEvent"
 import SearchFilter from "./SearchFilter"
 
 export default function ProgramPage() {
@@ -83,6 +83,10 @@ export default function ProgramPage() {
       name: "Pop / Indiepop",
     },
     {
+      slug: "humor-scen",
+      name: "Humor / Scen",
+    },
+    {
       slug: "punk-metal",
       name: "Punk / Metal",
     },
@@ -91,58 +95,83 @@ export default function ProgramPage() {
       name: "Rock / Indierock",
     },
   ]
+  const types = [
+    {
+      slug: "humor",
+      name: "Humor / Scen",
+    },
+    {
+      slug: "film",
+      name: "Film",
+    },
+  ]
   const posts = data.allWpProgrampunkt.nodes
 
   const [isSelected, setIsSelected] = useState({})
+  const [clicked, toggleClicked] = useState(false)
+
+  const handleFilter = category => {
+    setIsSelected({
+      ...isSelected,
+      [category.slug]: !isSelected[category.slug],
+    })
+    toggleClicked(!clicked)
+  }
 
   useEffect(() => {
     const isSelected = {}
 
     const genreNames = genres.map(category => category.slug)
-    genreNames.forEach(genreName => (isSelected[genreName] = true))
+    const typeNames = types.map(category => category.slug)
+    const typesAndGenres = genreNames.concat(typeNames)
+    typesAndGenres.forEach(genreName => (isSelected[genreName] = true))
 
     setIsSelected(isSelected)
   }, [])
+
   console.log(isSelected)
   return (
     <div>
       <section className="flex flex-col mb-8">
         <div className="w-full space-y-4">
-          {posts.map(post => {
-            return <ProgramPageEventGrid key={post.id} post={post} />
-          })}
+          {posts
+            .filter(
+              post =>
+                isSelected[post.informationProgram.genre?.slug] ||
+                isSelected[post.informationProgram.typAvArrangemang?.slug]
+            )
+            .map(post => {
+              return <ProgramPageEvent key={post.id} post={post} />
+            })}
         </div>
-        <div className="hidden md:block order-first  mb-4 md:mb-8 ">
-          <div className="w-full">
+        <div className="order-first  mb-4 md:mb-8 ">
+          <div className="w-full hidden">
             <div className="flex flex-row w-full flex-wrap">
               {genres.map(genre => {
                 return <Genre key={genre.slug} genre={genre} />
               })}
             </div>
           </div>
-          <div className="hidden bg-brandpink dark:bg-brandpurple dark:bg-opacity-50 p-4 text-white">
-            <div className="flex flex-start">
-              <div className="flex flex-row gap-x-4">
-                {genres.map(category => {
-                  return (
-                    <div className="flex flex-row flex-wrap space-x-2 items-center">
-                      <input
-                        type="checkbox"
-                        defaultChecked={!isSelected[category.slug]}
-                        key={category.slug}
-                        name={category.slug}
-                        onClick={() =>
-                          setIsSelected({
-                            ...isSelected,
-                            [category.slug]: !isSelected[category.slug],
-                          })
-                        }
-                      />
-                      <label htmlFor={category.slug}>{category.name}</label>
-                    </div>
-                  )
-                })}
-              </div>
+          <div className=" dark:bg-brandpurple dark:bg-opacity-50 text-white order-1">
+            <div className="flex flex-row gap-x-4 w-full flex-wrap">
+              {genres.map(category => {
+                return (
+                  <button
+                    data={isSelected}
+                    className={`${
+                      clicked
+                        ? `bg-opacity-70`
+                        : `bg-brandpink dark:bg-brandpurple`
+                    } inline-block px-2 py-2 text-white text-xs whitespace-nowrap border  bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
+                    key={category.slug}
+                    id={category.slug}
+                    name={category.slug}
+                    onClick={() => handleFilter(category)}
+                  >
+                    {category.name}
+                  </button>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -150,14 +179,13 @@ export default function ProgramPage() {
     </div>
   )
 }
-function Genre({ genre }) {
-  const [clicked, toggleClicked] = useState(false)
-  console.log(clicked)
+function Genre({ genre, clicked }) {
   return (
     <button
-      onClick={() => toggleClicked(!clicked)}
       className={`${
-        clicked ? `bg-opacity-50` : `bg-brandpink dark:bg-brandpurple`
+        clicked
+          ? `bg-opacity-90 bg-brandpink`
+          : `bg-brandpink dark:bg-brandpurple`
       } inline-block px-2 py-2 text-white text-sm whitespace-nowrap border border-white bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
     >
       {genre.name}

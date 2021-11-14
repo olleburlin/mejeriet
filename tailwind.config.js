@@ -21,10 +21,12 @@ module.exports = {
   variants: {
     aspectRatio: ["responsive"],
     extend: {
-      backgroundColor: ["odd"],
+      backgroundColor: ["odd", "checked"],
       backgroundOpacity: ["odd"],
       backgroundColor: ["checked"],
       textColor: ["checked"],
+      grayscale: ["hover", "focus", "group-hover"],
+      backgroundColor: [],
     },
   },
   plugins: [],

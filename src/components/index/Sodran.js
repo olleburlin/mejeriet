@@ -3,22 +3,26 @@ import React from "react"
 
 export default function Sodran() {
   return (
-    <div className="bg-brandpink dark:bg-brandpurple dark:bg-opacity-50 text-gray-900 p-4 space-y-4">
+    <div className="bg-brandorange dark:bg-brandpurple dark:bg-opacity-50 text-pink-100 p-4 space-y-2">
       <h4 className="uppercase text-2xl">Filmer på södran</h4>
       <ul className="uppercase">
-        <li>15:30 Promising Young Woman</li>
-        <li>16:00 En runda till</li>
-        <li>17:45 Tove</li>
-        <li>18:30 Nomadland</li>
-        <li>20:10 En runda till</li>
+        {movies.map((movie, i) => {
+          return (
+            <li key={i} className="flex flex-row space-x-4">
+              <div>{movie.time}</div>  
+              <div className="font-bold">{movie.title}</div>
+            </li>
+          )
+        })}
       </ul>
-      {/* <p>
-        <Link to="/sodran">
-          <button className="bg-white text-brandpink py-2 px-3">
-            Visa alla
-          </button>
-        </Link>
-      </p> */}
     </div>
   )
 }
+
+const movies = [
+  { time: "15:30", title: "Promising Young Woman" },
+  { time: "16:30", title: "En runda till" },
+  { time: "17:30", title: "Tove" },
+  { time: "18:30", title: "Nomadland" },
+  { time: "19:30", title: "En runda till" },
+]

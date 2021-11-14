@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 export default function IndexNewsItem({ post }) {
   const { title, slug, date } = post
   return (
-    <div className="my-2 text-sm">
+    <div className="my-2">
       <Link to={`/aktuellt/${slug}`}>
         {" "}
         <h5 className="uppercase">{title}</h5>
