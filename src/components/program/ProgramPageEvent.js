@@ -6,59 +6,32 @@ import LongDate from "../common/LongDate"
 export default function ProgramPunktEvent({ post }) {
   const { title, informationProgram, featuredImage, slug } = post
   const imageData = getImage(featuredImage.node.localFile)
-  const { startdatum, genre, typAvArrangemang } = informationProgram
+  const { startdatum, genre, typAvArrangemang, samarbetspartner, status } =
+    informationProgram
   return (
     <div className="">
       <Link to={`/program/${slug}`}>
         <div className="flex flex-col md:flex-row justify-between relative">
           {/* Left */}
-          <div className=" w-full md:w-1/3 ">
+          <div className=" w-full md:w-5/12 ">
             <GatsbyImage image={imageData} alt={title} className="h-full " />
           </div>
           {/* Right */}
-          <div className="absolute  items-center h-full hidden">
-            <div className=" p-4">
-              <div className="text-2xl md:text-lg xl:text-xl space-y-2">
-                <header className="flex flex-col justify-start items-start space-y-2">
-                  <div className="flex flex-row gap-1">
-                    <div className="bg-brandpink text-white px-2 py-1 font-bold flex flex-row text-xs">
-                      <span>
-                        <LongDate dateString={startdatum} />
-                      </span>
-                    </div>
-                    {genre && (
-                      <div className="bg-brandorange uppercase text-white px-2 py-1 font-bold flex flex-row text-xs">
-                        <span>{genre.name}</span>
-                      </div>
-                    )}
-                    {typAvArrangemang && (
-                      <div className="bg-brandteal uppercase text-white px-2 py-1 font-bold flex flex-row text-xs">
-                        <span>{typAvArrangemang.name}</span>
-                      </div>
-                    )}
-                  </div>
-                  <h3 className="uppercase lg:text-2xl xl:text-4xl text-white ">
-                    {title}
-                  </h3>
-                </header>
-                <p className="text-white leading-none text-xl">
-                  {informationProgram.kortInfo}
-                </p>
-              </div>
-              <div className="w-full h-full md:w-24 flex-none hidden">
-                <Link to="/">
-                  <button className="bg-brandpink text-white font-bold uppercase block w-full h-full py-2 ">
-                    Köp <br className="hidden md:block" />
-                    biljett
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="w-full ">
+
+          <div className="w-7/12">
             <div className=" p-8 h-full flex flex-col justify-center">
-              <div className="text-2xl md:text-lg xl:text-xl space-y-2">
-                <header className="flex flex-col justify-center items-start space-y-2">
+              <div className="text-2xl md:text-lg xl:text-xl space-y-4">
+                <div> </div>
+                <header className="flex flex-col justify-center items-start space-y-4">
+                  <div className="">
+                    <Link to="/">
+                      <button className="text-brandteal border-b-4 border-brandteal  font-bold uppercase block w-full h-full hover:opacity-75 transition-all">
+                        {status === "Aktivt" || status === null
+                          ? "Köp biljett"
+                          : status}
+                      </button>
+                    </Link>
+                  </div>
                   <div className="flex flex-row gap-1">
                     <div className="">
                       <LongDate dateString={startdatum} />
@@ -69,7 +42,7 @@ export default function ProgramPunktEvent({ post }) {
                   </h3>
                 </header>
                 <p className="leading-none ">{informationProgram.kortInfo}</p>
-                <div>
+                <div className="flex flex-row items-center gap-2">
                   {genre && (
                     <div className="bg-brandorange uppercase text-pink-100 px-2 py-1 font-bold flex-row text-xs inline-block">
                       <span>{genre.name}</span>
@@ -81,15 +54,12 @@ export default function ProgramPunktEvent({ post }) {
                       <span>{typAvArrangemang.name}</span>
                     </div>
                   ) : null}
+                  {samarbetspartner && (
+                    <div className="bg-white text-gray-900 uppercase  px-2 py-1 font-bold inline-block text-xs">
+                      <span>{samarbetspartner?.title}</span>
+                    </div>
+                  )}
                 </div>
-              </div>
-              <div className="w-full h-full md:w-24 flex-none hidden">
-                <Link to="/">
-                  <button className="bg-brandpink  font-bold uppercase block w-full h-full py-2 ">
-                    Köp <br className="hidden md:block" />
-                    biljett
-                  </button>
-                </Link>
               </div>
             </div>
           </div>

@@ -51,6 +51,7 @@ export default function ProgramPage() {
               slug
               name
             }
+            status
             startdatum
             genre {
               slug
