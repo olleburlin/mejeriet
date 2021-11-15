@@ -11,7 +11,7 @@ function Header() {
   return (
     <Headroom>
       <div className="bg-white">
-        <header className="py-4 bg-brandpink bg-opacity-20 dark:bg-black">
+        <header className="py-8 bg-brandpink bg-opacity-20 dark:bg-black">
           <div className="flex flex-wrap items-center justify-between max-w-screen-2xl px-4 md:px-8 mx-auto">
             <div className="flex flex-row items-center">
               <div className="w-32 md:w-40 mr-12">
