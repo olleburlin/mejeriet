@@ -129,7 +129,7 @@ export default function ProgramPage() {
 
     setIsSelected(isSelected)
   }, [])
-
+  const [filter, toggleFilter] = useState(false)
   console.log(isSelected)
   return (
     <div>
@@ -153,34 +153,47 @@ export default function ProgramPage() {
               })}
             </div>
           </div>
-          <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  order-1 inline-block text-sm w-full p-4">
-            <div className="flex flex-row gap-x-4 space-x-2 w-full flex-wrap justify-evenly items-center">
-              {genres.map(category => {
-                return (
-                  <div className="space-x-2 flex flex-row items-center">
-                    <input
-                      classname="checked:text-pink-400"
-                      type="checkbox"
-                      defaultChecked={isSelected}
-                      data={isSelected}
-                      // className={`${
-                      //   clicked
-                      //     ? `bg-opacity-70`
-                      //     : `bg-brandpink dark:bg-brandpurple`
-                      // } inline-block px-2 py-2 text-white text-xs whitespace-nowrap border  bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
-                      key={category.slug}
-                      id={category.slug}
-                      name={category.slug}
-                      onClick={() => handleFilter(category)}
-                    />
-                    <label classname="" for={category.slug}>
-                      {" "}
-                      {category.name}
-                    </label>
-                  </div>
-                )
-              })}
+          <div className="flex flex-row gap-4 ">
+            <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  inline-block text-sm p-4 whitespace-nowrap uppercase font-bold">
+              <button
+                onClick={() => {
+                  toggleFilter(!filter)
+                }}
+              >
+                Visa filter
+              </button>
             </div>
+            {filter && (
+              <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  order-1 inline-block text-sm w-full p-4">
+                <div className="flex flex-row gap-x-4 space-x-2 w-full flex-wrap justify-evenly items-center">
+                  {genres.map(category => {
+                    return (
+                      <div className="space-x-2 flex flex-row items-center">
+                        <input
+                          classname="checked:text-pink-400"
+                          type="checkbox"
+                          defaultChecked={isSelected}
+                          data={isSelected}
+                          // className={`${
+                          //   clicked
+                          //     ? `bg-opacity-70`
+                          //     : `bg-brandpink dark:bg-brandpurple`
+                          // } inline-block px-2 py-2 text-white text-xs whitespace-nowrap border  bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
+                          key={category.slug}
+                          id={category.slug}
+                          name={category.slug}
+                          onClick={() => handleFilter(category)}
+                        />
+                        <label classname="" for={category.slug}>
+                          {" "}
+                          {category.name}
+                        </label>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
