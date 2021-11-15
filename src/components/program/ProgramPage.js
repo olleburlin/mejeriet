@@ -122,9 +122,9 @@ export default function ProgramPage() {
     const isSelected = {}
 
     const genreNames = genres.map(category => category.slug)
-    const typeNames = types.map(category => category.slug)
-    const typesAndGenres = genreNames.concat(typeNames)
-    typesAndGenres.forEach(genreName => (isSelected[genreName] = true))
+    // const typeNames = types.map(category => category.slug)
+    // const typesAndGenres = genreNames.concat(typeNames)
+    genreNames.forEach(genreName => (isSelected[genreName] = true))
 
     setIsSelected(isSelected)
   }, [])
@@ -135,11 +135,11 @@ export default function ProgramPage() {
       <section className="flex flex-col mb-8">
         <div className="w-full space-y-4">
           {posts
-            .filter(
-              post =>
-                isSelected[post.informationProgram.genre?.slug] ||
-                isSelected[post.informationProgram.typAvArrangemang?.slug]
-            )
+            // .filter(
+            //   post =>
+            //     isSelected[post.informationProgram.genre?.slug] ||
+            //     isSelected[post.informationProgram.typAvArrangemang?.slug]
+            // )
             .map(post => {
               return <ProgramPageEvent key={post.id} post={post} />
             })}
@@ -152,24 +152,31 @@ export default function ProgramPage() {
               })}
             </div>
           </div>
-          <div className=" dark:bg-brandpurple dark:bg-opacity-50 text-white order-1">
-            <div className="flex flex-row gap-x-4 w-full flex-wrap">
+          <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  order-1 inline-block text-sm w-full p-4">
+            <div className="flex flex-row gap-x-4 space-x-2 w-full flex-wrap justify-evenly items-center">
               {genres.map(category => {
                 return (
-                  <button
-                    data={isSelected}
-                    className={`${
-                      clicked
-                        ? `bg-opacity-70`
-                        : `bg-brandpink dark:bg-brandpurple`
-                    } inline-block px-2 py-2 text-white text-xs whitespace-nowrap border  bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
-                    key={category.slug}
-                    id={category.slug}
-                    name={category.slug}
-                    onClick={() => handleFilter(category)}
-                  >
-                    {category.name}
-                  </button>
+                  <div className="space-x-2 flex flex-row items-center">
+                    <input
+                      classname="checked:text-pink-400"
+                      type="checkbox"
+                      defaultChecked={isSelected}
+                      data={isSelected}
+                      // className={`${
+                      //   clicked
+                      //     ? `bg-opacity-70`
+                      //     : `bg-brandpink dark:bg-brandpurple`
+                      // } inline-block px-2 py-2 text-white text-xs whitespace-nowrap border  bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
+                      key={category.slug}
+                      id={category.slug}
+                      name={category.slug}
+                      onClick={() => handleFilter(category)}
+                    />
+                    <label classname="" for={category.slug}>
+                      {" "}
+                      {category.name}
+                    </label>
+                  </div>
                 )
               })}
             </div>

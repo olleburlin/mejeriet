@@ -53,3 +53,6 @@ button {
 .list-inline li {
   @apply inline-block pr-2;
 }
+.quote svg {
+  display: none;
+}

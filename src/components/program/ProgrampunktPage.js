@@ -9,14 +9,14 @@ export default function ProgrampunktPage({ post }) {
 
   return (
     <>
-      <section className="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0">
+      <section className="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 text-pink-100">
         {/* Primary column */}
         <div className="flex-1">
-          <div className="bg-brandpurple dark:bg-opacity-50 p-4">
+          <div className="bg-brandorange dark:bg-brandpurple dark:bg-opacity-50 p-4">
             <header className="flex flex-col my-2">
               <h1 className="uppercase text-5xl">{title}</h1>
 
-              <div className="flex md:flex-row flex-wrap text-brandorange text-lg mb-4">
+              <div className="flex md:flex-row flex-wrap dark:text-brandorange text-lg mb-4">
                 <date className="text-lg">
                   <MomentDate
                     dateString={informationProgram.startdatum}
@@ -57,7 +57,7 @@ export default function ProgrampunktPage({ post }) {
               </ul>
             </div>
           </div>
-          <div className="bg-brandpurple bg-opacity-50 p-4 my-4 ">
+          <div className="bg-brandorange dark:bg-brandpurple dark:bg-opacity-50 p-4 my-4 ">
             <div className="space-x-4">
               <button className="bg-white text-gray-900 text-md px-2 py-1">
                 Spotify
@@ -70,7 +70,7 @@ export default function ProgrampunktPage({ post }) {
               </button>
             </div>
           </div>
-          <div className="my-4 embed-responsive aspect-ratio-16/9">
+          <div className="my-4 embed-responsive w-full">
             <YouTube videoId="wycjnCCgUes" className="embed-responsive-item" />
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function ProgrampunktPage({ post }) {
           <div className="w-full">
             <GatsbyImage image={imageData} alt={title} />
           </div>
-          <div className="leading-relaxed tracking-tight text-lg p-8 bg-brandpurple bg-opacity-50 text-white">
+          <div className="leading-relaxed tracking-tight text-lg p-8 bg-brandorange dark:bg-brandpurple dark:bg-opacity-50 ">
             <p>
               Dan Bejar är av de senaste decenniernas mest säregna sångare och
               låtskrivare. Sällan förutsägbar, aldrig ointressant, liknar inte

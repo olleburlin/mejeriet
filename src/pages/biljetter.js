@@ -7,7 +7,7 @@ export default function BiljetterPage() {
   return (
     <Layout>
       <PageHeader text="Biljetter" />
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <Biljetter />
       </div>
     </Layout>

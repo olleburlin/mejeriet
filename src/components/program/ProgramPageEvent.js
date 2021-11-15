@@ -41,7 +41,7 @@ export default function ProgramPunktEvent({ post }) {
                     {title}
                   </h3>
                 </header>
-                <p className="text-white w-10/12 leading-none text-xl">
+                <p className="text-white leading-none text-xl">
                   {informationProgram.kortInfo}
                 </p>
               </div>
@@ -55,7 +55,7 @@ export default function ProgramPunktEvent({ post }) {
               </div>
             </div>
           </div>
-          <div className="w-2/3 ">
+          <div className="w-full ">
             <div className=" p-8 h-full flex flex-col justify-center">
               <div className="text-2xl md:text-lg xl:text-xl space-y-2">
                 <header className="flex flex-col justify-center items-start space-y-2">
@@ -68,16 +68,15 @@ export default function ProgramPunktEvent({ post }) {
                     {title}
                   </h3>
                 </header>
-                <p className="w-10/12 leading-none ">
-                  {informationProgram.kortInfo}
-                </p>
+                <p className="leading-none ">{informationProgram.kortInfo}</p>
                 <div>
                   {genre && (
                     <div className="bg-brandorange uppercase text-pink-100 px-2 py-1 font-bold flex-row text-xs inline-block">
                       <span>{genre.name}</span>
                     </div>
                   )}
-                  {typAvArrangemang && typAvArrangemang.name !== "konsert" ? (
+                  {typAvArrangemang !== null &&
+                  typAvArrangemang?.name !== "Konsert" ? (
                     <div className="bg-brandteal text-pink-100 uppercase  px-2 py-1 font-bold inline-block text-xs">
                       <span>{typAvArrangemang.name}</span>
                     </div>

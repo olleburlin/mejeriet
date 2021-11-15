@@ -44,42 +44,41 @@ export default function IndexEvents() {
           }
         }
       }
-      featuredEvent: wpProgrampunkt(id: { eq: "cG9zdDo4OTA5" }) {
-        title
-        slug
-        featuredImage {
-          node {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+
+      featuredEvents: wpPage(databaseId: { eq: 9046 }) {
+        id
+        missaInte {
+          utvaltArrangemang {
+            programmpunkt {
+              ... on WpProgrampunkt {
+                id
+                title
+                informationProgram {
+                  startdatum
+                }
+                featuredImage {
+                  node {
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData
+                      }
+                    }
+                  }
+                }
               }
             }
           }
-        }
-        informationProgram {
-          borjar
-          kortInfo
-          oppnar
-          plats
-          samarbetspartner {
-            ... on WpSammarbetspartner {
-              id
-              title
-            }
-          }
-          slutar
-          startdatum
         }
       }
     }
   `)
   const posts = data.allEvents.nodes
-  const featuredPost = data.featuredEvent
+
+  const featuredPosts = data.featuredEvents
+  console.log(featuredPosts)
   return (
     <>
-      <div className="">
-        <IndexEventFeatured post={featuredPost} />
-      </div>
+      <IndexEventFeatured posts={featuredPosts} />
 
       <div className="grid lg:grid-cols-2 gap-4">
         {posts.map(post => {
