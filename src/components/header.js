@@ -3,9 +3,33 @@ import DarkModeToggle from "./common/DarkModeToggle"
 import useDarkMode from "use-dark-mode"
 import Logo from "./common/Logo"
 import Link from "../components/common/Link"
+import { useStaticQuery, graphql } from "gatsby"
 import { Squash as Hamburger } from "hamburger-react"
 import Headroom from "react-headroom"
+import { flatListToHierarchical } from "../utils/flatListToHierarchical"
+import MenuItem from "./common/MenuItem"
 function Header() {
+  const data = useStaticQuery(graphql`
+    {
+      mainMenu: wpMenu(id: { eq: "dGVybToyMDU=" }) {
+        id
+        name
+        menuItems {
+          nodes {
+            path
+            parentId
+            label
+            id
+          }
+        }
+      }
+    }
+  `)
+
+  const menuItems = data.mainMenu.menuItems.nodes
+  console.log(menuItems)
+  const desktopMenu = flatListToHierarchical(menuItems)
+  console.log(desktopMenu)
   const darkMode = useDarkMode()
   const [isExpanded, toggleExpansion] = useState(false)
   return (
@@ -19,42 +43,10 @@ function Header() {
                   <Logo color="" />
                 </Link>
               </div>
-              <nav
-                className={`${
-                  isExpanded ? `block` : `hidden`
-                } hidden md:block md:items-center w-full md:w-auto space-x-8`}
-              >
-                {[
-                  {
-                    route: `/program/`,
-                    title: `Program`,
-                  },
-                  {
-                    route: `/sodran/`,
-                    title: `Bio`,
-                  },
-                  {
-                    route: `/biljetter/`,
-                    title: `Biljetter`,
-                  },
-                  {
-                    route: `/mat/`,
-                    title: `Mat`,
-                  },
-                  {
-                    route: `/om-mejeriet/`,
-                    title: `Om Mejeriet`,
-                  },
-                ].map(link => (
-                  <Link
-                    key={link.title}
-                    to={link.route}
-                    className="font-bold uppercase md:inline-block  text-xl pb-1 border-b-4 border-transparent hover:border-black dark:hover:border-white "
-                    activeClassName="border-b-4  dark:border-white border-black"
-                  >
-                    {link.title}
-                  </Link>
-                ))}
+              <nav className="text-xl flex flex-row items-center font-bold uppercase">
+                {desktopMenu.map(menuItem => {
+                  return <MenuItem key={menuItem.label} menuItem={menuItem} />
+                })}
               </nav>
             </div>
             <div className="flex flex-row items-center space-x-4 ">

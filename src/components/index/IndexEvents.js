@@ -21,7 +21,7 @@ export default function IndexEvents() {
                     layout: CONSTRAINED
                     aspectRatio: 1.5
                     transformOptions: {
-                      duotone: { highlight: "#e198b2", shadow: "#111111" }
+                      duotone: { highlight: "#e37e24", shadow: "#111111" }
                     }
                   )
                 }
