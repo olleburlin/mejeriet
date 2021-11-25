@@ -8,6 +8,8 @@ import { Squash as Hamburger } from "hamburger-react"
 import Headroom from "react-headroom"
 import { flatListToHierarchical } from "../utils/flatListToHierarchical"
 import MenuItem from "./common/MenuItem"
+import { Disclosure } from "@headlessui/react"
+import { ChevronUpIcon } from "@heroicons/react/solid"
 function Header() {
   const data = useStaticQuery(graphql`
     {
@@ -23,12 +25,27 @@ function Header() {
           }
         }
       }
+      mobileMenu: wpMenu(id: { eq: "dGVybToyMzg=" }) {
+        id
+        name
+        menuItems {
+          nodes {
+            path
+            parentId
+            label
+            id
+          }
+        }
+      }
     }
   `)
 
   const menuItems = data.mainMenu.menuItems.nodes
-  console.log(menuItems)
+  const mobileMenuItems = data.mobileMenu.menuItems.nodes
+
   const desktopMenu = flatListToHierarchical(menuItems)
+  const mobileMenu = flatListToHierarchical(mobileMenuItems)
+
   console.log(desktopMenu)
   const darkMode = useDarkMode()
   const [isExpanded, toggleExpansion] = useState(false)
@@ -43,7 +60,7 @@ function Header() {
                   <Logo color="" />
                 </Link>
               </div>
-              <nav className="text-xl flex flex-row items-center font-bold uppercase">
+              <nav className="text-xl  flex-row items-center font-bold uppercase hidden md:flex">
                 {desktopMenu.map(menuItem => {
                   return <MenuItem key={menuItem.label} menuItem={menuItem} />
                 })}
@@ -78,54 +95,59 @@ function Header() {
                     </Link>
                   </div>
                 </div>
-                <div className="pt-2 pb-6 px-5 ">
-                  <div className="mt-6 flex flex-col justify-center  text-center items-center h-full">
+                <div className="pt-2 pb-6 px-5 text-xl uppercase font-bold">
+                  <div className="mt-6 flex flex-col justify-center h-full">
                     <div className="space-y-4 mt-4">
-                      {[
-                        {
-                          route: `/program`,
-                          title: `Program`,
-                        },
-                        {
-                          route: `/biljetter`,
-                          title: `Biljetter`,
-                        },
-                        {
-                          route: `/mat`,
-                          title: `Mat`,
-                        },
-                        {
-                          route: `/om-mejeriet`,
-                          title: `Om Mejeriet`,
-                        },
-                        {
-                          route: `/aktuellt`,
-                          title: `Aktuellt`,
-                        },
-                        {
-                          route: `/hyra-mejeriet`,
-                          title: `Hyra Mejeriet`,
-                        },
-                        {
-                          route: `/musikskolan`,
-                          title: `Musikskolan`,
-                        },
-                        {
-                          route: `/volontar-replokaler`,
-                          title: `Volontärer & Replokaler`,
-                        },
-                        {
-                          route: `/#`,
-                          title: `In English`,
-                        },
-                      ].map(menuItem => {
+                      {mobileMenu.map(menuItem => {
                         return (
-                          <Link
-                            to={menuItem.route}
-                            className="block uppercase font-bold"
-                          >
-                            {menuItem.title}
-                          </Link>
+                          <>
+                            {menuItem.children.length === 0 ? (
+                              <Link
+                                to={menuItem.path}
+                                className="block uppercase "
+                              >
+                                {menuItem.label}
+                              </Link>
+                            ) : (
+                              <div>
+                                <Disclosure>
+                                  {({ open }) => (
+                                    <>
+                                      <Disclosure.Button className="w-full">
+                                        <div className="flex flex-row items-center justify-between w-full">
+                                          <div>{menuItem.label}</div>
+                                          <div className="w-10">
+                                            <ChevronUpIcon
+                                              className={`${
+                                                open
+                                                  ? "transition-all transform rotate-180"
+                                                  : "transition-all"
+                                              }`}
+                                            />
+                                          </div>
+                                        </div>
+                                      </Disclosure.Button>
+                                      <Disclosure.Panel
+                                        as="div"
+                                        className="space-y-4 my-4 pl-2"
+                                      >
+                                        {menuItem.children.map(post => {
+                                          return (
+                                            <div
+                                              key={post.id}
+                                              className="text-base"
+                                            >
+                                              {post.label}
+                                            </div>
+                                          )
+                                        })}
+                                      </Disclosure.Panel>
+                                    </>
+                                  )}
+                                </Disclosure>
+                              </div>
+                            )}
+                          </>
                         )
                       })}
                     </div>

@@ -68,10 +68,10 @@ export default function MenuItem({ menuItem }) {
                 onMouseEnter={onMouseEnterMenu}
                 onMouseLeave={onMouseLeaveMenu}
                 static
-                className="bg-pink-100 z-20  px-2 w-screen max-w-xl sm:px-0 "
+                className="bg-pink-100 z-20  px-2 sm:px-0 "
               >
                 <div className="">
-                  <div className="relative  bg-third px-4 py-8 ">
+                  <div className="relative  bg-third pt-12 pb-8 px-8 ">
                     <nav className="space-y-8">
                       {menuItem.children.map(subMenuItem => {
                         return (

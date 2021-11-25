@@ -154,7 +154,7 @@ export default function ProgramPage() {
             </div>
           </div>
           <div className="flex flex-row gap-4 ">
-            <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  inline-block text-sm p-4 whitespace-nowrap uppercase font-bold">
+            {/* <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  inline-block text-sm p-4 whitespace-nowrap uppercase font-bold">
               <button
                 onClick={() => {
                   toggleFilter(!filter)
@@ -162,7 +162,7 @@ export default function ProgramPage() {
               >
                 Visa filter
               </button>
-            </div>
+            </div> */}
             {filter && (
               <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  order-1 inline-block text-sm w-full p-4">
                 <div className="flex flex-row gap-x-4 space-x-2 w-full flex-wrap justify-evenly items-center">
