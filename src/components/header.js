@@ -97,31 +97,33 @@ function Header() {
                 </div>
                 <div className="pt-2 pb-6 px-5 text-xl uppercase font-bold">
                   <div className="mt-6 flex flex-col justify-center h-full">
-                    <div className="space-y-4 mt-4">
+                    <div className="mt-4">
                       {mobileMenu.map(menuItem => {
                         return (
                           <>
                             {menuItem.children.length === 0 ? (
-                              <Link
-                                to={menuItem.path}
-                                className="block uppercase "
-                              >
-                                {menuItem.label}
-                              </Link>
+                              <div className="py-2">
+                                <Link
+                                  to={menuItem.path}
+                                  className="block uppercase "
+                                >
+                                  {menuItem.label}
+                                </Link>
+                              </div>
                             ) : (
                               <div>
                                 <Disclosure>
                                   {({ open }) => (
                                     <>
                                       <Disclosure.Button className="w-full">
-                                        <div className="flex flex-row items-center justify-between w-full">
+                                        <div className="flex flex-row items-center justify-between w-full ">
                                           <div>{menuItem.label}</div>
                                           <div className="w-10">
                                             <ChevronUpIcon
                                               className={`${
                                                 open
-                                                  ? "transition-all transform rotate-180"
-                                                  : "transition-all"
+                                                  ? "transition-all"
+                                                  : "transition-all  transform rotate-180"
                                               }`}
                                             />
                                           </div>
