@@ -12,7 +12,7 @@ export default function MenuItem({ menuItem }) {
   )
   const [mouseOverButton, setMouseOverButton] = useState(false)
   const [mouseOverMenu, setMouseOverMenu] = useState(false)
-  const timeoutDuration = 200
+  const timeoutDuration = 0
   let timeoutButton
   let timeoutMenu
 
@@ -38,8 +38,8 @@ export default function MenuItem({ menuItem }) {
   return (
     <div>
       {menuItem.children.length === 0 ? (
-        <Link className=" px-4 h-full inline-block" to={menuItem.route}>
-          <div>{menuItem.label}</div>
+        <Link className=" px-4 h-full inline-block" to={menuItem.path}>
+          {menuItem.label}
         </Link>
       ) : (
         <Menu>
@@ -54,7 +54,7 @@ export default function MenuItem({ menuItem }) {
             <Menu.Button as="a">
               <div
                 className={`${
-                  show ? "bg-third" : ""
+                  show ? "bg-pink-100" : ""
                 } cursor-pointer py-6 px-4 hover:bg-third `}
               >
                 {menuItem.label}
@@ -68,7 +68,7 @@ export default function MenuItem({ menuItem }) {
                 onMouseEnter={onMouseEnterMenu}
                 onMouseLeave={onMouseLeaveMenu}
                 static
-                className=" z-20  px-2 w-screen max-w-xl sm:px-0 "
+                className="bg-pink-100 z-20  px-2 w-screen max-w-xl sm:px-0 "
               >
                 <div className="">
                   <div className="relative  bg-third px-4 py-8 ">
@@ -78,15 +78,20 @@ export default function MenuItem({ menuItem }) {
                           <Menu.Item onClick={() => setOpenDropdown(false)}>
                             <div className="space-y-6">
                               <div className="font-bold">
-                                {subMenuItem.label}
+                                <Link
+                                  className="-m-3 px-3 flex items-center"
+                                  to={subMenuItem.path}
+                                >
+                                  {subMenuItem.label}
+                                </Link>
                               </div>
                               <div className="space-y-8">
                                 {subMenuItem.children.map(post => {
                                   return (
-                                    <div className="pl-3 flex flex-row">
+                                    <div className="pl-3 ">
                                       <Link
                                         className="-m-3 px-3 flex items-center"
-                                        to={post.route}
+                                        to={post.path}
                                       >
                                         {post.label}
                                       </Link>
