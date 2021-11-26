@@ -105,7 +105,7 @@ function Header() {
                               <div className="py-2">
                                 <Link
                                   to={menuItem.path}
-                                  className="block uppercase "
+                                  className="block uppercase"
                                 >
                                   {menuItem.label}
                                 </Link>
