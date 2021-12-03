@@ -21,7 +21,7 @@ exports.createPages = async ({ graphql, actions }) => {
     },
   } = await graphql(`
     query {
-      allWpPage {
+      allWpPage(filter: { synlighet: { customSida: { ne: true } } }) {
         nodes {
           id
           uri

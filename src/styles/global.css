@@ -56,3 +56,13 @@ button {
 .quote svg {
   display: none;
 }
+
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+  @apply w-full p-4;
+}
+
+.wp-content p {
+  @apply mb-4;
+}
