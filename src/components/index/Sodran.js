@@ -3,7 +3,7 @@ import React from "react"
 
 export default function Sodran() {
   return (
-    <div className="bg-brandpurple dark:bg-brandpurple dark:bg-opacity-50 text-pink-100 p-4 space-y-2">
+    <div className="bg-brandpurple dark:bg-brandpurple dark:bg-opacity-50 text-white p-4 space-y-2">
       <h4 className="uppercase text-2xl">Filmer på södran</h4>
       <ul className="uppercase">
         {movies.map((movie, i) => {

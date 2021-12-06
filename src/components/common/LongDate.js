@@ -3,7 +3,7 @@ import moment from "moment"
 
 export default function LongDate({ dateString }) {
   moment().locale("sv")
-  const date = moment(dateString).format("LL")
+  let date = moment(dateString).format("YYYY.MM.DD")
 
   return <>{date}</>
 }

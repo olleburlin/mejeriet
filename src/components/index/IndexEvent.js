@@ -20,7 +20,7 @@ export default function IndexEvent({ post }) {
             <div className=" p-4">
               <div className="md:text-lg xl:text-xl space-y-2">
                 <header className="flex flex-col justify-start items-start space-y-2">
-                  <div className="bg-brandpink dark:bg-brandpurple text-white px-2 py-1 font-bold flex flex-row text-sm">
+                  <div className="bg-white dark:bg-brandpurple text-black px-2 py-1 font-bold flex flex-row text-sm">
                     <span>
                       <LongDate dateString={startdatum} />
                     </span>
@@ -29,7 +29,7 @@ export default function IndexEvent({ post }) {
                     {title}
                   </h3>
                 </header>
-                <p className="text-white w-10/12 leading-none">
+                <p className="text-white w-10/12 leading-normal">
                   {informationProgram.kortInfo}
                 </p>
               </div>

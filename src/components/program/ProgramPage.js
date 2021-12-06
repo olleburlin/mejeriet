@@ -7,13 +7,10 @@ import { CheckIcon, SelectorIcon } from "@heroicons/react/solid"
 export default function ProgramPage() {
   const data = useStaticQuery(graphql`
     {
-      allWpTermNode(limit: 5) {
+      allWpProgramkategori {
         nodes {
-          ... on WpProgramkategori {
-            id
-            name
-            slug
-          }
+          slug
+          name
         }
       }
       allWpProgrampunkt(
@@ -66,22 +63,24 @@ export default function ProgramPage() {
     }
   `)
 
-  const types = data.allWpTermNode.nodes
+  const types = data.allWpProgramkategori.nodes
   const posts = data.allWpProgrampunkt.nodes
-  const [selected, setSelected] = useState(types[0])
+  // const [selected, setSelected] = useState(types[0])
 
   const [isSelected, setIsSelected] = useState(
     types.map(category => category.slug)
   )
 
-  console.log(isSelected)
-
+  // function handleChange(selected) {
+  //   console.log(selected)
+  //   setSelected(selected)
+  // }
   const [items] = React.useState(types)
-
+  console.log(types)
   return (
     <div>
       <section className="flex flex-col mb-8">
-        <div className="w-full space-y-4">
+        <div className="w-full space-y-8">
           {posts
             .filter(post =>
               isSelected.includes(
@@ -93,8 +92,8 @@ export default function ProgramPage() {
             })}
         </div>
         <div className="order-first  mb-4 md:mb-8 ">
-          <div className="hidden">
-            <Listbox value={selected} onChange={setSelected}>
+          <div className="">
+            {/* <Listbox value={selected} onChange={setSelected}>
               <div className="relative mt-1">
                 <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
                   <span className="block truncate">{selected.name}</span>
@@ -112,6 +111,12 @@ export default function ProgramPage() {
                   leaveTo="opacity-0"
                 >
                   <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <Listbox.Option
+                      value="all"
+                      className="  cursor-default select-none relative py-2 pl-10 pr-4"
+                    >
+                      Visa Allt
+                    </Listbox.Option>
                     {types.map((category, i) => (
                       <Listbox.Option
                         key={i}
@@ -154,7 +159,7 @@ export default function ProgramPage() {
                   </Listbox.Options>
                 </Transition>
               </div>
-            </Listbox>
+            </Listbox> */}
           </div>
           <div className="flex flex-row gap-4 ">
             <div className="order-1 inline-block text-xl ">
@@ -175,9 +180,9 @@ export default function ProgramPage() {
                       //     ? `bg-opacity-70`
                       //     : `bg-brandpink dark:bg-brandpurple`
                       // } inline-block px-2 py-2 text-white text-xs whitespace-nowrap border  bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
-                      // key={category.slug}
-                      // id={category.slug}
-                      // name={category.slug}
+                      key={category.slug}
+                      id={category.slug}
+                      name={category.slug}
                     >
                       {category.name}
                     </option>
