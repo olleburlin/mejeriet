@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import ProgramPageEvent from "./ProgramPageEvent"
-import SearchFilter from "./SearchFilter"
+import { Listbox, Transition } from "@headlessui/react"
+import { CheckIcon, SelectorIcon } from "@heroicons/react/solid"
 
 export default function ProgramPage() {
   const data = useStaticQuery(graphql`
     {
-      allWpTermNode {
+      allWpTermNode(limit: 5) {
         nodes {
-          ... on WpGenre {
+          ... on WpProgramkategori {
+            id
+            name
             slug
           }
         }
@@ -62,155 +65,129 @@ export default function ProgramPage() {
       }
     }
   `)
-  const genres = [
-    {
-      slug: "all",
-      name: "Allt",
-    },
-    {
-      slug: "elektroniskt-experimentellt",
-      name: "Elektroniskt / Experimentellt",
-    },
-    {
-      slug: "jazz-folk",
-      name: "Jazz / Folk",
-    },
-    {
-      slug: "klubb-dans",
-      name: "Klubb / Dans",
-    },
-    {
-      slug: "pop-indiepop",
-      name: "Pop / Indiepop",
-    },
-    {
-      slug: "humor-scen",
-      name: "Humor / Scen",
-    },
-    {
-      slug: "punk-metal",
-      name: "Punk / Metal",
-    },
-    {
-      slug: "rock-indierock",
-      name: "Rock / Indierock",
-    },
-  ]
-  const types = [
-    {
-      slug: "humor",
-      name: "Humor / Scen",
-    },
-    {
-      slug: "film",
-      name: "Film",
-    },
-    {
-      slug: "konsert",
-      name: "Konsert",
-    },
-  ]
+
+  const types = data.allWpTermNode.nodes
   const posts = data.allWpProgrampunkt.nodes
+  const [selected, setSelected] = useState(types[0])
 
-  const [isSelected, setIsSelected] = useState({})
-  const [clicked, toggleClicked] = useState(false)
+  const [isSelected, setIsSelected] = useState(
+    types.map(category => category.slug)
+  )
 
-  const handleFilter = category => {
-    setIsSelected({
-      ...isSelected,
-      [category.slug]: !isSelected[category.slug],
-    })
-    toggleClicked(!clicked)
-  }
-
-  useEffect(() => {
-    const isSelected = {}
-
-    // const genreNames = genres.map(category => category.slug)
-    const typeNames = types.map(category => category.slug)
-    // const typesAndGenres = genreNames.concat(typeNames)
-    typeNames.forEach(typeName => (isSelected[typeName] = true))
-
-    setIsSelected(isSelected)
-  }, [])
-  const [filter, toggleFilter] = useState(false)
   console.log(isSelected)
+
+  const [items] = React.useState(types)
+
   return (
     <div>
       <section className="flex flex-col mb-8">
         <div className="w-full space-y-4">
           {posts
-            .filter(
-              post => isSelected[post.informationProgram.typAvArrangemang?.slug]
+            .filter(post =>
+              isSelected.includes(
+                post.informationProgram.typAvArrangemang?.slug
+              )
             )
             .map(post => {
               return <ProgramPageEvent key={post.id} post={post} />
             })}
         </div>
         <div className="order-first  mb-4 md:mb-8 ">
-          <div className="w-full">
-            <div className="flex flex-row w-full flex-wrap">
-              {types.map(type => {
-                return <Genre key={type.slug} genre={type} />
-              })}
-            </div>
+          <div className="hidden">
+            <Listbox value={selected} onChange={setSelected}>
+              <div className="relative mt-1">
+                <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
+                  <span className="block truncate">{selected.name}</span>
+                  <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                    <SelectorIcon
+                      className="w-5 h-5 text-gray-400"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </Listbox.Button>
+                <Transition
+                  as={Fragment}
+                  leave="transition ease-in duration-100"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+                >
+                  <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    {types.map((category, i) => (
+                      <Listbox.Option
+                        key={i}
+                        className={({ active }) =>
+                          `${
+                            active
+                              ? "text-amber-900 bg-amber-100"
+                              : "text-gray-900"
+                          }
+                          cursor-default select-none relative py-2 pl-10 pr-4`
+                        }
+                        value={category}
+                      >
+                        {({ selected, active }) => (
+                          <>
+                            <span
+                              className={`${
+                                selected ? "font-medium" : "font-normal"
+                              } block truncate`}
+                            >
+                              {category.name}
+                            </span>
+                            {selected ? (
+                              <span
+                                className={`${
+                                  active ? "text-amber-600" : "text-amber-600"
+                                }
+                                absolute inset-y-0 left-0 flex items-center pl-3`}
+                              >
+                                <CheckIcon
+                                  className="w-5 h-5"
+                                  aria-hidden="true"
+                                />
+                              </span>
+                            ) : null}
+                          </>
+                        )}
+                      </Listbox.Option>
+                    ))}
+                  </Listbox.Options>
+                </Transition>
+              </div>
+            </Listbox>
           </div>
           <div className="flex flex-row gap-4 ">
-            <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  inline-block text-sm p-4 whitespace-nowrap uppercase font-bold">
-              <button
-                onClick={() => {
-                  toggleFilter(!filter)
-                }}
+            <div className="order-1 inline-block text-xl ">
+              <select
+                className="p-2"
+                onChange={e => setIsSelected(e.currentTarget.value)}
               >
-                Visa filter
-              </button>
-            </div>
-
-            <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  order-1 inline-block text-sm w-full p-4">
-              <div className="flex flex-row gap-x-4 space-x-2 w-full flex-wrap justify-evenly items-center">
-                {types.map(category => {
+                <option value={types.map(category => category.slug)}>
+                  Allt
+                </option>
+                {items.map(category => {
                   return (
-                    <div className="space-x-2 flex flex-row items-center">
-                      <input
-                        classname="checked:text-pink-400"
-                        type="checkbox"
-                        defaultChecked={false}
-                        data={isSelected}
-                        // className={`${
-                        //   clicked
-                        //     ? `bg-opacity-70`
-                        //     : `bg-brandpink dark:bg-brandpurple`
-                        // } inline-block px-2 py-2 text-white text-xs whitespace-nowrap border  bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
-                        key={category.slug}
-                        id={category.slug}
-                        name={category.slug}
-                        onClick={() => handleFilter(category)}
-                      />
-                      <label classname="" for={category.slug}>
-                        {" "}
-                        {category.name}
-                      </label>
-                    </div>
+                    <option
+                      value={category.slug}
+                      // classname="checked:text-pink-400"
+                      // className={`${
+                      //   clicked
+                      //     ? `bg-opacity-70`
+                      //     : `bg-brandpink dark:bg-brandpurple`
+                      // } inline-block px-2 py-2 text-white text-xs whitespace-nowrap border  bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
+                      // key={category.slug}
+                      // id={category.slug}
+                      // name={category.slug}
+                    >
+                      {category.name}
+                    </option>
                   )
                 })}
-              </div>
+              </select>
             </div>
           </div>
         </div>
       </section>
     </div>
-  )
-}
-function Genre({ genre, clicked }) {
-  return (
-    <button
-      className={`${
-        clicked
-          ? `bg-opacity-90 bg-brandpink`
-          : `bg-brandpink dark:bg-brandpurple`
-      } inline-block px-2 py-2 text-white text-sm whitespace-nowrap border border-white bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
-    >
-      {genre.name}
-    </button>
   )
 }

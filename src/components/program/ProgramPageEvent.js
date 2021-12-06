@@ -54,11 +54,6 @@ export default function ProgramPunktEvent({ post }) {
                       <span>{typAvArrangemang.name}</span>
                     </div>
                   ) : null}
-                  {samarbetspartner && (
-                    <div className="bg-white text-gray-900 uppercase  px-2 py-1 font-bold inline-block text-xs">
-                      <span>{samarbetspartner?.title}</span>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
