@@ -105,6 +105,10 @@ export default function ProgramPage() {
       slug: "film",
       name: "Film",
     },
+    {
+      slug: "konsert",
+      name: "Konsert",
+    },
   ]
   const posts = data.allWpProgrampunkt.nodes
 
@@ -122,10 +126,10 @@ export default function ProgramPage() {
   useEffect(() => {
     const isSelected = {}
 
-    const genreNames = genres.map(category => category.slug)
-    // const typeNames = types.map(category => category.slug)
+    // const genreNames = genres.map(category => category.slug)
+    const typeNames = types.map(category => category.slug)
     // const typesAndGenres = genreNames.concat(typeNames)
-    genreNames.forEach(genreName => (isSelected[genreName] = true))
+    typeNames.forEach(typeName => (isSelected[typeName] = true))
 
     setIsSelected(isSelected)
   }, [])
@@ -136,25 +140,23 @@ export default function ProgramPage() {
       <section className="flex flex-col mb-8">
         <div className="w-full space-y-4">
           {posts
-            // .filter(
-            //   post =>
-            //     isSelected[post.informationProgram.genre?.slug] ||
-            //     isSelected[post.informationProgram.typAvArrangemang?.slug]
-            // )
+            .filter(
+              post => isSelected[post.informationProgram.typAvArrangemang?.slug]
+            )
             .map(post => {
               return <ProgramPageEvent key={post.id} post={post} />
             })}
         </div>
         <div className="order-first  mb-4 md:mb-8 ">
-          <div className="w-full hidden">
+          <div className="w-full">
             <div className="flex flex-row w-full flex-wrap">
-              {genres.map(genre => {
-                return <Genre key={genre.slug} genre={genre} />
+              {types.map(type => {
+                return <Genre key={type.slug} genre={type} />
               })}
             </div>
           </div>
           <div className="flex flex-row gap-4 ">
-            {/* <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  inline-block text-sm p-4 whitespace-nowrap uppercase font-bold">
+            <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  inline-block text-sm p-4 whitespace-nowrap uppercase font-bold">
               <button
                 onClick={() => {
                   toggleFilter(!filter)
@@ -162,38 +164,37 @@ export default function ProgramPage() {
               >
                 Visa filter
               </button>
-            </div> */}
-            {filter && (
-              <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  order-1 inline-block text-sm w-full p-4">
-                <div className="flex flex-row gap-x-4 space-x-2 w-full flex-wrap justify-evenly items-center">
-                  {genres.map(category => {
-                    return (
-                      <div className="space-x-2 flex flex-row items-center">
-                        <input
-                          classname="checked:text-pink-400"
-                          type="checkbox"
-                          defaultChecked={isSelected}
-                          data={isSelected}
-                          // className={`${
-                          //   clicked
-                          //     ? `bg-opacity-70`
-                          //     : `bg-brandpink dark:bg-brandpurple`
-                          // } inline-block px-2 py-2 text-white text-xs whitespace-nowrap border  bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
-                          key={category.slug}
-                          id={category.slug}
-                          name={category.slug}
-                          onClick={() => handleFilter(category)}
-                        />
-                        <label classname="" for={category.slug}>
-                          {" "}
-                          {category.name}
-                        </label>
-                      </div>
-                    )
-                  })}
-                </div>
+            </div>
+
+            <div className="bg-brandpink text-pink-100 dark:bg-brandpurple dark:bg-opacity-50  order-1 inline-block text-sm w-full p-4">
+              <div className="flex flex-row gap-x-4 space-x-2 w-full flex-wrap justify-evenly items-center">
+                {types.map(category => {
+                  return (
+                    <div className="space-x-2 flex flex-row items-center">
+                      <input
+                        classname="checked:text-pink-400"
+                        type="checkbox"
+                        defaultChecked={false}
+                        data={isSelected}
+                        // className={`${
+                        //   clicked
+                        //     ? `bg-opacity-70`
+                        //     : `bg-brandpink dark:bg-brandpurple`
+                        // } inline-block px-2 py-2 text-white text-xs whitespace-nowrap border  bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
+                        key={category.slug}
+                        id={category.slug}
+                        name={category.slug}
+                        onClick={() => handleFilter(category)}
+                      />
+                      <label classname="" for={category.slug}>
+                        {" "}
+                        {category.name}
+                      </label>
+                    </div>
+                  )
+                })}
               </div>
-            )}
+            </div>
           </div>
         </div>
       </section>
