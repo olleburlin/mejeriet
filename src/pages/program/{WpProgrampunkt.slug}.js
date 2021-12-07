@@ -33,6 +33,7 @@ export const query = graphql`
         kortInfo
         oppnar
         plats
+        youtubeKlipp
         samarbetspartner {
           ... on WpSammarbetspartner {
             id

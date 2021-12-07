@@ -1,8 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import ProgramPageEvent from "./ProgramPageEvent"
-import { Listbox, Transition } from "@headlessui/react"
-import { CheckIcon, SelectorIcon } from "@heroicons/react/solid"
 
 export default function ProgramPage() {
   const data = useStaticQuery(graphql`
@@ -162,13 +160,14 @@ export default function ProgramPage() {
             </Listbox> */}
           </div>
           <div className="flex flex-row gap-4 ">
-            <div className="order-1 inline-block text-xl ">
+            <div className="order-1 inline-block text-xl w-max">
+              {" "}
               <select
-                className="p-2"
+                className="py-2 px-4 w-full bg-brandorange text-white appearance-none rounded-none before:text-black border-none focus:none outline-none uppercase font-heavy"
                 onChange={e => setIsSelected(e.currentTarget.value)}
               >
                 <option value={types.map(category => category.slug)}>
-                  Allt
+                  Visa hela programmet{" "}
                 </option>
                 {items.map(category => {
                   return (
