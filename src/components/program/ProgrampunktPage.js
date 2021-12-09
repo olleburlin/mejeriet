@@ -1,28 +1,38 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
+import Link from "../common/Link"
 import YouTube from "react-youtube"
 import MomentDate from "../../utils/MomentDate"
 import { YoutubeHelper } from "../../utils/YoutubeHelper"
+import Priskategorier from "./Priskategorier"
 
 export default function ProgrampunktPage({ post }) {
   const { title, informationProgram, featuredImage } = post
   const imageData = getImage(featuredImage.node.localFile)
-  const { youtubeKlipp } = informationProgram
+  const {
+    youtubeKlipp,
+    plats,
+    prices,
+    oppnar,
+    borjar,
+    aldersgrans,
+    langInfo,
+    biljettlank,
+  } = informationProgram
 
   const youTubeId = YoutubeHelper(youtubeKlipp)
   console.log(youTubeId)
 
   return (
     <>
-      <section className="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 ">
+      <section className="grid md:grid-cols-2 gap-8 md:gap-16 py-16">
         {/* Primary column */}
         <div className="flex-1">
-          <div className="space-y-8">
+          <div className="space-y-4">
             <header className="flex flex-col">
               <h1 className="uppercase text-5xl">{title}</h1>
 
-              <div className="flex md:flex-row flex-wrap  mb-4">
+              <div className="flex md:flex-row flex-wrap  ">
                 <date className="">
                   <MomentDate
                     dateString={informationProgram.startdatum}
@@ -32,70 +42,55 @@ export default function ProgrampunktPage({ post }) {
               </div>
             </header>
 
-            {/* <div className="my-8">
-              <Link to="/">
-                <button className=" px-3 py-2">Köp biljett</button>
-              </Link>
-            </div> */}
-            <div className="program-information">
-              <ul className="list-inline">
-                <li>
-                  <span>Pris:</span>&nbsp;195kr
-                </li>
-                <li>
-                  <span>Öppnar:</span>&nbsp;20:00
-                </li>
-                <li>
-                  <span>Börjar:</span>&nbsp;21:00
-                </li>
-                <li>
-                  <span>Plats:</span>&nbsp;Mejeriet
-                </li>
-                <li>
-                  <span>Åldersgräns:</span>&nbsp;13 år
-                </li>
-              </ul>
+            <div className="my-8">
+              {biljettlank && (
+                <Link to={biljettlank}>
+                  <button className="bg-brandteal text-white rounded-sm px-3 py-2">
+                    Köp biljett
+                  </button>
+                </Link>
+              )}
             </div>
-            <div className=" ">
-              <p>
-                Dan Bejar är av de senaste decenniernas mest säregna sångare och
-                låtskrivare. Sällan förutsägbar, aldrig ointressant, liknar inte
-                riktigt någon annan. Som frontfigur för det kanadensiska bandet
-                Destroyer gör han sedan mitten av nittiotalet en stämningsfull,
-                teatralisk, stundom synthig, ofta jazzigt elegant och
-                pratsjungen croonerpop som ibland jämförs med David Bowie,
-                annars brittiskt åttiotal. Första singeln ”Crimson Tide” från
-                komman plattan ”Have We Met” släpptes i oktober är en sex
-                minuters resa som tar sin rättmätiga plats bland andra
-                Destroyer-klassiker.{" "}
-              </p>
-
-              <p>
-                Dan Bejar har sagt att skivan är inspirerad av åttiotalsfilmer
-                som White Nights och Pretty In Pink. Låter hur lovande som
-                helst. ”Få just nu aktiva band kan skryta med en diskografi med
-                så hög lägstanivå. Processen i att bryta ner och bygga upp är
-                kanske just anledningen till att man klarat av att vara
-                relevanta under så lång tid, man har inte direkt förhållit sig
-                till trender utan fokuserar bara på sin egen grej.” – Pontus
-                Flodin, Hymn
-                <p>Support blir brittiska singer/songwritern Anna B Savage.</p>
-              </p>
+            <div className="program-information border-t-4 py-4 border-b-4 border-black">
+              <div>{prices && <Priskategorier prices={prices} />}</div>
+              {oppnar && (
+                <div className="font-heavy">
+                  Öppnar:&nbsp;
+                  <span className="font-normal"> {oppnar}</span>
+                </div>
+              )}
+              {borjar && (
+                <div className="font-heavy">
+                  Börjar:&nbsp;
+                  <span className="font-normal"> {borjar}</span>
+                </div>
+              )}
+              {plats && (
+                <div className="font-heavy">
+                  Plats:&nbsp;
+                  <span className="font-normal">{plats}</span>
+                </div>
+              )}
+              {aldersgrans && (
+                <div className="font-heavy">
+                  Åldersgräns:&nbsp;<span className="font-normal">13 år</span>
+                </div>
+              )}
+            </div>
+            {langInfo && (
+              <div
+                dangerouslySetInnerHTML={{ __html: langInfo }}
+                className="space-y-4"
+              />
+            )}
+            <div className="italic text-sm border-t-4 border-black pt-4">
+              Från den 1a december 2021 kommer vi kräva att man kan uppvisar ett
+              giltigt Vaccinationsbevis/Covidpass i dörren på samtliga
+              arrangemang i Mejeriets lokaler. Det är ditt ansvar att ha
+              vaccinationsbevis samt legitimation med dig till evenemanget. Var
+              där i extra god tid!
             </div>
           </div>
-          {/* <div className=" p-4 my-4 ">
-            <div className="space-x-4">
-              <button className="bg-white text-gray-900 text-md px-2 py-1">
-                Spotify
-              </button>
-              <button className="bg-white text-gray-900 text-md px-2 py-1">
-                Hemsida
-              </button>
-              <button className="bg-white text-gray-900 text-md px-2 py-1">
-                Facebookevent
-              </button>
-            </div>
-          </div> */}
         </div>
         {/* Secondary column */}
         <div className="flex-1">

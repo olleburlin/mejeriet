@@ -31,6 +31,8 @@ export const query = graphql`
       informationProgram {
         borjar
         kortInfo
+        langInfo
+        biljettlank
         oppnar
         plats
         youtubeKlipp
@@ -42,6 +44,10 @@ export const query = graphql`
         }
         slutar
         startdatum
+        prices {
+          priceDescription
+          price
+        }
       }
     }
   }

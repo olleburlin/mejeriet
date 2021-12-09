@@ -160,34 +160,48 @@ export default function ProgramPage() {
             </Listbox> */}
           </div>
           <div className="flex flex-row gap-4 ">
-            <div className="order-1 inline-block text-xl w-max">
+            <div className="order-1 inline-block text-xl w-full">
               {" "}
-              <select
-                className="py-2 px-4 w-full bg-brandorange text-white appearance-none rounded-none before:text-black border-none focus:none outline-none uppercase font-heavy"
-                onChange={e => setIsSelected(e.currentTarget.value)}
-              >
-                <option value={types.map(category => category.slug)}>
-                  Visa hela programmet{" "}
-                </option>
-                {items.map(category => {
-                  return (
-                    <option
-                      value={category.slug}
-                      // classname="checked:text-pink-400"
-                      // className={`${
-                      //   clicked
-                      //     ? `bg-opacity-70`
-                      //     : `bg-brandpink dark:bg-brandpurple`
-                      // } inline-block px-2 py-2 text-white text-xs whitespace-nowrap border  bg-brandpink dark:bg-brandpurple  hover:bg-opacity-50  flex-auto`}
-                      key={category.slug}
-                      id={category.slug}
-                      name={category.slug}
-                    >
-                      {category.name}
+              <div className="flex flex-row items-center justify-center w-full">
+                <div className="flex flex-row items-center bg-brandorange">
+                  <select
+                    className="cursor-pointer py-2 px-4 w-full bg-brandorange text-white appearance-none  before:text-black border-none focus:none outline-none uppercase font-heavy"
+                    onChange={e => setIsSelected(e.currentTarget.value)}
+                  >
+                    <option value={types.map(category => category.slug)}>
+                      Visa hela programmet{" "}
                     </option>
-                  )
-                })}
-              </select>
+                    {items.map(category => {
+                      return (
+                        <option
+                          value={category.slug}
+                          key={category.slug}
+                          id={category.slug}
+                          name={category.slug}
+                        >
+                          {category.name}
+                        </option>
+                      )
+                    })}
+                  </select>
+                  <div className="pr-4 text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
