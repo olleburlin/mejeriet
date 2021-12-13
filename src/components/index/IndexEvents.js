@@ -55,6 +55,10 @@ export default function IndexEvents() {
                 title
                 informationProgram {
                   startdatum
+                  borjar
+                  kortInfo
+                  oppnar
+                  plats
                 }
                 featuredImage {
                   node {
@@ -80,7 +84,7 @@ export default function IndexEvents() {
     <>
       <IndexEventFeatured posts={featuredPosts} />
 
-      <div className="grid lg:grid-cols-2 gap-4">
+      <div className="grid l gap-4">
         {posts.map(post => {
           return <IndexEvent key={post.id} post={post} />
         })}

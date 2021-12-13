@@ -25,7 +25,7 @@ export default function IndexMiniEvents() {
   const posts = data.allWpProgrampunkt.nodes
 
   return (
-    <div className="bg-brandpurple dark:bg-brandpurple dark:bg-opacity-50 p-4 text-white">
+    <div className="bg-brandorange dark:bg-brandorange  p-4 text-white">
       <div>
         <h5 className="uppercase text-2xl mb-2">Närmsta evenemang</h5>
       </div>
