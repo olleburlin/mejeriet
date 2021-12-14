@@ -98,8 +98,12 @@ export default function ProgrampunktPage({ post }) {
             <GatsbyImage image={imageData} alt={title} />
           </div>
           {youTubeId && (
-            <div className="my-4 embed-container w-full">
-              <YouTube videoId={youTubeId} className=" w-full max-w-full" />
+            <div className="my-4 embed-container">
+              <iframe
+                src={"https://www.youtube.com/embed/" + youTubeId}
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
             </div>
           )}
         </div>
