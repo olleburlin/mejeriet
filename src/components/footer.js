@@ -5,7 +5,7 @@ import NewsletterForm from "./common/NewsletterForm"
 
 export default function Footer() {
   return (
-    <footer className="bg-brandorange dark:bg-brandpurple dark:bg-opacity-50 py-8 md:py-8 text-pink-100 text-lg">
+    <footer className="bg-brandpurple dark:bg-opacity-50 py-8 md:py-16 text-pink-100 text-lg">
       <div className="flex flex-col md:flex-row mx-auto items-center justify-center px-8 ">
         <div className="flex-1 text-left ">
           Kulturmejeriet
@@ -21,11 +21,11 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center my-16">
+      {/* <div className="flex flex-col items-center justify-center my-16">
         <div className="w-1/3">
           <img src={karta} />
         </div>
-      </div>
+      </div> */}
     </footer>
   )
 }

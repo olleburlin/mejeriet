@@ -55,6 +55,7 @@ export default function IndexEvents() {
               ... on WpProgrampunkt {
                 id
                 title
+                slug
                 informationProgram {
                   startdatum
                   borjar

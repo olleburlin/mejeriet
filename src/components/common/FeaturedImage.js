@@ -7,7 +7,7 @@ export default function FeaturedImage({ image }) {
   return (
     <div className="mx-8">
       <div className="relative z-0 ">
-        <div className="before:absolute before:bottom-5 before:right-6  before:z-10 before:mix-blend-multiply  before:w-full before:h-full before:bg-brandorange before:bg-opacity-80 dark:before:bg-brandpurple  dark:before:bg-opacity-70 ">
+        <div className="before:absolute before:bottom-5 before:right-6  before:z-10 before:mix-blend-multiply  before:w-full before:h-full before:bg-brandorange before:bg-opacity-90 dark:before:bg-brandpurple  dark:before:bg-opacity-70 ">
           <GatsbyImage
             image={imageData}
             alt={image?.node.title}
