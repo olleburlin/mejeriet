@@ -87,71 +87,70 @@ function Header() {
                 isExpanded ? `block` : `hidden`
               } fixed top-0 inset-x-0 transition transform origin-top-right z-30`}
             >
-              <div className="bg-white dark:bg-black text-black dark:text-white min-h-screen mobilemenu text-2xl pt-4">
-                <div className="flex items-center justify-between px-4 h-full">
-                  <div className="w-32 mr-12 pt-4">
-                    <Link to="/">
-                      <Logo color="" />
-                    </Link>
+              <div className="bg-white dark:bg-black text-black dark:text-white min-h-screen mobilemenu  pt-4">
+                <div className="max-w-screen-2xl mx-auto">
+                  <div className="flex items-center justify-between px-4 h-full ">
+                    <div className="w-32 md:w-40 mr-12 pt-4">
+                      <Link to="/">
+                        <Logo color="" />
+                      </Link>
+                    </div>
                   </div>
-                </div>
-                <div className="pt-2 pb-6 px-5 text-xl uppercase font-bold">
-                  <div className="mt-6 flex flex-col justify-center h-full">
-                    <div className="mt-4">
-                      {mobileMenu.map(menuItem => {
-                        return (
-                          <>
-                            {menuItem.children.length === 0 ? (
-                              <div className="py-2">
-                                <Link
-                                  to={menuItem.path}
-                                  className="block uppercase"
-                                >
-                                  {menuItem.label}
-                                </Link>
-                              </div>
-                            ) : (
-                              <div>
-                                <Disclosure>
-                                  {({ open }) => (
-                                    <>
-                                      <Disclosure.Button className="w-full">
-                                        <div className="flex flex-row items-center justify-between w-full ">
-                                          <div>{menuItem.label}</div>
-                                          <div className="w-10">
-                                            <ChevronUpIcon
-                                              className={`${
-                                                open
-                                                  ? "transition-all"
-                                                  : "transition-all  transform rotate-180"
-                                              }`}
-                                            />
-                                          </div>
-                                        </div>
-                                      </Disclosure.Button>
-                                      <Disclosure.Panel
-                                        as="div"
-                                        className="space-y-4 my-4 pl-2"
-                                      >
-                                        {menuItem.children.map(post => {
-                                          return (
-                                            <div
-                                              key={post.id}
-                                              className="text-base"
-                                            >
-                                              {post.label}
+                  <div className="pt-2 pb-6 px-5 text-2xl md:text-3xl uppercase font-bold">
+                    <div className="mt-6 flex flex-col justify-center h-full">
+                      <div className="mt-4 space-y-4 max-w-xl mx-auto">
+                        {mobileMenu.map(menuItem => {
+                          return (
+                            <>
+                              {menuItem.children.length === 0 ? (
+                                <div className="">
+                                  <Link
+                                    to={menuItem.path}
+                                    className="block uppercase"
+                                  >
+                                    {menuItem.label}
+                                  </Link>
+                                </div>
+                              ) : (
+                                <div className="">
+                                  <Disclosure>
+                                    {({ open }) => (
+                                      <>
+                                        <Disclosure.Button className="w-full">
+                                          <div className="flex flex-row items-center justify-between w-full  overflow-hidden relative">
+                                            <div>{menuItem.label}</div>
+                                            <div className="w-10  overflow-hidden absolute right-0">
+                                              <ChevronUpIcon
+                                                className={`${
+                                                  open
+                                                    ? "transition-all"
+                                                    : "transition-all  transform rotate-180"
+                                                } `}
+                                              />
                                             </div>
-                                          )
-                                        })}
-                                      </Disclosure.Panel>
-                                    </>
-                                  )}
-                                </Disclosure>
-                              </div>
-                            )}
-                          </>
-                        )
-                      })}
+                                          </div>
+                                        </Disclosure.Button>
+                                        <Disclosure.Panel
+                                          as="div"
+                                          className="space-y-4 my-4 pl-2"
+                                        >
+                                          {menuItem.children.map(post => {
+                                            return (
+                                              <div key={post.id} className="">
+                                                {post.label}
+                                              </div>
+                                            )
+                                          })}
+                                        </Disclosure.Panel>
+                                      </>
+                                    )}
+                                  </Disclosure>
+                                </div>
+                              )}
+                            </>
+                          )
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>

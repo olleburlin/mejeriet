@@ -20,6 +20,15 @@ export const query = graphql`
     wpPage(id: { eq: $id }) {
       title
       content
+      featuredImage {
+        node {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
     }
   }
 `

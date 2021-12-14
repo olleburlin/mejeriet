@@ -3,6 +3,7 @@ import Layout from "../../components/layout"
 import { useStaticQuery, graphql } from "gatsby"
 import PageHeader from "../../components/common/PageHeader"
 import { StandardForm } from "../../components/common/Forms"
+import FeaturedImage from "../../components/common/FeaturedImage"
 
 export default function KontaktPage() {
   const data = useStaticQuery(graphql`
@@ -11,6 +12,15 @@ export default function KontaktPage() {
         id
         title
         content
+        featuredImage {
+          node {
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
         kontaktaOss {
           fragor {
             fraga
@@ -20,19 +30,19 @@ export default function KontaktPage() {
       }
     }
   `)
-  const { title, content, kontaktaOss } = data.wpPage
+  const { title, content, kontaktaOss, featuredImage } = data.wpPage
   const questions = kontaktaOss.fragor
 
   return (
     <div>
       <Layout>
-        <div className="max-w-4xl mx-auto pb-16">
+        <div className="max-w-4xl mx-auto pb-16 space-y-12">
           <PageHeader text={data.wpPage.title} />
-          <div className="text-xl font-heavy wp-content pb-4">
-            <div
-              dangerouslySetInnerHTML={{ __html: content }}
-              className="space-y-4"
-            />
+          <div>
+            <FeaturedImage image={featuredImage} />
+          </div>
+          <div className="text-xl font-heavy wp-content">
+            <div dangerouslySetInnerHTML={{ __html: content }} className="" />
           </div>
           <div className="">
             {questions.map(question => {

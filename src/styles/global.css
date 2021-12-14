@@ -82,3 +82,11 @@ button {
   width: 100%;
   height: 100%;
 }
+
+#page-template p {
+  @apply mb-4;
+}
+
+#page-template ul {
+  @apply list-disc list-inside mb-4;
+}

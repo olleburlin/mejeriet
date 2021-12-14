@@ -3,6 +3,7 @@ import { Menu, Transition } from "@headlessui/react"
 import Link from "../common/Link"
 
 import { useDetectOutsideClick } from "../../hooks/useDetectOutsideClick"
+import { ChevronDownIcon } from "@heroicons/react/solid"
 
 export default function MenuItem({ menuItem }) {
   const dropdownRef = useRef(null)
@@ -36,7 +37,7 @@ export default function MenuItem({ menuItem }) {
   const show =
     (openDropdown && (mouseOverMenu || mouseOverButton)) || mobileOpen
   return (
-    <div>
+    <div className="">
       {menuItem.children.length === 0 ? (
         <Link className=" px-4 h-full inline-block" to={menuItem.path}>
           {menuItem.label}
@@ -50,36 +51,40 @@ export default function MenuItem({ menuItem }) {
             onKeyPress={null}
             role="button"
             tabIndex="0"
+            className="z-40 relative"
           >
             <Menu.Button as="a">
               <div
                 className={`${
                   show ? "bg-pink-100 dark:bg-gray-900" : ""
-                } cursor-pointer py-6 px-4 hover:bg-third `}
+                } cursor-pointer py-6 px-4 hover:bg-third flex flex-row items-center`}
               >
-                {menuItem.label}
+                <div>{menuItem.label}</div>
+                <div className="w-6">
+                  <ChevronDownIcon />
+                </div>
               </div>
             </Menu.Button>
           </div>
-          <div className="absolute">
+          <div className="absolute ">
             <Transition show={show}>
               <Menu.Items
                 ref={dropdownRef}
                 onMouseEnter={onMouseEnterMenu}
                 onMouseLeave={onMouseLeaveMenu}
                 static
-                className="bg-pink-100 dark:bg-gray-900 z-20  px-2 sm:px-0 "
+                className="bg-pink-100 dark:bg-gray-900  px-2 sm:px-0 z-50 relative"
               >
                 <div className="">
-                  <div className="relative  bg-third pt-12 pb-8 px-8 ">
-                    <nav className="space-y-8">
+                  <div className="relative z-40  bg-third pt-12 pb-8 px-8 ">
+                    <nav className="space-y-8 ">
                       {menuItem.children.map(subMenuItem => {
                         return (
                           <Menu.Item onClick={() => setOpenDropdown(false)}>
                             <div className="space-y-6">
-                              <div className="font-bold">
+                              <div className="font-bold ">
                                 <Link
-                                  className="-m-3 px-3 flex items-center"
+                                  className="-m-3 px-3 flex items-center "
                                   to={subMenuItem.path}
                                 >
                                   {subMenuItem.label}
