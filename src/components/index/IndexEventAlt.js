@@ -16,7 +16,7 @@ export default function IndexEventAlt({ post }) {
             <GatsbyImage
               image={imageData}
               alt={title}
-              className="h-full grayscale mix-blend-multiply"
+              className="h-full grayscale mix-blend-multiply dark:mix-blend-normal"
             />{" "}
           </Link>
         </div>
