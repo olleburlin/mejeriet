@@ -169,7 +169,7 @@ export default function ProgramPage() {
                     onChange={e => setIsSelected(e.currentTarget.value)}
                   >
                     <option value={types.map(category => category.slug)}>
-                      Visa hela programmet{" "}
+                      Visa Allt
                     </option>
                     {items.map(category => {
                       return (

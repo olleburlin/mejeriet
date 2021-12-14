@@ -1,13 +1,18 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import IndexEvent from "./IndexEvent"
+import Link from "../common/Link"
+import IndexEventAlt from "./IndexEventAlt"
 import IndexEventFeatured from "./IndexEventFeatured"
-
+import moment from "moment"
 export default function IndexEvents() {
+  let today = moment().calendar("yyyy-mm-dd")
+  console.log(today)
+
   const data = useStaticQuery(graphql`
     query {
       allEvents: allWpProgrampunkt(
         sort: { fields: informationProgram___startdatum, order: ASC }
+        limit: 10
       ) {
         nodes {
           title
@@ -20,9 +25,6 @@ export default function IndexEvents() {
                     placeholder: DOMINANT_COLOR
                     layout: CONSTRAINED
                     aspectRatio: 1.5
-                    transformOptions: {
-                      duotone: { highlight: "#e37e24", shadow: "#111111" }
-                    }
                   )
                 }
               }
@@ -86,8 +88,15 @@ export default function IndexEvents() {
 
       <div className="grid l gap-4">
         {posts.map(post => {
-          return <IndexEvent key={post.id} post={post} />
+          return <IndexEventAlt key={post.id} post={post} />
         })}
+      </div>
+      <div className="inline-block my-8 ">
+        <Link to="/program/">
+          <button className="py-2 px-4  bg-brandorange text-white">
+            Visa hela programmet &rarr;
+          </button>
+        </Link>
       </div>
     </>
   )

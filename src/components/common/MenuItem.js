@@ -54,7 +54,7 @@ export default function MenuItem({ menuItem }) {
             <Menu.Button as="a">
               <div
                 className={`${
-                  show ? "bg-pink-100" : ""
+                  show ? "bg-pink-100 dark:bg-gray-900" : ""
                 } cursor-pointer py-6 px-4 hover:bg-third `}
               >
                 {menuItem.label}
@@ -68,7 +68,7 @@ export default function MenuItem({ menuItem }) {
                 onMouseEnter={onMouseEnterMenu}
                 onMouseLeave={onMouseLeaveMenu}
                 static
-                className="bg-pink-100 z-20  px-2 sm:px-0 "
+                className="bg-pink-100 dark:bg-gray-900 z-20  px-2 sm:px-0 "
               >
                 <div className="">
                   <div className="relative  bg-third pt-12 pb-8 px-8 ">

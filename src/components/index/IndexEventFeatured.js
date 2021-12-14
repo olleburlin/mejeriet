@@ -7,7 +7,7 @@ export default function IndexEventFeatured({ posts }) {
   const featuredEvents = posts.missaInte.utvaltArrangemang[0].programmpunkt
 
   return (
-    <div className="relative quote flex flex-col w-full bg-gradient-to-t from-brandpink to-brandorange dark:from-brandpurple dark:to-brandpink mb-4 text-white">
+    <div className="relative quote flex flex-col w-full bg-gradient-to-t from-brandpink to-brandorange  mb-4 text-white">
       {featuredEvents.map(event => {
         return <FeaturedEvent key={event.id} event={event} />
       })}
@@ -32,7 +32,7 @@ function FeaturedEvent({ event }) {
             </div>
             <div>
               <div className="absolute top-0">
-                <div className="bg-brandorange dark:bg-brandpink font-bold pr-2 py-2 md:px-3 md:py-3 uppercase text-xs md:text-2xl">
+                <div className="bg-brandorange  font-bold pr-2 py-2 md:px-3 md:py-3 uppercase text-xs md:text-2xl">
                   Missa inte
                 </div>
               </div>
