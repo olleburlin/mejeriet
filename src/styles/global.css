@@ -88,5 +88,5 @@ button {
 }
 
 #page-template ul {
-  @apply list-disc list-inside mb-4;
+  @apply list-disc list-inside mb-4 text-brandorange;
 }

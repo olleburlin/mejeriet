@@ -40,8 +40,8 @@ function Header() {
     }
   `)
 
-  const menuItems = data.mainMenu.menuItems.nodes
-  const mobileMenuItems = data.mobileMenu.menuItems.nodes
+  const menuItems = data.mainMenu.menuItems?.nodes
+  const mobileMenuItems = data.mobileMenu.menuItems?.nodes
 
   const desktopMenu = flatListToHierarchical(menuItems)
   const mobileMenu = flatListToHierarchical(mobileMenuItems)

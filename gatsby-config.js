@@ -6,7 +6,6 @@ module.exports = {
     siteUrl: `https://kulturmejeriet.se`,
   },
   plugins: [
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-use-dark-mode`,
     `gatsby-plugin-image`,
@@ -25,6 +24,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

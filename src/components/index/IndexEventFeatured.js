@@ -7,7 +7,7 @@ export default function IndexEventFeatured({ posts }) {
   const featuredEvents = posts.missaInte.utvaltArrangemang[0].programmpunkt
 
   return (
-    <div className="relative quote flex flex-col w-full bg-gradient-to-t from-brandpink to-brandorange  mb-4 text-white">
+    <div className="relative flex flex-col w-full bg-gradient-to-t from-brandpink to-brandorange  mb-4 text-white">
       {featuredEvents.map(event => {
         return <FeaturedEvent key={event.id} event={event} />
       })}
@@ -19,7 +19,7 @@ function FeaturedEvent({ event }) {
   const { title, informationProgram, featuredImage, slug } = event
   const imageData = getImage(featuredImage.node.localFile)
   return (
-    <div>
+    <>
       <div className="w-full border-transparent border-2  p-2 md:p-4 text-white ">
         <Link to={`/program/${slug}`}>
           <div className="relative">
@@ -57,6 +57,6 @@ function FeaturedEvent({ event }) {
           </p>
         </div>
       </div>
-    </div>
+    </>
   )
 }

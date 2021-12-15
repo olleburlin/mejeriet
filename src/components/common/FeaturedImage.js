@@ -11,7 +11,7 @@ export default function FeaturedImage({ image }) {
           <GatsbyImage
             image={imageData}
             alt={image?.node.title}
-            className=" "
+            className="grayscale"
           />
         </div>
       </div>
