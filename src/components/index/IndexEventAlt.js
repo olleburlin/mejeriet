@@ -35,10 +35,10 @@ export default function IndexEventAlt({ post }) {
                       </button>
                     </Link> */}
                 </div>
-                <div className="">
+                <div className="text-base md:text-xl">
                   <LongDate dateString={startdatum} />
                 </div>
-                <h3 className="uppercase inline text-3xl pb-4">
+                <h3 className="uppercase inline text-2xl md:text-3xl pb-4">
                   <Link to={`/program/${slug}`}>
                     <span className="border-b-4 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
                       {title}
@@ -46,7 +46,7 @@ export default function IndexEventAlt({ post }) {
                   </Link>
                 </h3>{" "}
               </header>
-              <p className="leading-normal text-sm md:text-xl">
+              <p className=" text-base md:text-xl tracking-tight">
                 {informationProgram.kortInfo}
               </p>
               {/* <div className="flex flex-row items-center gap-2">
