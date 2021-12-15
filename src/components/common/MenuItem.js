@@ -73,10 +73,10 @@ export default function MenuItem({ menuItem }) {
                 onMouseEnter={onMouseEnterMenu}
                 onMouseLeave={onMouseLeaveMenu}
                 static
-                className="bg-pink-100 dark:bg-gray-900  px-2 sm:px-0 z-50 relative"
+                className="bg-pink-100 dark:bg-gray-900  px-2 sm:px-0 z-40 relative"
               >
                 <div className="">
-                  <div className="relative z-40  bg-third pt-12 pb-8 px-8 ">
+                  <div className="relative z-30  bg-third pt-12 pb-8 px-8 ">
                     <nav className="space-y-8 ">
                       {menuItem.children.map(subMenuItem => {
                         return (

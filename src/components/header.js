@@ -85,7 +85,7 @@ function Header() {
             <div
               className={`${
                 isExpanded ? `block` : `hidden`
-              } fixed top-0 inset-x-0 transition transform origin-top-right z-30`}
+              } fixed top-0 inset-x-0 transition transform origin-top-right z-40`}
             >
               <div className="bg-white dark:bg-black text-black dark:text-white min-h-screen mobilemenu  pt-4">
                 <div className="max-w-screen-2xl mx-auto">
