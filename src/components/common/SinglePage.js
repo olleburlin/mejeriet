@@ -5,7 +5,7 @@ export default function SinglePage({ data }) {
   const { content, featuredImage } = data.wpPage
 
   return (
-    <div id="page-template" className="min-h-screen">
+    <div id="page-template" className="min-h-screen ">
       <div className="max-w-4xl mx-auto space-y-8">
         <div>
           <PageHeader text={data.wpPage.title} />

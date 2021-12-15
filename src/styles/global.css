@@ -88,5 +88,9 @@ button {
 }
 
 #page-template ul {
-  @apply list-disc list-inside mb-4 text-brandorange;
+  @apply list-disc list-inside mb-4;
+}
+
+p a {
+  @apply underline decoration-brandorange decoration-4 dark:decoration-brandpurple;
 }

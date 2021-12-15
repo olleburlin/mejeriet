@@ -36,7 +36,7 @@ export default function KontaktPage() {
   return (
     <div>
       <Layout>
-        <div className="max-w-4xl mx-auto pb-16 space-y-12">
+        <div className="max-w-4xl mx-auto pb-16 space-y-12 ">
           <PageHeader text={data.wpPage.title} />
           <div>
             <FeaturedImage image={featuredImage} />
@@ -44,7 +44,7 @@ export default function KontaktPage() {
           <div className="text-xl font-heavy wp-content">
             <div dangerouslySetInnerHTML={{ __html: content }} className="" />
           </div>
-          <div className="">
+          <div className="text-sm">
             {questions.map(question => {
               return <Question key={question.id} question={question} />
             })}{" "}
