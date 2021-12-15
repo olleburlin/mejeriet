@@ -35,18 +35,20 @@ export default function ProgramPunktEvent({ post }) {
                       </button>
                     </Link> */}
                 </div>
-                <div className="">
+                <div className="text-base md:text-xl">
                   <LongDate dateString={startdatum} />
                 </div>
-                <h3 className="uppercase inline text-5xl pb-4">
+                <h3 className="uppercase inline text-2xl md:text-3xl pb-4">
                   <Link to={`/program/${slug}`}>
-                    <span className="border-b-8 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
+                    <span className="border-b-4 md:border-b-8 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
                       {title}
                     </span>
                   </Link>
                 </h3>{" "}
               </header>
-              <p className="">{informationProgram.kortInfo}</p>
+              <p className="text-base md:text-xl">
+                {informationProgram.kortInfo}
+              </p>
               {/* <div className="flex flex-row items-center gap-2">
                   {genre && (
                     <div className="bg-brandorange uppercase text-pink-100 px-2 py-1 font-bold flex-row inline-block">

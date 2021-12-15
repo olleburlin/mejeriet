@@ -162,7 +162,7 @@ export default function ProgramPage() {
           <div className="flex flex-row gap-4 ">
             <div className="order-1 inline-block text-xl w-full">
               {" "}
-              <div className="flex flex-row items-center justify-center w-full">
+              <div className="flex flex-row items-center justify-center w-full pb-4">
                 <div className="flex flex-row items-center bg-brandorange">
                   <select
                     className="cursor-pointer py-2 px-4 w-full bg-brandorange text-white appearance-none  before:text-black border-none focus:none outline-none uppercase font-heavy"
