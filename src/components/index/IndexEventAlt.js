@@ -46,7 +46,9 @@ export default function IndexEventAlt({ post }) {
                   </Link>
                 </h3>{" "}
               </header>
-              <p className="leading-normal">{informationProgram.kortInfo}</p>
+              <p className="leading-normal text-sm md:text-xl">
+                {informationProgram.kortInfo}
+              </p>
               {/* <div className="flex flex-row items-center gap-2">
                   {genre && (
                     <div className="bg-brandorange uppercase text-pink-100 px-2 py-1 font-bold flex-row inline-block">

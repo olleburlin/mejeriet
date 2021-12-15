@@ -50,7 +50,7 @@ function FeaturedEvent({ event }) {
             </div>
             <h3 className="uppercase md:text-4xl">{title}</h3>
           </header>
-          <p className="text-white text-sm leading-none md:w-10/12 md:leading-normal">
+          <p className="text-white text-sm md:text-xl leading-none md:w-10/12 md:leading-normal">
             {informationProgram.kortInfo}
           </p>
         </div>
