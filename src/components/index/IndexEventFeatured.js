@@ -20,7 +20,7 @@ function FeaturedEvent({ event }) {
   const imageData = getImage(featuredImage.node.localFile)
   return (
     <div>
-      <div className="w-full border-transparent border-2  p-4">
+      <div className="w-full border-transparent border-2  p-2 md:p-4">
         <Link to={`/program/${slug}`}>
           <div className="relative">
             <div className="relative">
@@ -40,7 +40,7 @@ function FeaturedEvent({ event }) {
           </div>
         </Link>
       </div>
-      <div className="flex-col justify-between  px-4 pb-4 space-y-2 text-xl text-pink-100">
+      <div className="flex-col justify-between  px-4 pb-4 space-y-2 md:text-xl text-white">
         <div>
           <header className="flex flex-col  justify-between">
             <div className="flex flex-row   font-bold">
@@ -48,9 +48,9 @@ function FeaturedEvent({ event }) {
                 <LongDate dateString={informationProgram.startdatum} />
               </div>
             </div>
-            <h3 className="uppercase text-4xl">{title}</h3>
+            <h3 className="uppercase md:text-4xl">{title}</h3>
           </header>
-          <p className="text-white w-10/12 leading-normal">
+          <p className="text-white text-sm leading-none md:w-10/12 md:leading-normal">
             {informationProgram.kortInfo}
           </p>
         </div>
