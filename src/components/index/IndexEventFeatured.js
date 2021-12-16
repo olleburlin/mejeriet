@@ -32,7 +32,7 @@ function FeaturedEvent({ event }) {
             </div>
             <div>
               <div className="absolute top-0">
-                <div className="bg-brandorange  font-bold pr-2 py-2 md:px-3 md:py-3 uppercase text-xs md:text-2xl">
+                <div className="bg-brandorange  font-bold pr-2 py-1 md:px-3 md:py-3 uppercase text-xs md:text-2xl">
                   Missa inte
                 </div>
               </div>

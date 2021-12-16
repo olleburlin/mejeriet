@@ -25,7 +25,7 @@ export default function ProgrampunktPage({ post }) {
 
   return (
     <>
-      <section className="grid md:grid-cols-2 gap-8 md:gap-16 py-16">
+      <section className="grid md:grid-cols-2 gap-8 md:gap-16 md:py-16">
         {/* Primary column */}
         <div className="flex-1">
           <div className="space-y-4">
@@ -51,7 +51,7 @@ export default function ProgrampunktPage({ post }) {
                 </Link>
               )}
             </div>
-            <div className="program-information border-t-4 py-4 border-b-4 border-black">
+            <div className="program-information border-t-4 py-4 border-b-4 border-black dark:border-white">
               <div>{prices && <Priskategorier prices={prices} />}</div>
               {oppnar && (
                 <div className="font-heavy">

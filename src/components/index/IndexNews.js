@@ -18,7 +18,7 @@ export default function IndexNews() {
   `)
   const posts = data.allWpPost.nodes
   return (
-    <div className="bg-brandorange  text-white p-4">
+    <div className="bg-brandorange dark:bg-brandpurple  text-white p-4">
       <div>
         <h5 className="uppercase text-2xl pb-2">Aktuellt</h5>
       </div>

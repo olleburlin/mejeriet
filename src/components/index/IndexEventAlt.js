@@ -10,7 +10,6 @@ export default function IndexEventAlt({ post }) {
   return (
     <div className="">
       <div className="flex flex-col md:flex-row justify-between relative">
-        {/* Left */}
         <div className=" w-full md:w-5/12 ">
           <Link to={`/program/${slug}`}>
             <GatsbyImage
@@ -20,7 +19,6 @@ export default function IndexEventAlt({ post }) {
             />{" "}
           </Link>
         </div>
-        {/* Right */}
 
         <div className="w-full md:w-7/12 text-xl leading-relaxed">
           <div className=" md:px-8 h-full flex flex-col justify-center">

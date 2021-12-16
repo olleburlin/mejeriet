@@ -26,7 +26,7 @@ function IndexPage() {
 
             <IndexNews />
             {/* <Pushar /> */}
-            <Sodran />
+            {/* <Sodran /> */}
           </div>
         </section>
       </div>
