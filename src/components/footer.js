@@ -1,6 +1,6 @@
 import React from "react"
 import Logo from "./common/Logo"
-import karta from "../images/karta.svg"
+
 import NewsletterForm from "./common/NewsletterForm"
 
 export default function Footer() {
@@ -21,11 +21,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      {/* <div className="flex flex-col items-center justify-center my-16">
-        <div className="w-1/3">
-          <img src={karta} />
-        </div>
-      </div> */}
     </footer>
   )
 }

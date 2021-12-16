@@ -9,7 +9,7 @@ export default function PageTemplate({ post }) {
     <div id="page-template" className="grid md:grid-cols-2 gap-8">
       <section className="p-2">
         <h1 className="text-4xl">{title}</h1>
-        <div>
+        <div className="content">
           {" "}
           <div dangerouslySetInnerHTML={{ __html: content }}></div>
         </div>
