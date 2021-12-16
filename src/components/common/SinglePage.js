@@ -6,7 +6,7 @@ export default function SinglePage({ data }) {
 
   return (
     <div id="page-template" className="min-h-screen ">
-      <div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-4xl mx-auto space-y-12">
         <div>
           <PageHeader text={data.wpPage.title} />
         </div>

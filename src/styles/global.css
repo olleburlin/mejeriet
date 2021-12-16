@@ -92,5 +92,5 @@ button {
 }
 
 p a {
-  @apply underline decoration-brandorange decoration-4 dark:decoration-brandpurple;
+  @apply underline decoration-brandorange decoration-2 dark:decoration-brandpurple;
 }

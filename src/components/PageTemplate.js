@@ -13,7 +13,7 @@ export default function PageTemplate({ post }) {
           {" "}
           <div dangerouslySetInnerHTML={{ __html: content }}></div>
         </div>
-      </section>
+      </section>{" "}
       <section className="">
         <GatsbyImage image={imageData} alt={title} />
       </section>
