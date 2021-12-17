@@ -44,6 +44,9 @@ export const query = graphql`
         }
         slutar
         startdatum
+        typAvArrangemang {
+          name
+        }
         prices {
           priceDescription
           price

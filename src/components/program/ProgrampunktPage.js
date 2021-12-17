@@ -18,11 +18,12 @@ export default function ProgrampunktPage({ post }) {
     aldersgrans,
     langInfo,
     biljettlank,
+    typAvArrangemang,
+    samarbetspartner,
   } = informationProgram
 
   const youTubeId = YoutubeHelper(youtubeKlipp)
-  console.log(youTubeId)
-
+  console.log(samarbetspartner)
   return (
     <>
       <section className="grid md:grid-cols-2 gap-8 md:gap-16 md:py-16">
@@ -42,7 +43,7 @@ export default function ProgrampunktPage({ post }) {
               </div>
             </header>
 
-            <div className="my-8">
+            <div className="pb-2">
               {biljettlank && (
                 <Link to={biljettlank}>
                   <button className="bg-brandteal text-white rounded-sm px-3 py-2">
@@ -53,6 +54,18 @@ export default function ProgrampunktPage({ post }) {
             </div>
             <div className="program-information border-t-4 py-4 border-b-4 border-black dark:border-white">
               <div>{prices && <Priskategorier prices={prices} />}</div>
+              {typAvArrangemang.name && (
+                <div className="font-heavy">
+                  Typ av arrangemang:&nbsp;
+                  <span className="font-normal"> {typAvArrangemang.name}</span>
+                </div>
+              )}
+              {samarbetspartner && (
+                <div className="font-heavy">
+                  Samarbetspartner:&nbsp;
+                  <span className="font-normal"> {samarbetspartner.title}</span>
+                </div>
+              )}
               {oppnar && (
                 <div className="font-heavy">
                   Öppnar:&nbsp;
@@ -93,19 +106,21 @@ export default function ProgrampunktPage({ post }) {
           </div>
         </div>
         {/* Secondary column */}
-        <div className="flex-1">
+        <div className="flex-1 space-y-8">
           <div className="w-full">
             <GatsbyImage image={imageData} alt={title} />
           </div>
-          {youTubeId && (
-            <div className="my-4 embed-container">
-              <iframe
-                src={"https://www.youtube.com/embed/" + youTubeId}
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
-            </div>
-          )}
+          <div>
+            {youTubeId && (
+              <div className=" embed-container">
+                <iframe
+                  src={"https://www.youtube.com/embed/" + youTubeId}
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            )}
+          </div>
         </div>
       </section>
     </>

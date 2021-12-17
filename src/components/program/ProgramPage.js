@@ -22,13 +22,7 @@ export default function ProgramPage() {
             node {
               localFile {
                 childImageSharp {
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    aspectRatio: 1.7
-                    # transformOptions: {
-                    #   duotone: { highlight: "#e198b2", shadow: "#000000" }
-                    # }
-                  )
+                  gatsbyImageData(placeholder: BLURRED, aspectRatio: 1.7)
                 }
               }
             }
@@ -95,10 +89,10 @@ export default function ProgramPage() {
           </>
         </div>
         <div className="order-first  mb-4 md:mb-8 flex flex-col items-center justify-center">
-          <div className="w-72  top-16">
+          <div className="w-72 mb-8">
             <Listbox value={selected} onChange={setSelected}>
               <div className="relative mt-1">
-                <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-brandorange cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
+                <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-brandorange cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500">
                   <span className="block truncate text-white">
                     {selected.name}
                   </span>
@@ -115,7 +109,7 @@ export default function ProgramPage() {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="absolute w-full  overflow-auto text-base bg-brandorange bg-opacity-95  max-h-60 ring-1 ring-brandorange ring-opacity-5 focus:outline-none sm:text-sm">
+                  <Listbox.Options className="absolute w-full  overflow-auto bg-brandorange bg-opacity-95  ring-1 ring-brandorange ring-opacity-5 focus:outline-none">
                     {people.map((person, personIdx) => (
                       <Listbox.Option
                         key={personIdx}
@@ -123,7 +117,7 @@ export default function ProgramPage() {
                           `${
                             active ? "text-brandorange bg-white" : "text-white"
                           }
-                          cursor-default select-none relative py-2 pl-3 pr-4 uppercase text-sm font-heavy`
+                          cursor-default select-none relative py-2 pl-3 pr-4 uppercase  font-heavy`
                         }
                         value={person}
                       >
