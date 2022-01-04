@@ -22,6 +22,7 @@ function Header() {
             parentId
             label
             id
+            url
           }
         }
       }
@@ -31,6 +32,7 @@ function Header() {
         menuItems {
           nodes {
             path
+            url
             parentId
             label
             id
@@ -41,7 +43,7 @@ function Header() {
   `)
 
   const menuItems = data.mainMenu.menuItems?.nodes
-  const mobileMenuItems = data.mobileMenu.menuItems?.nodes
+  const mobileMenuItems = data.mainMenu.menuItems?.nodes
 
   const desktopMenu = flatListToHierarchical(menuItems)
   const mobileMenu = flatListToHierarchical(mobileMenuItems)
@@ -67,10 +69,10 @@ function Header() {
               </nav>
             </div>
             <div className="flex flex-row items-center space-x-4 ">
-              <div className="pt-1 hidden md:block">
+              <div className="pt-1">
                 <DarkModeToggle />
               </div>
-              <div className=" inline-block z-50">
+              <div className=" inline-block md:hidden z-50">
                 <Hamburger
                   toggled={isExpanded}
                   toggle={toggleExpansion}
@@ -87,7 +89,7 @@ function Header() {
                 isExpanded ? `block` : `hidden`
               } fixed top-0 inset-x-0 transition transform origin-top-right z-40`}
             >
-              <div className="bg-white dark:bg-black text-black dark:text-white min-h-screen mobilemenu  pt-4">
+              <div className="block md:hidden bg-white dark:bg-black text-black dark:text-white min-h-screen mobilemenu  pt-4">
                 <div className="max-w-screen-2xl mx-auto">
                   <div className="flex items-center justify-between px-4 h-full ">
                     <div className="w-32 md:w-40 mr-12 pt-4">
@@ -98,7 +100,7 @@ function Header() {
                   </div>
                   <div className="pt-2 pb-6 px-5 text-2xl md:text-3xl uppercase font-bold">
                     <div className="mt-6 flex flex-col justify-center h-full">
-                      <div className="mt-4 space-y-4 max-w-xl mx-auto">
+                      <div className="mt-4 space-y-4 max-w-xl w-full mx-auto">
                         {mobileMenu.map(menuItem => {
                           return (
                             <>
@@ -112,7 +114,7 @@ function Header() {
                                   </Link>
                                 </div>
                               ) : (
-                                <div className="">
+                                <div className="" key={menuItem.id}>
                                   <Disclosure>
                                     {({ open }) => (
                                       <>
