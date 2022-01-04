@@ -1,7 +1,7 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Link from "../common/Link"
-import YouTube from "react-youtube"
+
 import MomentDate from "../../utils/MomentDate"
 import { YoutubeHelper } from "../../utils/YoutubeHelper"
 import Priskategorier from "./Priskategorier"
@@ -34,12 +34,12 @@ export default function ProgrampunktPage({ post }) {
               <h1 className="uppercase text-5xl">{title}</h1>
 
               <div className="flex md:flex-row flex-wrap  ">
-                <date className="">
+                <div className="">
                   <MomentDate
                     dateString={informationProgram.startdatum}
                     newDate="MMMM Do, YYYY"
                   />
-                </date>
+                </div>
               </div>
             </header>
 
@@ -115,8 +115,7 @@ export default function ProgrampunktPage({ post }) {
               <div className=" embed-container">
                 <iframe
                   src={"https://www.youtube.com/embed/" + youTubeId}
-                  frameborder="0"
-                  allowfullscreen
+                  frameBorder="0"
                 ></iframe>
               </div>
             )}

@@ -80,7 +80,11 @@ export default function MenuItem({ menuItem }) {
                     <nav className="space-y-8 ">
                       {menuItem.children.map(subMenuItem => {
                         return (
-                          <Menu.Item onClick={() => setOpenDropdown(false)}>
+                          <Menu.Item
+                            as="div"
+                            key={subMenuItem.id}
+                            onClick={() => setOpenDropdown(false)}
+                          >
                             <div className="space-y-6">
                               <div className="font-bold ">
                                 <Link
@@ -93,7 +97,7 @@ export default function MenuItem({ menuItem }) {
                               <div className="space-y-8">
                                 {subMenuItem.children.map(post => {
                                   return (
-                                    <div className="pl-3 ">
+                                    <div className="pl-3" key={post.id}>
                                       <Link
                                         className="-m-3 px-3 flex items-center"
                                         to={post.path}
