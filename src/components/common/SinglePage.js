@@ -19,8 +19,10 @@ export default function SinglePage({ data }) {
         </div>
         {kartor && (
           <div className="py-8">
-            <img src={kartaLight} alt="Karta" className="light" />
-            <img src={kartaDark} alt="Karta" className="dark" />
+            {kartaLight && (
+              <img src={kartaLight} alt="Karta" className="light" />
+            )}
+            {kartaDark && <img src={kartaDark} alt="Karta" className="dark" />}
           </div>
         )}
       </div>
