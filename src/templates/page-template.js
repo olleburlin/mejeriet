@@ -20,6 +20,20 @@ export const query = graphql`
     wpPage(id: { eq: $id }) {
       title
       content
+      kartor {
+        kartaDark {
+          localFile {
+            id
+            publicURL
+          }
+        }
+        kartaLight {
+          localFile {
+            id
+            publicURL
+          }
+        }
+      }
       featuredImage {
         node {
           localFile {

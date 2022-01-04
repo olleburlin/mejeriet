@@ -98,3 +98,10 @@ p a {
 #page-template content img {
   @apply md:px-12 md:mx-auto;
 }
+
+.dark img.light {
+  display: none;
+}
+.light img.dark {
+  display: none;
+}

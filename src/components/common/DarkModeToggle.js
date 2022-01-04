@@ -3,7 +3,7 @@ import useDarkMode from "use-dark-mode"
 import { Switch } from "@headlessui/react"
 
 const DarkModeToggle = () => {
-  const darkMode = useDarkMode(true, {
+  const darkMode = useDarkMode(false, {
     classNameDark: "dark",
     classNameLight: "light",
   })

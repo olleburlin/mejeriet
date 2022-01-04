@@ -6,7 +6,7 @@ import MomentDate from "../../utils/MomentDate"
 export default function IndexNews() {
   const data = useStaticQuery(graphql`
     {
-      allWpPost(limit: 5) {
+      allWpPost(limit: 3) {
         nodes {
           title
           id

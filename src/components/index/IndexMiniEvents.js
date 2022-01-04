@@ -7,7 +7,7 @@ export default function IndexMiniEvents() {
     {
       allWpProgrampunkt(
         sort: { fields: informationProgram___startdatum, order: ASC }
-        limit: 3
+        limit: 8
       ) {
         nodes {
           title
