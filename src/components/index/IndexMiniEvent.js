@@ -9,12 +9,12 @@ export default function IndexMiniEvent({ post }) {
     <div className="">
       <Link to={`/program/${slug}`}>
         <div className="flex flex-row space-x-4 items-baseline">
-          <date className=" tracking-tight">
+          <div className=" tracking-tight">
             <MomentDate
               dateString={informationProgram.startdatum}
               newDate="YY.MM.DD"
             />
-          </date>
+          </div>
           <div className="text-md font-bold uppercase ">{title}</div>
         </div>
       </Link>

@@ -103,9 +103,9 @@ function Header() {
                       <div className="mt-4 space-y-4 max-w-xl w-full mx-auto">
                         {mobileMenu.map(menuItem => {
                           return (
-                            <>
+                            <div key={menuItem.id}>
                               {menuItem.children.length === 0 ? (
-                                <div key={menuItem.id} className="">
+                                <div className="">
                                   <Link
                                     to={menuItem.path}
                                     className="block uppercase"
@@ -156,7 +156,7 @@ function Header() {
                                   </Disclosure>
                                 </div>
                               )}
-                            </>
+                            </div>
                           )
                         })}
                       </div>

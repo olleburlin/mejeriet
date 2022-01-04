@@ -61,8 +61,8 @@ export default function ProgramPage() {
   const people = [
     { id: 1, name: "Visa allt", slug: "visa-allt" },
     { id: 2, name: "Bar", slug: "bar" },
-    { id: 3, name: "Film", slug: "film" },
-    { id: 4, name: "Humor Scen", slug: "humor" },
+
+    { id: 4, name: "Humor/Scen", slug: "humor" },
     { id: 5, name: "Klubb", slug: "klubb" },
     { id: 6, name: "Konsert", slug: "konsert" },
   ]
