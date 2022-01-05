@@ -1,7 +1,6 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Link from "../common/Link"
-
 import MomentDate from "../../utils/MomentDate"
 import { YoutubeHelper } from "../../utils/YoutubeHelper"
 import Priskategorier from "./Priskategorier"
@@ -20,6 +19,7 @@ export default function ProgrampunktPage({ post }) {
     biljettlank,
     typAvArrangemang,
     samarbetspartner,
+    covid19,
   } = informationProgram
 
   const youTubeId = YoutubeHelper(youtubeKlipp)
@@ -96,13 +96,13 @@ export default function ProgrampunktPage({ post }) {
                 className="space-y-4"
               />
             )}
-            <div className="italic text-sm border-t-4 border-black pt-4">
-              Från den 1a december 2021 kommer vi kräva att man kan uppvisar ett
-              giltigt Vaccinationsbevis/Covidpass i dörren på samtliga
-              arrangemang i Mejeriets lokaler. Det är ditt ansvar att ha
-              vaccinationsbevis samt legitimation med dig till evenemanget. Var
-              där i extra god tid!
-            </div>
+            {covid19.vaccinpass && (
+              <div className="italic text-sm border-t-4 border-black pt-4">
+                <div
+                  dangerouslySetInnerHTML={{ __html: covid19.informationstext }}
+                />
+              </div>
+            )}
           </div>
         </div>
         {/* Secondary column */}

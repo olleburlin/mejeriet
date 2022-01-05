@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import ProgramPageEvent from "./ProgramPageEvent"
 import { Listbox, Transition } from "@headlessui/react"
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid"
+import { getCurrentDate } from "../../utils/getCurrentDate"
 export default function ProgramPage() {
   const data = useStaticQuery(graphql`
     {
@@ -22,7 +23,7 @@ export default function ProgramPage() {
             node {
               localFile {
                 childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED, aspectRatio: 1.7)
+                  gatsbyImageData(placeholder: BLURRED, aspectRatio: 1.6)
                 }
               }
             }
@@ -56,7 +57,9 @@ export default function ProgramPage() {
     }
   `)
 
-  const posts = data.allWpProgrampunkt.nodes
+  const posts = data.allWpProgrampunkt.nodes.filter(
+    post => post.informationProgram.startdatum > getCurrentDate()
+  )
 
   const people = [
     { id: 1, name: "Visa allt", slug: "visa-allt" },
@@ -81,13 +84,15 @@ export default function ProgramPage() {
                   .filter(
                     post =>
                       post.informationProgram.typAvArrangemang?.slug ===
-                      selected.slug
+                        selected.slug &&
+                      post.informationProgram.startdatum > getCurrentDate()
                   )
                   .map(post => {
                     return <ProgramPageEvent key={post.id} post={post} />
                   })}
           </>
         </div>
+
         <div className="order-first  mb-4 md:mb-8 flex flex-col items-center justify-center">
           <div className="w-72 mb-8">
             <Listbox value={selected} onChange={setSelected}>

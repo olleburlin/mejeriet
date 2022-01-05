@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import DarkModeToggle from "./common/DarkModeToggle"
 import useDarkMode from "use-dark-mode"
 import Logo from "./common/Logo"
 import Link from "../components/common/Link"
@@ -68,9 +67,6 @@ function Header() {
               </nav>
             </div>
             <div className="flex flex-row items-center space-x-4 ">
-              <div className="pt-1">
-                <DarkModeToggle />
-              </div>
               <div className=" inline-block md:hidden z-50">
                 <Hamburger
                   toggled={isExpanded}
