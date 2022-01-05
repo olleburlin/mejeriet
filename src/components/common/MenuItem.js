@@ -66,16 +66,24 @@ export default function MenuItem({ menuItem }) {
               </div>
             </Menu.Button>
           </div>
-          <div className="absolute ">
-            <Transition show={show}>
+          <div className="relative">
+            <Transition
+              show={show}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
+            >
               <Menu.Items
                 ref={dropdownRef}
                 onMouseEnter={onMouseEnterMenu}
                 onMouseLeave={onMouseLeaveMenu}
                 static
-                className="bg-pink-100 dark:bg-gray-900  px-2 sm:px-0 z-40 relative"
+                className="bg-pink-100 dark:bg-gray-900  px-2 sm:px-0 z-40 absolute right-0  origin-top-right "
               >
-                <div className="">
+                <div className="pr-24">
                   <div className="relative z-30  bg-third pt-12 pb-8 px-8 ">
                     <nav className="space-y-8 ">
                       {menuItem.children.map(subMenuItem => {

@@ -102,7 +102,7 @@ function Header() {
                               {menuItem.children.length === 0 ? (
                                 <div className="">
                                   <Link
-                                    to={menuItem.path}
+                                    to={menuItem.url}
                                     className="block uppercase"
                                   >
                                     {menuItem.label}
@@ -134,7 +134,7 @@ function Header() {
                                           {menuItem.children.map(post => {
                                             return (
                                               <div key={post.id}>
-                                                <Link to={post.path}>
+                                                <Link to={post.url}>
                                                   <div
                                                     key={post.id}
                                                     className=""

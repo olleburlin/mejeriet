@@ -8,7 +8,9 @@
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.5",
     "@loadable/component": "^5.15.0",
+    "axios": "^0.24.0",
     "fade-carousel": "^1.1.4",
+    "formik": "^2.2.9",
     "gatsby": "^4.0.2",
     "gatsby-plugin-gatsby-cloud": "^4.0.0",
     "gatsby-plugin-image": "^2.0.0",
@@ -33,7 +35,8 @@
     "react-youtube": "^7.13.1",
     "slick-carousel": "^1.8.1",
     "swiper": "^7.3.2",
-    "use-dark-mode": "^2.3.1"
+    "use-dark-mode": "^2.3.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
