@@ -48,7 +48,6 @@ function Header() {
   const desktopMenu = flatListToHierarchical(menuItems)
   const mobileMenu = flatListToHierarchical(mobileMenuItems)
 
-  console.log(desktopMenu)
   const darkMode = useDarkMode()
   const [isExpanded, toggleExpansion] = useState(false)
   return (

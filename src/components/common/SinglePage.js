@@ -17,8 +17,10 @@ export default function SinglePage({ data }) {
         <div>
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
+      </div>
+      <div className="max-w-4xl md:max-w-2xl mx-auto py-12">
         {kartor && (
-          <div className="py-8">
+          <div className="md:py-8 px-4 md:px-24">
             {kartaLight && (
               <img src={kartaLight} alt="Karta" className="light" />
             )}
