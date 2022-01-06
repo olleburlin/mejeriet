@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import useDarkMode from "use-dark-mode"
 import Logo from "./common/Logo"
 import Link from "../components/common/Link"
 import { useStaticQuery, graphql } from "gatsby"
@@ -47,7 +46,6 @@ function Header() {
   const desktopMenu = flatListToHierarchical(menuItems)
   const mobileMenu = flatListToHierarchical(mobileMenuItems)
 
-  const darkMode = useDarkMode()
   const [isExpanded, toggleExpansion] = useState(false)
   return (
     <Headroom>
@@ -73,7 +71,7 @@ function Header() {
                   toggle={toggleExpansion}
                   onClick={() => toggleExpansion(!isExpanded)}
                   size="32"
-                  color={darkMode.value === true ? "#ffffff" : "#000000"}
+                  // color={darkMode.value === true ? "#ffffff" : "#000000"}
                   className="z-50 relative "
                   style={{ padding: "0", margin: "0" }}
                 />
