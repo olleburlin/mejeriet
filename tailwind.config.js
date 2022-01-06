@@ -13,6 +13,7 @@ module.exports = {
         brandorange: "#e37e24",
         brandteal: "#009ea6",
         brandpink: "#e13f79",
+        brandlightpink: "#f4dae2",
         brandpurple: "#2f255b",
       },
     },

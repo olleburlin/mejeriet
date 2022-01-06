@@ -1,43 +1,8 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import InstagramItem from "./InstagramItem";
-import InstagramLogo from "./InstagramLogo";
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import InstagramItem from "./InstagramItem"
+import InstagramLogo from "./InstagramLogo"
 
-const Instagram = () => {
-  const data = useStaticQuery(graphql`
-    {
-      allInstaNode(limit: 8, sort: { fields: timestamp, order: DESC }) {
-        edges {
-          node {
-            timestamp
-            id
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 300, maxHeight: 300, quality: 70) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-  return (
-    <div className="mt-4">
-      <div className="grid grid-cols-3 gap-4">
-        <div className="flex flex-col items-center justify-center w-full h-full bg-gray-900 text-brandpurple">
-          <div className="w-8 pb-2">
-            <InstagramLogo color="text-sand" />
-          </div>
-          <div className="text-lg font-bold">@mejerietilund</div>
-        </div>
-        {data.allInstaNode.edges.map((post) => {
-          return <InstagramItem key={post.node.id} post={post} />;
-        })}
-      </div>
-    </div>
-  );
-};
+const Instagram = () => {}
 
-export default Instagram;
+export default Instagram

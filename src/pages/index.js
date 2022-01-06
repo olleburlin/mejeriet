@@ -3,7 +3,9 @@ import React from "react"
 import IndexEvents from "../components/index/IndexEvents"
 import IndexMiniEvents from "../components/index/IndexMiniEvents"
 import IndexNews from "../components/index/IndexNews"
+import Instagram from "../components/common/Instagram"
 import Pushar from "../components/index/Pushar"
+
 import Sodran from "../components/index/Sodran"
 
 import Layout from "../components/layout"
@@ -29,6 +31,7 @@ function IndexPage() {
             {/* <Sodran /> */}
           </div>
         </section>
+        <Instagram />
       </div>
     </Layout>
   )

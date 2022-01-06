@@ -1,16 +1,5 @@
-import React from "react";
-import Img from "gatsby-image";
+import React from "react"
 
 export default function InstagramItem({ post }) {
-  return (
-    <div className="w-full">
-      <a
-        href={`https://www.instagram.com/p/${post.node.id}`}
-        title="Visa på Instagram"
-        target="_blank noreferrer noopener"
-      >
-        <Img fluid={post.node.localFile.childImageSharp.fluid} />
-      </a>
-    </div>
-  );
+  return <div className="w-full">{post.id}</div>
 }
