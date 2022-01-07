@@ -31,7 +31,7 @@ export default function SinglePage({ data }) {
             </div>
           </div>
         )}
-        {personal && (
+        {personalKategorier && (
           <div className="max-w-4xl md:max-w-4xl mx-auto py-8">
             <PersonalKategorier personalKategorier={personalKategorier} />
           </div>
