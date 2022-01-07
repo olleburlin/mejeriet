@@ -38,7 +38,7 @@ export default function ProgramPunktEvent({ post }) {
                 <div className="text-base md:text-xl">
                   <LongDate dateString={startdatum} />
                 </div>
-                <h3 className="uppercase inline text-2xl md:text-3xl pb-4">
+                <h3 className="uppercase inline text-2xl md:text-4xl pb-4">
                   <Link to={`/program/${slug}`}>
                     <span className="border-b-4 md:border-b-8 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
                       {title}
