@@ -39,7 +39,7 @@ export default function MenuItem({ menuItem }) {
   return (
     <div className="whitespace-nowrap">
       {menuItem.children.length === 0 ? (
-        <Link className=" px-4 h-full inline-block" to={menuItem.url}>
+        <Link className=" px-4 h-full inline-block" to={menuItem.path}>
           {menuItem.label}
         </Link>
       ) : (
@@ -97,7 +97,7 @@ export default function MenuItem({ menuItem }) {
                               <div className="font-bold ">
                                 <Link
                                   className="-m-3 px-3 flex items-center "
-                                  to={subMenuItem.url}
+                                  to={subMenuItem.path}
                                 >
                                   {subMenuItem.label}
                                 </Link>
@@ -108,7 +108,7 @@ export default function MenuItem({ menuItem }) {
                                     <div className="pl-3" key={post.id}>
                                       <Link
                                         className="-m-3 px-3 flex items-center"
-                                        to={post.url}
+                                        to={post.path}
                                       >
                                         {post.label}
                                       </Link>

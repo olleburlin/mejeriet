@@ -20,6 +20,12 @@ export const query = graphql`
     wpPage(id: { eq: $id }) {
       title
       content
+      personal {
+        underkategorier {
+          innehall
+          namnPaKategori
+        }
+      }
       kartor {
         kartaDark {
           localFile {
@@ -27,6 +33,7 @@ export const query = graphql`
             publicURL
           }
         }
+
         kartaLight {
           localFile {
             id
@@ -34,6 +41,7 @@ export const query = graphql`
           }
         }
       }
+
       featuredImage {
         node {
           localFile {
