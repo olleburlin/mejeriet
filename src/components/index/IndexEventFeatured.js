@@ -67,7 +67,7 @@ function FeaturedEvent({ event }) {
                       {title}
                     </h2>
                   </Link>
-                  <p className=" text-base md:text-xl  md:w-10/12">
+                  <p className="hidden md:block text-base md:text-xl  md:w-10/12">
                     {informationProgram.kortInfo}
                   </p>
                 </div>
