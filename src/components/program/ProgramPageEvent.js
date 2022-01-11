@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import LongDate from "../common/LongDate"
 
 export default function ProgramPunktEvent({ post }) {
-  const { title, informationProgram, featuredImage, slug } = post
+  const { title, informationProgram, featuredImage, slug, uri } = post
   const imageData = getImage(featuredImage.node.localFile)
   const { startdatum, status, extraText, underrubrik, biljettlank } =
     informationProgram
@@ -13,7 +13,7 @@ export default function ProgramPunktEvent({ post }) {
       <div className="flex flex-col md:flex-row justify-between relative">
         {/* Left */}
         <div className=" w-full md:w-4/12 ">
-          <Link to={`/program/${slug}`}>
+          <Link to={uri}>
             <GatsbyImage
               image={imageData}
               alt={title}
@@ -40,7 +40,7 @@ export default function ProgramPunktEvent({ post }) {
                     )}
                   </div>
                   <h3 className="uppercase inline text-2xl md:text-3xl pb-4">
-                    <Link to={`/program/${slug}`}>
+                    <Link to={uri}>
                       <span className="border-b-4 md:border-b-4 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
                         {title}
                       </span>

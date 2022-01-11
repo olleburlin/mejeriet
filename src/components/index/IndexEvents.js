@@ -18,6 +18,7 @@ export default function IndexEvents() {
         nodes {
           title
           slug
+          uri
           featuredImage {
             node {
               localFile {
@@ -60,6 +61,7 @@ export default function IndexEvents() {
               id
               title
               slug
+              uri
               informationProgram {
                 startdatum
                 borjar
