@@ -49,8 +49,8 @@ function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
   return (
     <Headroom>
-      <div className="bg-white">
-        <header className="py-8 bg-brandpink bg-opacity-20 dark:bg-black">
+      <div className="">
+        <header id="top-header">
           <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 md:px-8 mx-auto">
             <div className="flex flex-row items-center md:justify-between md:w-full">
               <div className="w-32 md:w-40 mr-12">

@@ -20,10 +20,10 @@ export default function IndexEventAlt({ post }) {
           </Link>
         </div>
 
-        <div className="w-full md:w-7/12 text-xl leading-relaxed">
-          <div className=" md:px-8 h-full flex flex-col justify-center">
+        <div className="w-full md:w-7/12 text-xl leading-relaxed text-right">
+          <div className=" md:px-8 h-full flex flex-col justify-center ">
             <div className="">
-              <header className="flex flex-col justify-center items-start pt-4 md:pt-0">
+              <header className="flex flex-col justify-center pt-4 md:pt-0">
                 <div className="">
                   {/* <Link to="/">
                       <button className=" font-bold uppercase block w-full h-full ">

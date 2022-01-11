@@ -3,6 +3,9 @@ module.exports = {
 
   theme: {
     extend: {
+      aspectRatio: {
+        "5/3": "5 / 3",
+      },
       colors: {
         "accent-1": "#FAFAFA",
         "accent-2": "#EAEAEA",
@@ -13,7 +16,7 @@ module.exports = {
         brandorange: "#e37e24",
         brandteal: "#009ea6",
         brandpink: "#e13f79",
-        brandlightpink: "#f4dae2",
+        brandlightpink: "#F9C5D7",
         brandpurple: "#2f255b",
       },
     },

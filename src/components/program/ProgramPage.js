@@ -34,6 +34,7 @@ export default function ProgramPage() {
             oppnar
             plats
             underrubrik
+            biljettlank
             extraText
             samarbetspartner {
               ... on WpSammarbetspartner {

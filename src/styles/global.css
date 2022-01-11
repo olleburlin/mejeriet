@@ -109,3 +109,10 @@ p a {
 .clip {
   clip-path: inset(0 0 28% 0);
 }
+
+header#top-header {
+  @apply py-8 bg-brandlightpink;
+}
+.headroom--pinned header#top-header {
+  @apply py-4 bg-brandlightpink;
+}

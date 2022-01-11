@@ -1,8 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Link from "../common/Link"
-import IndexEventAlt from "./IndexEventAlt"
 import IndexEventFeatured from "./IndexEventFeatured"
+import ProgramPageEvent from "../program/ProgramPageEvent"
+
 import moment from "moment"
 export default function IndexEvents() {
   let today = moment().calendar("yyyy-mm-dd")
@@ -22,9 +23,9 @@ export default function IndexEvents() {
               localFile {
                 childImageSharp {
                   gatsbyImageData(
-                    placeholder: DOMINANT_COLOR
+                    placeholder: BLURRED
                     layout: CONSTRAINED
-                    aspectRatio: 1.5
+                    aspectRatio: 1.6
                   )
                 }
               }
@@ -35,6 +36,10 @@ export default function IndexEvents() {
             kortInfo
             oppnar
             plats
+            status
+            biljettlank
+            underrubrik
+            extraText
             samarbetspartner {
               ... on WpSammarbetspartner {
                 id
@@ -89,9 +94,9 @@ export default function IndexEvents() {
     <>
       <IndexEventFeatured posts={featuredPosts} />
 
-      <div className="grid l gap-4">
+      <div className="grid gap-4">
         {posts.map(post => {
-          return <IndexEventAlt key={post.id} post={post} />
+          return <ProgramPageEvent key={post.id} post={post} />
         })}
       </div>
       <div className="inline-block my-8 ">

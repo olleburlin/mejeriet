@@ -36,54 +36,41 @@ function FeaturedEvent({ event }) {
   const imageData = getImage(featuredImage.node.localFile)
   return (
     <>
-      {/* <div className="w-full border-transparent border-2  p-2 md:p-4 text-white relative">
-        <Link to={`/program/${slug}`}>
+      <div className="overflow-hidden  inset-0 h-full  bg-gradient-to-t from-brandpink to-brandorange flex flex-col justify-end    space-y-2 md:text-xl ">
+        <div className="p-2 md:p-4">
           <div className="relative">
-            <div className="relative">
+            <div className="">
               <GatsbyImage
                 image={imageData}
                 alt={title}
-                className="object-cover w-full block relative z-30"
+                className="object-cover relative "
               />
             </div>
-            <div>
-              <div className="absolute top-0">
-                <div className="bg-brandorange  font-bold pr-2 py-1 md:px-3 md:py-3 uppercase text-xs md:text-2xl">
-                  Missa inte
+            <div className="absolute inset-0 flex flex-col justify-between ">
+              <div className="">
+                <div className="relative inset-0 bg-brandorange inline-block">
+                  <div className="">
+                    <div className=" pt-1 pb-1 md:pt-2 md:pb-3 pl-1 pr-2 2 md:pr-3 md:pl-2 leading-loose text-sm md:text-xl uppercase font-bold">
+                      Missa inte
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </Link>
-      </div> */}
-      <div className="overflow-hidden p-4 inset-0 h-full  bg-gradient-to-t from-brandpink to-brandorange flex flex-col justify-end   px-4 pb-4 space-y-2 md:text-xl ">
-        <div className="relative">
-          <div className="relative ">
-            <GatsbyImage
-              image={imageData}
-              alt={title}
-              className="object-cover relative "
-            />
-          </div>
-
-          <div className="absolute inset-0 flex flex-col justify-end z-30 ">
-            <div className="relative w-full backdrop-blur-md">
-              <div className="relative  p-4">
-                <header className="flex flex-col  justify-between">
+              <div className="relative w-full bg-gradient-to-t from-gray-900 to-transparent">
+                <div className="relative  p-2 md:p-4">
                   <div className="text-base md:text-xl ">
                     <LongDate dateString={informationProgram.startdatum} />
                   </div>
-
                   <Link to={`/program/${slug}`}>
                     {" "}
-                    <h3 className="uppercase text-2xl text-brandorange md:text-4xl">
+                    <h3 className="uppercase text-xl text-brandorange md:text-4xl">
                       {title}
                     </h3>
                   </Link>
-                </header>
-                <p className=" text-base md:text-xl tracking-tight leading-none md:w-10/12 md:leading-normal">
-                  {informationProgram.kortInfo}
-                </p>
+                  <p className="hidden md:block text-base md:text-xl tracking-tight leading-none md:w-10/12 md:leading-normal">
+                    {informationProgram.kortInfo}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
