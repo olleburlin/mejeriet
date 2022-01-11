@@ -8,15 +8,15 @@ export default function SinglePage({ data }) {
   const kartaDark = kartor?.kartaDark?.localFile.publicURL
   const personalKategorier = personal.underkategorier
   return (
-    <div id="page-template" className="min-h-screen ">
-      <div className="max-w-4xl mx-auto space-y-12">
+    <div id="page-template" className="min-h-screen py-8">
+      <div className="max-w-4xl mx-auto space-y-8">
         <div>
           <PageHeader text={data.wpPage.title} />
         </div>
         <div className="relative">
           <FeaturedImage image={featuredImage} />
         </div>
-        <div>
+        <div className="">
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
         {kartaLight && (
