@@ -50,25 +50,27 @@ export default function IndexEvents() {
       featuredEvents: wpPage(databaseId: { eq: 9046 }) {
         id
         missaInte {
-          utvaltArrangemang {
-            programmpunkt {
-              ... on WpProgrampunkt {
-                id
-                title
-                slug
-                informationProgram {
-                  startdatum
-                  borjar
-                  kortInfo
-                  oppnar
-                  plats
-                }
-                featuredImage {
-                  node {
-                    localFile {
-                      childImageSharp {
-                        gatsbyImageData
-                      }
+          programmpunkt {
+            ... on WpProgrampunkt {
+              id
+              title
+              slug
+              informationProgram {
+                startdatum
+                borjar
+                kortInfo
+                oppnar
+                plats
+              }
+              featuredImage {
+                node {
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(
+                        placeholder: DOMINANT_COLOR
+                        layout: CONSTRAINED
+                        aspectRatio: 1.6
+                      )
                     }
                   }
                 }

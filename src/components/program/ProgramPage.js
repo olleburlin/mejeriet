@@ -33,6 +33,8 @@ export default function ProgramPage() {
             kortInfo
             oppnar
             plats
+            underrubrik
+            extraText
             samarbetspartner {
               ... on WpSammarbetspartner {
                 id
@@ -73,8 +75,8 @@ export default function ProgramPage() {
   console.log(selected)
   return (
     <div>
-      <section className="flex flex-col mb-8">
-        <div className="w-full space-y-8">
+      <section className="flex flex-col mb-8 ">
+        <div className="w-full space-y-8 ">
           <>
             {selected.slug === "visa-allt"
               ? posts.map(post => {

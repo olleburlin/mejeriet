@@ -4,9 +4,10 @@ import Link from "../common/Link"
 import MomentDate from "../../utils/MomentDate"
 import { YoutubeHelper } from "../../utils/YoutubeHelper"
 import Priskategorier from "./Priskategorier"
+import ArtistLinks from "./ArtistLinks"
 
 export default function ProgrampunktPage({ post }) {
-  const { title, informationProgram, featuredImage } = post
+  const { title, informationProgram, featuredImage, artistLinks } = post
   const imageData = getImage(featuredImage.node.localFile)
   const {
     youtubeKlipp,
@@ -17,13 +18,15 @@ export default function ProgrampunktPage({ post }) {
     aldersgrans,
     langInfo,
     biljettlank,
+    underrubrik,
+    extraText,
     typAvArrangemang,
     samarbetspartner,
     covid19,
   } = informationProgram
 
   const youTubeId = YoutubeHelper(youtubeKlipp)
-  console.log(samarbetspartner)
+  console.log(artistLinks)
   return (
     <>
       <section className="grid md:grid-cols-2 gap-8 md:gap-16 md:py-16">
@@ -32,15 +35,13 @@ export default function ProgrampunktPage({ post }) {
           <div className="space-y-4">
             <header className="flex flex-col">
               <h1 className="uppercase text-5xl">{title}</h1>
-
               <div className="flex md:flex-row flex-wrap  ">
-                <div className="">
-                  <MomentDate
-                    dateString={informationProgram.startdatum}
-                    newDate="MMMM Do, YYYY"
-                  />
-                </div>
+                <MomentDate
+                  dateString={informationProgram.startdatum}
+                  newDate="MMMM Do, YYYY"
+                />
               </div>
+              {extraText && <div className="text-brandorange">{extraText}</div>}{" "}
             </header>
 
             <div className="pb-2">
@@ -120,6 +121,7 @@ export default function ProgrampunktPage({ post }) {
               </div>
             )}
           </div>
+          <div>{artistLinks && <ArtistLinks artistLinks={artistLinks} />}</div>
         </div>
       </section>
     </>

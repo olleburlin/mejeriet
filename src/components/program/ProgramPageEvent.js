@@ -6,7 +6,7 @@ import LongDate from "../common/LongDate"
 export default function ProgramPunktEvent({ post }) {
   const { title, informationProgram, featuredImage, slug } = post
   const imageData = getImage(featuredImage.node.localFile)
-  const { startdatum, status } = informationProgram
+  const { startdatum, status, extraText, underrubrik } = informationProgram
   return (
     <div className="">
       <div className="flex flex-col md:flex-row justify-between relative">
@@ -16,13 +16,13 @@ export default function ProgramPunktEvent({ post }) {
             <GatsbyImage
               image={imageData}
               alt={title}
-              className="h-full grayscale mix-blend-multiply dark:mix-blend-normal"
+              className="grayscale mix-blend-multiply dark:mix-blend-normal"
             />{" "}
           </Link>
         </div>
         {/* Right */}
 
-        <div className="w-full md:w-8/12 text-2xl leading-relaxed">
+        <div className="w-full md:w-8/12 text-xl leading-relaxed">
           <div className=" md:px-8 h-full flex flex-col justify-center">
             <div className="">
               <header className="flex flex-col justify-center items-start pt-4 md:pt-0">
@@ -35,6 +35,9 @@ export default function ProgramPunktEvent({ post }) {
                       </button>
                     </Link> */}
                 </div>
+                {extraText && (
+                  <div className="text-brandorange uppercase">{extraText}</div>
+                )}{" "}
                 <div className="text-base md:text-xl">
                   <LongDate dateString={startdatum} />
                 </div>
@@ -45,23 +48,11 @@ export default function ProgramPunktEvent({ post }) {
                     </span>
                   </Link>
                 </h3>{" "}
+                {underrubrik && <div className="font-bold">{underrubrik}</div>}{" "}
               </header>
               <p className="text-base md:text-xl">
                 {informationProgram.kortInfo}
               </p>
-              {/* <div className="flex flex-row items-center gap-2">
-                  {genre && (
-                    <div className="bg-brandorange uppercase text-pink-100 px-2 py-1 font-bold flex-row inline-block">
-                      <span>{genre.name}</span>
-                    </div>
-                  )}
-                  {typAvArrangemang !== null &&
-                  typAvArrangemang?.name !== "Konsert" ? (
-                    <div className="bg-brandteal text-pink-100 uppercase  px-2 py-1 font-bold inline-block">
-                      <span>{typAvArrangemang.name}</span>
-                    </div>
-                  ) : null}
-                </div> */}
             </div>
           </div>
         </div>

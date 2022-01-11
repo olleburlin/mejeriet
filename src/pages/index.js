@@ -18,11 +18,11 @@ function IndexPage() {
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Hem"
       />
-      <div className="flex flex-col md:flex-row md:space-x-4">
+      <div className="flex flex-col">
         <section className="flex-1">
           <IndexEvents />
         </section>
-        <section className="md:w-1/3">
+        <section className="md:w-1/3 hidden">
           <div className="max-w-full space-y-4">
             <IndexMiniEvents />
 

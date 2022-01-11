@@ -28,8 +28,16 @@ export const query = graphql`
           }
         }
       }
+      artistLinks {
+        urlFacebook
+        urlFacebookevent
+        urlHomepage
+        urlSpotify
+      }
       informationProgram {
         borjar
+        extraText
+        underrubrik
         kortInfo
         langInfo
         biljettlank
