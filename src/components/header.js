@@ -132,7 +132,7 @@ function Header() {
                                           {menuItem.children.map(post => {
                                             return (
                                               <div key={post.id}>
-                                                <Link to={post.url}>
+                                                <Link to={post.path}>
                                                   <div
                                                     key={post.id}
                                                     className=""
