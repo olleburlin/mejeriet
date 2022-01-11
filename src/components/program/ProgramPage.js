@@ -100,7 +100,7 @@ export default function ProgramPage() {
           </>
         </div>
 
-        <div className="order-first  mb-4 md:mb-8 flex flex-col items-center justify-center">
+        <div className="order-first  my-4 md:mb-8 flex flex-col items-center justify-center">
           <div className="w-72 mb-8">
             <Listbox value={selected} onChange={setSelected}>
               <div className="relative mt-1">
