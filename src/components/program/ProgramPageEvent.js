@@ -26,8 +26,8 @@ export default function ProgramPunktEvent({ post }) {
         <div className="w-full text-base leading-relaxed bg-pink-100">
           <div className="h-full flex flex-col justify-center">
             <div className="flex flex-row">
-              <div className="w-full md:w-3/4 border-r-8 pr-4 border-brandlightpink border-dotted  p-8">
-                <header className="flex flex-col space-y-2">
+              <div className="w-full md:w-3/4 md:border-r-8 pr-4 border-brandlightpink border-dotted  p-4 md:p-8">
+                <header className="flex flex-col md:space-y-2">
                   <div className="flex flex-row items-center font-normal tracking-wide ">
                     <div className="">
                       <LongDate dateString={startdatum} />
@@ -47,14 +47,16 @@ export default function ProgramPunktEvent({ post }) {
                     </Link>
                   </h3>{" "}
                   {underrubrik && (
-                    <div className="font-bold uppercase ">{underrubrik}</div>
+                    <div className="font-bold uppercase leading-none pb-2 md:pb-0">
+                      {underrubrik}
+                    </div>
                   )}{" "}
                 </header>
-                <p className=" md:text-xl font-normal">
+                <p className=" md:text-xl font-normal leading-normal">
                   {informationProgram.kortInfo}
                 </p>
               </div>
-              <div className="flex-1 flex flex-col justify-center items-center text-center">
+              <div className="hidden flex-1 md:flex flex-col justify-center items-center text-center">
                 <div className="">
                   <div className="">
                     <Link to={biljettlank}>
