@@ -23,7 +23,11 @@ export default function ProgramPage() {
             node {
               localFile {
                 childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED, aspectRatio: 1.6)
+                  gatsbyImageData(
+                    placeholder: BLURRED
+                    aspectRatio: 1.6
+                    width: 500
+                  )
                 }
               }
             }

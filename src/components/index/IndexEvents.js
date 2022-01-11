@@ -24,8 +24,8 @@ export default function IndexEvents() {
                 childImageSharp {
                   gatsbyImageData(
                     placeholder: BLURRED
-                    layout: CONSTRAINED
                     aspectRatio: 1.6
+                    width: 500
                   )
                 }
               }
