@@ -48,7 +48,7 @@ function FeaturedEvent({ event }) {
             </div>
             <div className="absolute inset-0 flex flex-col justify-between ">
               <div className="">
-                <div className="relative inset-0 bg-brandorange bg-opacity-90 inline-block">
+                <div className="relative inset-0 bg-brandorange  inline-block">
                   <div className="">
                     <div className=" pt-1 pb-1 md:pt-2 md:pb-3 pl-1 pr-2 2 md:pr-3 md:pl-2 leading-loose text-sm md:text-xl uppercase font-bold">
                       Missa inte
