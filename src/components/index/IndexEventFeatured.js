@@ -21,7 +21,7 @@ export default function IndexEventFeatured({ posts }) {
   const featuredEvents = posts.missaInte.programmpunkt
   console.log(featuredEvents)
   return (
-    <div className="relative flex flex-col w-full bg-gradient-to-t from-brandpink to-brandorange  mb-4 text-white">
+    <div className="relative flex flex-col w-full bg-gradient-to-t from-brandpink to-brandorange  mb-4 md:mb-6 text-white">
       <Slider {...settings}>
         {featuredEvents.map(event => {
           return <FeaturedEvent key={event.id} event={event} />
@@ -36,8 +36,8 @@ function FeaturedEvent({ event }) {
   const imageData = getImage(featuredImage.node.localFile)
   return (
     <>
-      <div className="overflow-hidden  inset-0 h-full  bg-gradient-to-t from-brandpink to-brandorange flex flex-col justify-end    space-y-2 md:text-xl ">
-        <div className="p-2 md:p-4">
+      <div className="p-2 md:p-6  inset-0 h-full  bg-gradient-to-t from-brandpink to-brandorange flex flex-col justify-end    space-y-2 md:text-xl ">
+        <div className="">
           <div className="relative">
             <div className="">
               <GatsbyImage
@@ -57,17 +57,17 @@ function FeaturedEvent({ event }) {
                 </div>
               </div>
               <div className="relative w-full bg-gradient-to-t from-gray-900 to-transparent">
-                <div className="relative  p-2 md:p-4">
+                <div className="relative space-y-2 p-2 md:p-4">
                   <div className="text-base md:text-xl ">
                     <LongDate dateString={informationProgram.startdatum} />
                   </div>
                   <Link to={`/program/${slug}`}>
                     {" "}
-                    <h3 className="uppercase text-xl text-brandorange md:text-4xl">
+                    <h2 className="uppercase text-xl text-brandorange md:text-6xl">
                       {title}
-                    </h3>
+                    </h2>
                   </Link>
-                  <p className="hidden md:block text-base md:text-xl tracking-tight leading-none md:w-10/12 md:leading-normal">
+                  <p className=" text-base md:text-xl  md:w-10/12">
                     {informationProgram.kortInfo}
                   </p>
                 </div>

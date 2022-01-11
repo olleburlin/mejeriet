@@ -92,9 +92,11 @@ export default function IndexEvents() {
   console.log(featuredPosts)
   return (
     <>
-      <IndexEventFeatured posts={featuredPosts} />
+      <div>
+        <IndexEventFeatured posts={featuredPosts} />
+      </div>
 
-      <div className="grid gap-4">
+      <div className="grid gap-6">
         {posts.map(post => {
           return <ProgramPageEvent key={post.id} post={post} />
         })}

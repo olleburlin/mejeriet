@@ -23,13 +23,13 @@ export default function ProgramPunktEvent({ post }) {
         </div>
         {/* Right */}
 
-        <div className="w-full text-xl leading-relaxed bg-pink-100">
+        <div className="w-full text-base leading-relaxed bg-pink-100">
           <div className="h-full flex flex-col justify-center">
             <div className="flex flex-row">
               <div className="w-full md:w-3/4 border-r-8 pr-4 border-brandlightpink border-dotted  p-8">
-                <header className="flex flex-col justify-center items-start">
-                  <div className="flex flex-row items-center  ">
-                    <div className="text-base md:text-xl">
+                <header className="flex flex-col space-y-2">
+                  <div className="flex flex-row items-center font-normal tracking-wide ">
+                    <div className="">
                       <LongDate dateString={startdatum} />
                     </div>
                     {extraText && (
@@ -47,10 +47,10 @@ export default function ProgramPunktEvent({ post }) {
                     </Link>
                   </h3>{" "}
                   {underrubrik && (
-                    <div className="font-bold">{underrubrik}</div>
+                    <div className="font-bold uppercase ">{underrubrik}</div>
                   )}{" "}
                 </header>
-                <p className="text-base md:text-xl">
+                <p className=" md:text-xl font-normal">
                   {informationProgram.kortInfo}
                 </p>
               </div>
