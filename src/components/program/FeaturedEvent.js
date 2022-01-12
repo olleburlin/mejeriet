@@ -8,7 +8,7 @@ export default function FeaturedEvent({ event }) {
   const imageData = getImage(featuredImage.node.localFile)
   return (
     <>
-      <div className="p-2 md:p-3  inset-0 h-full  bg-gradient-to-t from-brandpink to-brandorange flex flex-col justify-end    space-y-2 md:text-xl ">
+      <div className="p-2 md:p-3  inset-0 h-full  bg-gradient-to-t from-brandpurple to-brandorange flex flex-col justify-end    space-y-2 md:text-xl ">
         <Link to={uri} title={title} className="relative z-40">
           <div className="">
             <div className="relative">
