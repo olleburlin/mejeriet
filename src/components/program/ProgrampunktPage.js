@@ -121,7 +121,9 @@ export default function ProgrampunktPage({ post }) {
               </div>
             )}
           </div>
-          <div>{artistLinks && <ArtistLinks artistLinks={artistLinks} />}</div>
+          <div className="pb-4">
+            {artistLinks && <ArtistLinks artistLinks={artistLinks} />}
+          </div>
         </div>
       </section>
     </>
