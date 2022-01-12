@@ -17,7 +17,7 @@ export default function ProgramPunktEvent({ post }) {
             <GatsbyImage
               image={imageData}
               alt={title}
-              className=" dark:mix-blend-normal h-full"
+              className=" dark:mix-blend-normal h-full w-full"
             />{" "}
           </Link>
         </div>
@@ -54,7 +54,7 @@ export default function ProgramPunktEvent({ post }) {
                     </div>
                   )}{" "}
                 </header>
-                <p className=" md:text-xl font-normal leading-normal">
+                <p className=" md:text-xl leading-normal">
                   {informationProgram.kortInfo}
                 </p>
               </div>

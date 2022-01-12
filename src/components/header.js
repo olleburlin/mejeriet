@@ -8,6 +8,7 @@ import { flatListToHierarchical } from "../utils/flatListToHierarchical"
 import MenuItem from "./common/MenuItem"
 import { Disclosure } from "@headlessui/react"
 import { ChevronUpIcon } from "@heroicons/react/solid"
+import SocialIcons from "../components/common/SocialIcons"
 function Header() {
   const data = useStaticQuery(graphql`
     {
@@ -51,18 +52,21 @@ function Header() {
     <Headroom>
       <div className="bg-black py-6 md:py-8">
         <header id="top-header">
-          <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 md:px-8 mx-auto">
+          <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
             <div className="flex flex-row items-center md:justify-between md:w-full">
-              <div id="logo" className="w-32 md:w-40 mr-12">
+              <div id="logo" className=" mr-4">
                 <Link to="/">
                   <Logo color="" />
                 </Link>
               </div>
-              <nav className="text-xl  flex-row items-center font-bold uppercase hidden md:flex">
-                {desktopMenu.map(menuItem => {
-                  return <MenuItem key={menuItem.label} menuItem={menuItem} />
-                })}
-              </nav>
+              <div className="hidden md:flex flex-row items-center">
+                <nav className="text-base xl:text-xl lg:text-lg flex flex-row items-center font-bold uppercase ">
+                  {desktopMenu.map(menuItem => {
+                    return <MenuItem key={menuItem.label} menuItem={menuItem} />
+                  })}
+                </nav>
+                <SocialIcons fill="#ffffff" />
+              </div>
             </div>
             <div className="flex flex-row items-center space-x-4 ">
               <div className=" inline-block md:hidden z-50">
