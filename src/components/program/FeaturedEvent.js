@@ -8,7 +8,7 @@ export default function FeaturedEvent({ event }) {
   const imageData = getImage(featuredImage.node.localFile)
   return (
     <>
-      <div className="p-2 md:p-3  inset-0 h-full  bg-gradient-to-t from-brandorange to-brandpurple flex flex-col justify-end    space-y-2 md:text-xl ">
+      <div className="p-2 md:p-3  inset-0 h-full  bg-gradient-to-t from-brandorange to-brandpurple via-brandpink/50 flex flex-col justify-end    space-y-2 md:text-xl ">
         <Link to={uri} title={title} className="relative z-40">
           <div className="">
             <div className="relative">
@@ -16,7 +16,7 @@ export default function FeaturedEvent({ event }) {
                 <GatsbyImage
                   image={imageData}
                   alt={title}
-                  className="object-cover relative "
+                  className="object-cover relative"
                 />
               </div>
 
@@ -27,7 +27,7 @@ export default function FeaturedEvent({ event }) {
                     <div className="text-base md:text-xl ">
                       <LongDate dateString={informationProgram.startdatum} />
                     </div>{" "}
-                    <h2 className="uppercase text-xl text-brandorange md:text-6xl">
+                    <h2 className="uppercase text-xl md:text-6xl relative">
                       {title}
                     </h2>
                     <p className="hidden md:block text-base md:text-xl  md:w-10/12">

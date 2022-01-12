@@ -105,7 +105,7 @@ export default function ProgramPage() {
           <div className="w-72 mb-8">
             <Listbox value={selected} onChange={setSelected}>
               <div className="relative mt-1">
-                <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-brandorange cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500">
+                <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-brandpurple cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500">
                   <span className="block truncate text-white">
                     {selected.name}
                   </span>
@@ -122,15 +122,15 @@ export default function ProgramPage() {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="absolute w-full  overflow-auto bg-brandorange bg-opacity-95  ring-1 ring-brandorange ring-opacity-5 focus:outline-none">
+                  <Listbox.Options className="absolute w-full  overflow-auto bg-brandpurple bg-opacity-95  ring-1 ring-brandpurple ring-opacity-5 focus:outline-none">
                     {people.map((person, personIdx) => (
                       <Listbox.Option
                         key={personIdx}
                         className={({ active }) =>
                           `${
-                            active ? "text-brandorange bg-white" : "text-white"
+                            active ? "text-brandpurple bg-white" : "text-white"
                           }
-                          cursor-default select-none relative py-2 pl-3 pr-4 uppercase  font-heavy`
+                          cursor-pointer select-none relative py-2 pl-3 pr-4 uppercase  font-heavy`
                         }
                         value={person}
                       >

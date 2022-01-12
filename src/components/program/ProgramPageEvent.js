@@ -41,7 +41,7 @@ export default function ProgramPunktEvent({ post }) {
                       </div>
                     )}
                   </div>
-                  <h3 className="uppercase inline text-2xl md:text-3xl relative -top-2 pb-2">
+                  <h3 className="uppercase inline text-2xl md:text-3xl relative -top-2 md:pb-2 ">
                     <Link to={uri}>
                       <span className="border-b-4 md:border-b-4 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
                         {title}
@@ -49,7 +49,7 @@ export default function ProgramPunktEvent({ post }) {
                     </Link>
                   </h3>{" "}
                   {underrubrik && (
-                    <div className="font-bold uppercase leading-none pb-2">
+                    <div className="font-bold uppercase leading-none md:pb-2 hidden md:block">
                       {underrubrik}
                     </div>
                   )}{" "}
@@ -62,7 +62,7 @@ export default function ProgramPunktEvent({ post }) {
                 <div className="">
                   <div className="">
                     <Link to={biljettlank}>
-                      <button className="uppercase  bg-brandpurple  text-white py-2 px-3">
+                      <button className="uppercase  bg-brandpurple   text-white py-2 px-3">
                         Köp biljett
                       </button>
                     </Link>

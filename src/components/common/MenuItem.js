@@ -67,15 +67,7 @@ export default function MenuItem({ menuItem }) {
             </Menu.Button>
           </div>
           <div className="relative">
-            <Transition
-              show={show}
-              enter="transition ease-out duration-100"
-              enterFrom="transform opacity-0 scale-95"
-              enterTo="transform opacity-100 scale-100"
-              leave="transition ease-in duration-75"
-              leaveFrom="transform opacity-100 scale-100"
-              leaveTo="transform opacity-0 scale-95"
-            >
+            <Transition show={show}>
               <Menu.Items
                 ref={dropdownRef}
                 onMouseEnter={onMouseEnterMenu}
