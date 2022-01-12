@@ -52,7 +52,7 @@ function Header() {
     <Headroom>
       <div className="bg-black py-6 md:py-8">
         <header id="top-header">
-          <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+          <div className="  relative flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
             <div className="flex flex-row items-center md:justify-between md:w-full">
               <div id="logo" className=" mr-4">
                 <Link to="/">
@@ -75,26 +75,21 @@ function Header() {
                   toggle={toggleExpansion}
                   onClick={() => toggleExpansion(!isExpanded)}
                   size="32"
-                  // color={darkMode.value === true ? "#ffffff" : "#000000"}
+                  color="white"
                   className="z-50 relative "
                   style={{ padding: "0", margin: "0" }}
                 />
               </div>
             </div>
-            <div
-              className={`${
-                isExpanded ? `block` : `hidden`
-              } fixed top-0 inset-x-0 transition transform origin-top-right z-40`}
-            >
-              <div className="block md:hidden bg-white dark:bg-black text-black dark:text-white min-h-screen mobilemenu  pt-4">
-                <div className="max-w-screen-2xl mx-auto">
-                  <div className="flex items-center justify-between px-4 h-full ">
-                    <div className="w-32 md:w-40 mr-12 pt-4">
-                      <Link to="/">
-                        <Logo color="" />
-                      </Link>
-                    </div>
+            {isExpanded && (
+              <div className="fixed top-0 left-0 overflow-x-hidden z-40 bg-black inset-0 h-screen ">
+                <div className="relative h-full    text-white  pt-6">
+                  <div className="pl-4">
+                    <Link to="/">
+                      <Logo color="" />
+                    </Link>
                   </div>
+
                   <div className="pt-2 pb-6 px-5 text-2xl md:text-3xl uppercase font-bold">
                     <div className="mt-6 flex flex-col justify-center h-full">
                       <div className="mt-4 space-y-4 max-w-xl w-full mx-auto">
@@ -161,7 +156,7 @@ function Header() {
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </header>
       </div>
