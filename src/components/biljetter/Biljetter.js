@@ -19,9 +19,9 @@ export default function Biljetter() {
   `)
   const posts = data.allWpProgrampunkt.nodes
   return (
-    <div className="w-full ">
+    <div className="w-full mb-16">
       <div className="text-center mt-4 mb-8">
-        <button className="bg-brandteal text-lg px-3 py-2 text-white rounded-sm">
+        <button className="bg-brandpurple text-lg px-3 py-2 text-white rounded-sm">
           <a href="https://www.tickster.com/sv/events/nm8kdtw3b485ram/2045-01-01/presentkort">
             Köp presentkort
           </a>
@@ -37,15 +37,15 @@ export default function Biljetter() {
 function Biljett({ post }) {
   const { title, informationProgram } = post
   return (
-    <div className="text-base flex flex-row justify-between items-center space-x-4  p-4 uppercase even:bg-brandpink dark:even:bg-brandpurple even:bg-opacity-10 dark:even:bg-opacity-30">
-      <div className="flex-none text-brandorange">
+    <div className="text-base flex flex-row justify-between items-center space-x-4 p-2  uppercase bg-white text-black border-b border-black">
+      <div className="flex-none text-brandorange ">
         {informationProgram.startdatum}
       </div>
 
-      <div className="flex-1 font-heavy">{title}</div>
-      <div className="flex-none">
+      <div className="flex-1 font-heavy ">{title}</div>
+      <div className="flex-none ">
         {" "}
-        <button className="bg-brandteal text-white py-1 px-2 text-sm rounded-sm">
+        <button className="bg-brandpurple text-white py-1 px-2 text-sm rounded-sm">
           Köp biljett
         </button>
       </div>

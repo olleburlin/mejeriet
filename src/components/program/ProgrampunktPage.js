@@ -47,7 +47,7 @@ export default function ProgrampunktPage({ post }) {
             <div className="pb-2">
               {biljettlank && (
                 <Link to={biljettlank}>
-                  <button className="bg-brandteal text-white rounded-sm px-3 py-2">
+                  <button className="bg-brandpurple text-white rounded-sm px-3 py-2">
                     Köp biljett
                   </button>
                 </Link>
