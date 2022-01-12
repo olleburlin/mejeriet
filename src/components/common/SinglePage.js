@@ -1,4 +1,5 @@
 import React from "react"
+import HyraMejeriet from "../forms/HyraMejeriet"
 import FeaturedImage from "./FeaturedImage"
 import PageHeader from "./PageHeader"
 import PersonalKategorier from "./PersonalKategorier"
@@ -36,6 +37,7 @@ export default function SinglePage({ data }) {
             <PersonalKategorier personalKategorier={personalKategorier} />
           </div>
         )}
+        <HyraMejeriet />
       </div>
     </div>
   )

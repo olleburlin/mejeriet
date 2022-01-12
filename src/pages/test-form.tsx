@@ -51,6 +51,7 @@ const WpContactForm7 = () => {
               setSubmitting(false)
             } catch (error) {
               setState("Misslyckades. Testa att skicka igen.")
+              console.log(error)
             }
           }
           submitData()
