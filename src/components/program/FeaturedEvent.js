@@ -21,15 +21,7 @@ export default function FeaturedEvent({ event }) {
               </div>
 
               <div className="absolute inset-0 flex flex-col justify-between ">
-                <div className="">
-                  <div className="relative inset-0 bg-brandorange  inline-block">
-                    <div className="">
-                      <div className=" pt-1 pb-1 md:pt-2 md:pb-3 pl-1 pr-2 2 md:pr-3 md:pl-2 leading-loose text-sm md:text-xl uppercase font-bold">
-                        Missa inte
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <div className=""></div>
                 <div className="relative w-full bg-gradient-to-t from-gray-900 to-transparent">
                   <div className="relative space-y-2 p-2 md:p-4">
                     <div className="text-base md:text-xl ">

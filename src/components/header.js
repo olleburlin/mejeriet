@@ -49,7 +49,7 @@ function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
   return (
     <Headroom>
-      <div className="bg-brandlightpink py-6 md:py-8">
+      <div className="bg-black py-6 md:py-8">
         <header id="top-header">
           <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 md:px-8 mx-auto">
             <div className="flex flex-row items-center md:justify-between md:w-full">
