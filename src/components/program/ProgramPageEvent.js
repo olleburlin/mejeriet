@@ -60,7 +60,7 @@ export default function ProgramPunktEvent({ post }) {
                 <div className="">
                   <div className="">
                     <Link to={biljettlank}>
-                      <button className="uppercase  bg-brandteal text-white py-2 px-3">
+                      <button className="uppercase  bg-brandpurple  text-white py-2 px-3">
                         Köp biljett
                       </button>
                     </Link>
