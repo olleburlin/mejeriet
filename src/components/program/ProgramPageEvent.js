@@ -26,7 +26,7 @@ export default function ProgramPunktEvent({ post }) {
         <div className="w-full text-base leading-relaxed bg-white text-black">
           <div className="h-full flex flex-col justify-center">
             <div className="flex flex-row">
-              <div className="w-full md:w-3/4 md:border-r-2 pr-4 border-black p-4 md:p-8">
+              <div className="w-full md:w-3/4 md:border-r-8 pr-4 border-black border-dotted p-4 md:p-8">
                 <header className="flex flex-col md:space-y-2">
                   <div className="flex flex-row items-center font-normal tracking-wide ">
                     <div className="">
