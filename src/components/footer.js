@@ -5,7 +5,7 @@ import NewsletterForm from "./common/NewsletterForm"
 
 export default function Footer() {
   return (
-    <footer className="bg-branddpurple py-8 md:py-16  text-lg">
+    <footer className="bg-brandpurple py-8 md:py-16  text-lg">
       <div className="flex flex-row mx-auto items-center justify-center md:px-8 ">
         <div className="md:flex-1 text-left">
           Kulturmejeriet

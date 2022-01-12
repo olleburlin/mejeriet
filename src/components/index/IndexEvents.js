@@ -93,7 +93,7 @@ export default function IndexEvents() {
   const featuredPosts = data.featuredEvents
   console.log(featuredPosts)
   return (
-    <>
+    <div className="mb-8">
       <div className="hidden md:block">
         <IndexEventFeatured posts={featuredPosts} />
       </div>
@@ -103,13 +103,13 @@ export default function IndexEvents() {
           return <ProgramPageEvent key={post.id} post={post} />
         })}
       </div>
-      <div className="inline-block my-8 ">
+      <div className="inline-block my-4 w-full md:w-auto">
         <Link to="/program/">
-          <button className="py-2 px-4  bg-brandorange text-white">
+          <button className="py-2 px-4 w-full bg-brandpurple   mx-auto text-white">
             Visa hela programmet &rarr;
           </button>
         </Link>
       </div>
-    </>
+    </div>
   )
 }

@@ -26,7 +26,7 @@ export default function ProgramPunktEvent({ post }) {
         <div className="w-full text-base leading-relaxed bg-white text-black">
           <div className="h-full flex flex-col justify-center">
             <div className="flex flex-row">
-              <div className="w-full md:w-3/4 md:border-r-8 pr-4 border-black border-dotted p-4 md:p-8">
+              <div className="w-full md:w-3/4 md:border-r-4 pr-4 border-black border-dotted p-4 md:p-8">
                 <header className="flex flex-col md:space-y-2">
                   <div className="flex flex-row items-center font-normal tracking-wide ">
                     <div className="">
@@ -41,7 +41,7 @@ export default function ProgramPunktEvent({ post }) {
                       </div>
                     )}
                   </div>
-                  <h3 className="uppercase inline text-2xl md:text-3xl pb-4">
+                  <h3 className="uppercase inline text-2xl md:text-3xl relative -top-2 pb-2">
                     <Link to={uri}>
                       <span className="border-b-4 md:border-b-4 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
                         {title}
@@ -49,12 +49,12 @@ export default function ProgramPunktEvent({ post }) {
                     </Link>
                   </h3>{" "}
                   {underrubrik && (
-                    <div className="font-bold uppercase leading-none pb-2 md:pb-0">
+                    <div className="font-bold uppercase leading-none pb-2">
                       {underrubrik}
                     </div>
                   )}{" "}
                 </header>
-                <p className=" md:text-xl leading-normal">
+                <p className=" md:text-xl font-normal tracking-wide leading-normal">
                   {informationProgram.kortInfo}
                 </p>
               </div>
