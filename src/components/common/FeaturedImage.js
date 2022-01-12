@@ -6,11 +6,7 @@ export default function FeaturedImage({ image }) {
 
   return (
     <div className="relative">
-      <GatsbyImage
-        image={imageData}
-        alt="Featured"
-        className="grayscale brightness-110 mix-blend-multiply "
-      />
+      <GatsbyImage image={imageData} alt="Featured" className="" />
     </div>
   )
 }
