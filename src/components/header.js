@@ -52,7 +52,7 @@ function Header() {
     <Headroom>
       <div className="bg-black py-6 md:py-8">
         <header id="top-header">
-          <div className="  relative flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+          <div className="  relative flex flex-wrap items-center justify-between max-w-screen-xl px-4 md:px-8 mx-auto">
             <div className="flex flex-row items-center md:justify-between md:w-full">
               <div id="logo" className=" mr-4">
                 <Link to="/">
