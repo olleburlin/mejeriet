@@ -33,7 +33,7 @@ export default function ProgramPunktEvent({ post }) {
                       <LongDate dateString={startdatum} />
                     </div>
                     {extraText && (
-                      <div className=" uppercase">
+                      <div className=" uppercase text-brandorange">
                         &nbsp;|&nbsp;
                         {extraText}
                       </div>
