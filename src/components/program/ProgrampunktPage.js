@@ -53,7 +53,7 @@ export default function ProgrampunktPage({ post }) {
                 </Link>
               )}
             </div>
-            <div className="program-information border-t-4 py-4 border-b-4 border-black dark:border-white">
+            <div className="program-information border-t-4 py-4 border-b-4 border-white">
               <div>{prices && <Priskategorier prices={prices} />}</div>
               {typAvArrangemang.name && (
                 <div className="font-heavy">
@@ -98,7 +98,7 @@ export default function ProgrampunktPage({ post }) {
               />
             )}
             {covid19.vaccinpass && (
-              <div className="italic text-sm border-t-4 border-black pt-4">
+              <div className="italic text-sm border-t-4 border-white pt-4">
                 <div
                   dangerouslySetInnerHTML={{ __html: covid19.informationstext }}
                 />
