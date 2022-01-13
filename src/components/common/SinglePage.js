@@ -37,7 +37,7 @@ export default function SinglePage({ data }) {
             <PersonalKategorier personalKategorier={personalKategorier} />
           </div>
         )}
-        <HyraMejeriet />
+        {/* <HyraMejeriet /> */}
       </div>
     </div>
   )

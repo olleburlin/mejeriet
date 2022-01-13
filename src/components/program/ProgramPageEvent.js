@@ -61,11 +61,9 @@ export default function ProgramPunktEvent({ post }) {
               <div className="hidden flex-1 md:flex flex-col justify-center items-center text-center">
                 <div className="">
                   <div className="">
-                    <Link to={biljettlank}>
-                      <button className="uppercase  bg-brandpurple   text-white py-2 px-3">
-                        Köp biljett
-                      </button>
-                    </Link>
+                    <button className="uppercase  bg-brandpurple   text-white py-2 px-3">
+                      <Link to={biljettlank}>Köp biljett</Link>
+                    </button>
                   </div>
                 </div>
               </div>
