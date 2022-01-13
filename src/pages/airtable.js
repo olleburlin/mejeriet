@@ -2,7 +2,7 @@ import React from "react"
 
 export default function AirtablePage() {
   return (
-    <div>
+    <div className="bg-black text-white">
       <form action="/api/airtable" method="POST">
         <h2 style={{ marginBottom: `16px` }}>Add person to Airtable</h2>
         <div style={{ marginBottom: `8px` }}>
@@ -12,7 +12,7 @@ export default function AirtablePage() {
           >
             Name:
           </label>
-          <input name="name" id="name" />
+          <input type="text" name="name" id="name" />
         </div>
         <div style={{ marginBottom: `8px` }}>
           <label
