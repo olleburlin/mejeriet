@@ -37,6 +37,9 @@ export default function IndexEvents() {
             kortInfo
             oppnar
             plats
+            covid19 {
+              vaccinpass
+            }
             status
             biljettlank
             underrubrik

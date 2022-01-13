@@ -6,7 +6,7 @@ import LongDate from "../common/LongDate"
 export default function ProgramPunktEvent({ post }) {
   const { title, informationProgram, featuredImage, slug, uri } = post
   const imageData = getImage(featuredImage.node.localFile)
-  const { startdatum, status, extraText, underrubrik, biljettlank } =
+  const { startdatum, status, extraText, underrubrik, biljettlank, covid19 } =
     informationProgram
   return (
     <div className="">
@@ -38,6 +38,13 @@ export default function ProgramPunktEvent({ post }) {
                         <span className=" uppercase text-brandorange">
                           {extraText}
                         </span>
+                      </div>
+                    )}
+                    {covid19.vaccinpass && (
+                      <div>
+                        {" "}
+                        &nbsp;|&nbsp;
+                        <span className="uppercase">Vaccinpass krävs</span>
                       </div>
                     )}
                   </div>

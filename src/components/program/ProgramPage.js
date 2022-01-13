@@ -40,6 +40,9 @@ export default function ProgramPage() {
             plats
             underrubrik
             biljettlank
+            covid19 {
+              vaccinpass
+            }
             extraText
             samarbetspartner {
               ... on WpSammarbetspartner {

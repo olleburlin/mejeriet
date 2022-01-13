@@ -51,7 +51,6 @@ export const query = graphql`
           }
         }
         covid19 {
-          informationstext
           vaccinpass
         }
         slutar

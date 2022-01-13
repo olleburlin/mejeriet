@@ -99,9 +99,34 @@ export default function ProgrampunktPage({ post }) {
             )}
             {covid19.vaccinpass && (
               <div className="italic text-sm border-t-4 border-white pt-4">
-                <div
-                  dangerouslySetInnerHTML={{ __html: covid19.informationstext }}
-                />
+                <div className="space-y-4">
+                  <p>
+                    Den 1 december 2021 verkställs Folkhälsomyndighetens krav på
+                    vaccinationsbevis för alla över 18 år som besöker allmänna
+                    sammankomster inomhus med fler än 100 deltagare. I linje med
+                    denna bestämmelse kommer det att krävas vaccinationsbevis
+                    från alla som önskar besöka våra evenemang.
+                  </p>
+                  <p>Kontroll av vaccinationsbevis på våra evenemang:</p>
+                  <ul className="list-disc list-inside space-y-2">
+                    <li>
+                      Ladda ned ditt vaccinationsbevis på www.covidbevis.se
+                      (mobilt Bank-ID krävs).
+                    </li>
+                    <li>
+                      Kontrollera att ditt vaccinationsbevis är giltigt över
+                      konsertdatumet (både utskrivet och digitalt
+                      vaccinationsbevis är giltigt).
+                    </li>{" "}
+                    Vad redo att visa ID-kort/legitimation i samband med
+                    uppvisandet av vaccinationsbeviset.
+                    <li>
+                      Kom i god tid! Inpasserandet kan eventuellt ta lite längre
+                      tid, så se till att vara på plats i god tid innan
+                      konserten börjar för en smidig inpassering.
+                    </li>
+                  </ul>
+                </div>
               </div>
             )}
           </div>
