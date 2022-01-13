@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import Link from "../common/Link"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import LongDate from "../common/LongDate"
 
