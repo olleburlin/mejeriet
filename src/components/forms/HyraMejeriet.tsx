@@ -129,7 +129,7 @@ export default function HyraMejeriet() {
                 ) : null}
               </label>
             </div>
-            {/* <div>
+            <div>
               <label htmlFor="eventDate">
                 eventDate
                 <input
@@ -143,7 +143,7 @@ export default function HyraMejeriet() {
                   <div>{errors.eventDate}</div>
                 ) : null}
               </label>
-            </div> */}
+            </div>
             <div>
               <label htmlFor="guests">
                 guests
