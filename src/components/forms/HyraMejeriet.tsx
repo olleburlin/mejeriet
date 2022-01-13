@@ -2,6 +2,8 @@ import React from "react"
 import * as Yup from "yup"
 import axios from "axios"
 import { Formik } from "formik"
+import { getCurrentDate } from "../../utils/getCurrentDate"
+
 const URL = "https://olleburl.in/mejeriet/wp-json"
 
 const CF7_ID = "9494"
@@ -32,7 +34,7 @@ export default function HyraMejeriet() {
           email: "",
           organisation: "",
           telefon: "",
-          eventDate: "",
+          eventDate: getCurrentDate(),
           guests: "",
           additionalInfo: "",
         }}
