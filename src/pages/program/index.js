@@ -5,6 +5,10 @@ import ProgramPage from "../../components/program/ProgramPage"
 export default function index() {
   return (
     <Layout>
+      <SEO
+        keywords={[`Mejeriet`, `Program`, `Konsert`, `Lund`]}
+        title="Program"
+      />
       <ProgramPage />
     </Layout>
   )
