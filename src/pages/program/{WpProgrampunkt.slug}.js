@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-
+import SEO from "../../components/seo"
 import Layout from "../../components/layout"
 import ProgrampunktPage from "../../components/program/ProgrampunktPage"
 
@@ -9,6 +9,10 @@ export default function Programpunkt({ data }) {
   console.table(post)
   return (
     <Layout>
+      <SEO
+        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        title={post.title}
+      />
       <ProgrampunktPage post={post} />
     </Layout>
   )

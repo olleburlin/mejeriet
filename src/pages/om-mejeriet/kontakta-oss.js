@@ -49,9 +49,9 @@ export default function KontaktPage() {
               return <Question key={question.id} question={question} />
             })}{" "}
           </div>
-          <div className="border-t-4 border-brandteal py-8 mt-8">
+          {/* <div className="border-t-4 border-brandteal py-8 mt-8">
             <StandardForm />
-          </div>
+          </div> */}
         </div>
       </Layout>
     </div>

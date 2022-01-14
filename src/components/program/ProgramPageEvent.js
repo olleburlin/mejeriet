@@ -48,7 +48,7 @@ export default function ProgramPunktEvent({ post }) {
                       </div>
                     )}
                   </div>
-                  <h3 className="uppercase inline text-2xl md:text-3xl relative -top-2 md:pb-2 ">
+                  <h3 className="uppercase inline text-2xl md:text-3xl relative -top-2 ">
                     <Link to={uri}>
                       <span className="border-b-4 md:border-b-4 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
                         {title}
@@ -61,7 +61,7 @@ export default function ProgramPunktEvent({ post }) {
                     </div>
                   )}{" "}
                 </header>
-                <p className=" md:text-xl font-normal tracking-wide leading-normal">
+                <p className=" md:text-xl font-normal tracking-wide leading-none">
                   {informationProgram.kortInfo}
                 </p>
               </div>
