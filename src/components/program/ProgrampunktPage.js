@@ -38,7 +38,7 @@ export default function ProgrampunktPage({ post }) {
               <div className="flex md:flex-row flex-wrap  ">
                 <MomentDate
                   dateString={informationProgram.startdatum}
-                  newDate="MMMM Do, YYYY"
+                  newDate="YYYY.MM.DD"
                 />
               </div>
               {extraText && <div className="text-brandorange">{extraText}</div>}{" "}

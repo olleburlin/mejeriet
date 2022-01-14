@@ -36,22 +36,21 @@ export default function KontaktPage() {
   return (
     <div>
       <Layout>
-        <div className="max-w-4xl mx-auto pb-16 space-y-12 ">
-          <PageHeader text={data.wpPage.title} />
-          <div>
-            <FeaturedImage image={featuredImage} />
+        <div id="page-template" className="min-h-screen py-8">
+          <div className="max-w-4xl mx-auto pb-16 space-y-12 ">
+            <PageHeader text={data.wpPage.title} />
+            <div>
+              <FeaturedImage image={featuredImage} />
+            </div>
+            <div className="text-xl font-heavy wp-content">
+              <div dangerouslySetInnerHTML={{ __html: content }} className="" />
+            </div>
+            <div className="text-sm">
+              {questions.map(question => {
+                return <Question key={question.id} question={question} />
+              })}{" "}
+            </div>
           </div>
-          <div className="text-xl font-heavy wp-content">
-            <div dangerouslySetInnerHTML={{ __html: content }} className="" />
-          </div>
-          <div className="text-sm">
-            {questions.map(question => {
-              return <Question key={question.id} question={question} />
-            })}{" "}
-          </div>
-          {/* <div className="border-t-4 border-brandteal py-8 mt-8">
-            <StandardForm />
-          </div> */}
         </div>
       </Layout>
     </div>
