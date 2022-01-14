@@ -4,6 +4,14 @@ import axios from "axios"
 import { Formik } from "formik"
 import { getCurrentDate } from "../../utils/getCurrentDate"
 
+import styled from "@emotion/styled"
+const Input = styled.input`
+  @apply text-red;
+`
+const Label = styled.label`
+  @apply flex flex-col text-4xl;
+`
+
 const URL = "https://olleburl.in/mejeriet/wp-json"
 
 const CF7_ID = "9494"
@@ -13,7 +21,7 @@ const CF7_ID = "9494"
 //   email: Yup.string().email("Invalid email").required("Required"),
 // })
 
-function convertJsontoUrlencoded(obj: any) {
+function convertJsontoUrlencoded(obj) {
   let str = []
   for (let key in obj) {
     if (obj.hasOwnProperty(key)) {
@@ -71,9 +79,9 @@ export default function HyraMejeriet() {
         }) => (
           <form onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="yourName">
-                Ditt för- och efternamn*
-                <input
+              <Label htmlFor="yourName">
+                För- och efternamn*
+                <Input
                   type="text"
                   name="yourName"
                   onChange={handleChange}
@@ -83,7 +91,7 @@ export default function HyraMejeriet() {
                 {errors.yourName && touched.yourName ? (
                   <div>{errors.yourName}</div>
                 ) : null}
-              </label>
+              </Label>
             </div>
             <div>
               <label htmlFor="email">

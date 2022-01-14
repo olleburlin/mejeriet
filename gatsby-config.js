@@ -16,6 +16,12 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts the following options, all of which are defined by `@emotion/babel-plugin` plugin.
+      },
+    },
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-wordpress`,
