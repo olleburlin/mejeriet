@@ -6,9 +6,6 @@ import ProgramPageEvent from "../program/ProgramPageEvent"
 
 import moment from "moment"
 export default function IndexEvents() {
-  let today = moment().calendar("yyyy-mm-dd")
-  console.log(today)
-
   const data = useStaticQuery(graphql`
     query {
       allEvents: allWpProgrampunkt(
