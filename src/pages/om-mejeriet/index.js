@@ -85,7 +85,7 @@ function SubCategory({ category }) {
         <div className="opacity-50 relative">
           <GatsbyImage
             image={getImage(
-              sidlank.featuredImage.node.localFile.childImageSharp
+              sidlank.featuredImage?.node.localFile.childImageSharp
             )}
           />
         </div>
