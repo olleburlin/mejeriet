@@ -26,6 +26,9 @@ export const query = graphql`
           namnPaKategori
         }
       }
+      synlighet {
+        gomRubrik
+      }
       kartor {
         kartaDark {
           localFile {

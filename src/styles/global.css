@@ -138,3 +138,11 @@ p a {
   overflow-x: hidden;
   transition: 0.5s;
 }
+
+/* WP Classes */
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
