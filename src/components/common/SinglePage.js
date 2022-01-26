@@ -15,7 +15,7 @@ export default function SinglePage({ data }) {
           <PageHeader text={data.wpPage.title} />
         </div>
         <div className="relative">
-          <FeaturedImage image={featuredImage} />
+          {featuredImage && <FeaturedImage image={featuredImage} />}
         </div>
         <div className="">
           <div dangerouslySetInnerHTML={{ __html: content }} />
