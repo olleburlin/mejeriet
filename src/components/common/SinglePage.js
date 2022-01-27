@@ -9,7 +9,7 @@ export default function SinglePage({ data }) {
   const kartaLight = kartor?.kartaLight?.localFile.publicURL
   const personalKategorier = personal.underkategorier
   return (
-    <div id="page-template" className="min-h-screen py-8">
+    <div id="page-template" className="min-h-screen pt-8 pb-16">
       <div className="max-w-4xl mx-auto space-y-8">
         {!synlighet.gomRubrik && (
           <div>
