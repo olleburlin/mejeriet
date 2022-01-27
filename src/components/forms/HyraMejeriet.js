@@ -43,7 +43,10 @@ export default function HyraMejeriet() {
           organisation: "",
           telefon: "",
           eventDate: getCurrentDate(),
+          eventDateExtra: "",
           guests: "",
+          catering: "",
+          tech: "",
           additionalInfo: "",
         }}
         onSubmit={(values, { setSubmitting }) => {
@@ -113,7 +116,7 @@ export default function HyraMejeriet() {
             </div>
             <div>
               <label htmlFor="organisation">
-                Organisation
+                Organisation<span className="text-brandorange">*</span>
                 <input
                   type="text"
                   name="organisation"
@@ -143,7 +146,7 @@ export default function HyraMejeriet() {
             </div>
             <div>
               <label htmlFor="eventDate">
-                Önskat datum
+                Önskat datum<span className="text-brandorange">*</span>
                 <input
                   type="date"
                   name="eventDate"
@@ -157,8 +160,22 @@ export default function HyraMejeriet() {
               </label>
             </div>
             <div>
+              <label htmlFor="eventDateExtra">
+                Önskar du hyra fler datum, vänligen specificera:
+                <textarea
+                  name="eventDateExtra"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.eventDateExtra}
+                />
+                {errors.eventDateExtra && touched.eventDateExtra ? (
+                  <div>{errors.eventDateExtra}</div>
+                ) : null}
+              </label>
+            </div>
+            <div>
               <label htmlFor="guests">
-                Antal deltagare
+                Antal deltagare<span className="text-brandorange">*</span>
                 <input
                   type="text"
                   name="guests"
@@ -172,8 +189,35 @@ export default function HyraMejeriet() {
               </label>
             </div>
             <div>
+              <label htmlFor="catering">
+                Önskemål om catering
+                <textarea
+                  name="catering"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.catering}
+                />
+                {errors.catering && touched.catering ? (
+                  <div>{errors.catering}</div>
+                ) : null}
+              </label>
+            </div>
+            <div>
+              <label htmlFor="tech">
+                Önskemål om teknik
+                <textarea
+                  name="tech"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.tech}
+                />
+                {errors.tech && touched.tech ? <div>{errors.tech}</div> : null}
+              </label>
+            </div>
+            <div>
               <label htmlFor="additionalInfo">
                 Mer information och önskemål
+                <span className="text-brandorange">*</span>
                 <textarea
                   name="additionalInfo"
                   onChange={handleChange}
