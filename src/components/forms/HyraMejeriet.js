@@ -216,7 +216,7 @@ export default function HyraMejeriet() {
             </div>
             <div>
               <label htmlFor="additionalInfo">
-                Mer information och önskemål
+                Beskriv ditt arrangemang så detaljerat du kan
                 <span className="text-brandorange">*</span>
                 <textarea
                   name="additionalInfo"
