@@ -20,6 +20,7 @@ export const query = graphql`
     wpPage(id: { eq: $id }) {
       title
       content
+      databaseId
       personal {
         underkategorier {
           innehall

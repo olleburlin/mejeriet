@@ -59,12 +59,25 @@ button {
   display: none;
 }
 
-/* form input[type="text"],
-form input[type="email"],
-form input[type="date"],
-form textarea {
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="date"],
+.form textarea {
   @apply w-full p-4 text-black;
-} */
+}
+.form input {
+  @apply block mt-2;
+}
+.form textarea {
+  @apply block mt-2;
+}
+.form div {
+  @apply mb-4;
+}
+
+.form button {
+  @apply bg-brandpurple  px-3 py-2 text-white rounded-sm;
+}
 
 .wp-content p {
   @apply mb-4;

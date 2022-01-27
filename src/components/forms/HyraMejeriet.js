@@ -77,10 +77,10 @@ export default function HyraMejeriet() {
           handleSubmit,
           isSubmitting,
         }) => (
-          <form onSubmit={handleSubmit}>
+          <form className="form" onSubmit={handleSubmit}>
             <div>
               <Label htmlFor="yourName">
-                För- och efternamn*
+                För- och efternamn<span className="text-brandorange">*</span>
                 <Input
                   type="text"
                   name="yourName"
@@ -95,7 +95,7 @@ export default function HyraMejeriet() {
             </div>
             <div>
               <label htmlFor="email">
-                E-post*
+                E-post<span className="text-brandorange">*</span>
                 <input
                   type="email"
                   id="email"
@@ -126,7 +126,7 @@ export default function HyraMejeriet() {
             </div>
             <div>
               <label htmlFor="telefon">
-                telefon
+                Telefon
                 <input
                   type="text"
                   name="telefon"
@@ -141,7 +141,7 @@ export default function HyraMejeriet() {
             </div>
             <div>
               <label htmlFor="eventDate">
-                eventDate
+                Önskat datum
                 <input
                   type="date"
                   name="eventDate"
@@ -156,7 +156,7 @@ export default function HyraMejeriet() {
             </div>
             <div>
               <label htmlFor="guests">
-                guests
+                Antal deltagare
                 <input
                   type="text"
                   name="guests"
@@ -183,7 +183,7 @@ export default function HyraMejeriet() {
                 ) : null}
               </label>
             </div>
-
+            <p className="text-brandorange text-sm">*Obligatoriska fält</p>
             <button type="submit" disabled={isSubmitting}>
               Skicka
             </button>

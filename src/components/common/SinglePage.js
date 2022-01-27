@@ -4,7 +4,8 @@ import FeaturedImage from "./FeaturedImage"
 import PageHeader from "./PageHeader"
 import PersonalKategorier from "./PersonalKategorier"
 export default function SinglePage({ data }) {
-  const { content, featuredImage, kartor, personal, synlighet } = data.wpPage
+  const { content, featuredImage, kartor, personal, synlighet, databaseId } =
+    data.wpPage
   const kartaLight = kartor?.kartaLight?.localFile.publicURL
   const personalKategorier = personal.underkategorier
   return (
@@ -38,7 +39,7 @@ export default function SinglePage({ data }) {
             <PersonalKategorier personalKategorier={personalKategorier} />
           </div>
         )}
-        {/* <HyraMejeriet /> */}
+        {databaseId === 9148 && <HyraMejeriet />}
       </div>
     </div>
   )
