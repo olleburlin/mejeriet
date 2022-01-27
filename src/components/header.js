@@ -46,8 +46,7 @@ function Header() {
 
   const desktopMenu = flatListToHierarchical(menuItems)
   const mobileMenu = flatListToHierarchical(mobileMenuItems)
-  console.log(menuItems)
-  console.log(desktopMenu)
+
   const [isExpanded, toggleExpansion] = useState(false)
   return (
     <Headroom>

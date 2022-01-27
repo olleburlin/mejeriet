@@ -78,6 +78,9 @@ button {
 .form button {
   @apply bg-brandpurple  px-3 py-2 text-white rounded-sm;
 }
+.form button:hover {
+  @apply bg-opacity-80 transition-all;
+}
 
 .wp-content p {
   @apply mb-4;

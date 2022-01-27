@@ -3,7 +3,7 @@ import * as Yup from "yup"
 import axios from "axios"
 import { Formik } from "formik"
 import { getCurrentDate } from "../../utils/getCurrentDate"
-
+import { navigate } from "gatsby"
 import styled from "@emotion/styled"
 const Input = styled.input`
   @apply text-red;
@@ -60,6 +60,8 @@ export default function HyraMejeriet() {
               })
               setState(result.data.message)
               setSubmitting(false)
+              console.log(result.data.message)
+              navigate("/success")
             } catch (error) {
               setState("Misslyckades. Testa att skicka igen.")
               console.log(error)
