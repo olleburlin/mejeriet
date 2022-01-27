@@ -187,7 +187,11 @@ export default function HyraMejeriet() {
             </div>
             <p className="text-brandorange text-sm">*Obligatoriska fält</p>
             <button type="submit" disabled={isSubmitting}>
-              Skicka
+              {isSubmitting ? (
+                <span className="opacity-75">Skickar</span>
+              ) : (
+                "Skicka"
+              )}
             </button>
           </form>
         )}
