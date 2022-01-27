@@ -4,13 +4,13 @@ import axios from "axios"
 import { Formik } from "formik"
 import { getCurrentDate } from "../../utils/getCurrentDate"
 import { navigate } from "gatsby"
-// import styled from "@emotion/styled"
-// const Input = styled.input`
-//   @apply text-red;
-// `
-// const Label = styled.label`
-//   @apply flex flex-col text-4xl;
-// `
+import styled from "@emotion/styled"
+const Input = styled.input`
+  @apply text-red;
+`
+const Label = styled.label`
+  @apply flex flex-col text-4xl;
+`
 
 const URL = "https://olleburl.in/mejeriet/wp-json"
 
