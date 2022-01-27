@@ -61,7 +61,7 @@ export default function HyraMejeriet() {
                 method: "POST",
                 data: convertJsontoUrlencoded(values),
               })
-              setState(result.data.message)
+
               setSubmitting(false)
               console.log(result.data.message)
               navigate("/success")
