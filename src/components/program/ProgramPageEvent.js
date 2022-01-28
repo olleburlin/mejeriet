@@ -5,7 +5,7 @@ import LongDate from "../common/LongDate"
 
 export default function ProgramPunktEvent({ post }) {
   const { title, informationProgram, featuredImage, slug, uri } = post
-  const imageData = getImage(featuredImage.node.localFile)
+  const imageData = getImage(featuredImage?.node.localFile)
   const { startdatum, status, extraText, underrubrik, biljettlank, covid19 } =
     informationProgram
   return (
