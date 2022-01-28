@@ -8,7 +8,7 @@ import ArtistLinks from "./ArtistLinks"
 
 export default function ProgrampunktPage({ post }) {
   const { title, informationProgram, featuredImage, artistLinks } = post
-  const imageData = getImage(featuredImage.node.localFile)
+  const imageData = getImage(featuredImage?.node.localFile)
   const {
     youtubeKlipp,
     plats,
@@ -55,7 +55,7 @@ export default function ProgrampunktPage({ post }) {
             </div>
             <div className="program-information border-t-4 py-4 border-b-4 border-white">
               <div>{prices && <Priskategorier prices={prices} />}</div>
-              {typAvArrangemang.name && (
+              {typAvArrangemang?.name && (
                 <div className="font-heavy">
                   Typ av arrangemang:&nbsp;
                   <span className="font-normal"> {typAvArrangemang.name}</span>
