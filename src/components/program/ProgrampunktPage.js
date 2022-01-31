@@ -26,7 +26,7 @@ export default function ProgrampunktPage({ post }) {
   } = informationProgram
 
   const youTubeId = YoutubeHelper(youtubeKlipp)
-  console.log(artistLinks)
+
   return (
     <>
       <section className="grid md:grid-cols-2 gap-8 md:gap-16 md:py-16">

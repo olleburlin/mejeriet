@@ -6,7 +6,7 @@ import ProgrampunktPage from "../../components/program/ProgrampunktPage"
 
 export default function Programpunkt({ data }) {
   const post = data.wpProgrampunkt
-  console.table(post)
+
   return (
     <Layout>
       <SEO
