@@ -27,28 +27,29 @@ export default function ProgramPunktEvent({ post }) {
           <div className="h-full flex flex-col justify-center">
             <div className="flex flex-row">
               <div className="w-full md:w-3/4 md:border-r-4 pr-4 border-black border-dotted p-4 md:p-8">
-                <header className="flex flex-col md:space-y-2">
-                  <div className="flex flex-row items-center font-normal tracking-wide ">
-                    <div className="">
+                <header className="flex flex-col space-y-2">
+                  <span className=" font-normal tracking-wide ">
+                    <span className="">
                       <LongDate dateString={startdatum} />
-                    </div>
+                    </span>
                     {extraText && (
-                      <div className="">
+                      <span className="">
                         &nbsp;|&nbsp;
                         <span className=" uppercase text-brandorange">
                           {extraText}
                         </span>
-                      </div>
+                      </span>
                     )}
-                    {covid19.vaccinpass && (
-                      <div>
-                        {" "}
+                    {status !== "Aktivt" && (
+                      <span>
                         &nbsp;|&nbsp;
-                        <span className="uppercase">Vaccinpass krävs</span>
-                      </div>
+                        <span className="uppercase text-brandpink">
+                          {status}
+                        </span>
+                      </span>
                     )}
-                  </div>
-                  <h3 className="uppercase inline text-2xl md:text-3xl relative -top-2 ">
+                  </span>
+                  <h3 className="uppercase inline text-2xl md:text-3xl relative -top-2 pb-2">
                     <Link to={uri}>
                       <span className="border-b-4 md:border-b-4 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
                         {title}
