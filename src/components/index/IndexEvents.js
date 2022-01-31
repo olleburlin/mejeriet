@@ -103,7 +103,7 @@ export default function IndexEvents() {
           return <ProgramPageEvent key={post.id} post={post} />
         })}
       </div>
-      <div className="inline-block my-4 w-full md:w-auto">
+      <div className="inline-block my-6 w-full md:w-auto">
         <Link to="/program/">
           <button className="py-2 px-4 w-full bg-brandpurple   mx-auto text-white">
             Visa hela programmet &rarr;

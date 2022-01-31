@@ -29,12 +29,14 @@ export default function ProgramPunktEvent({ post }) {
               <div className="w-full md:w-3/4 md:border-r-4 pr-4 border-black border-dotted p-4 md:p-8">
                 <header className="flex flex-col space-y-2">
                   <span className=" font-normal tracking-wide ">
-                    <span className="">
+                    <div className="block md:inline">
                       <LongDate dateString={startdatum} />
-                    </span>
+                    </div>
                     {extraText && (
                       <span className="">
-                        &nbsp;|&nbsp;
+                        <span className="hidden md:inline-block">
+                          &nbsp;|&nbsp;
+                        </span>
                         <span className=" uppercase text-brandorange">
                           {extraText}
                         </span>
