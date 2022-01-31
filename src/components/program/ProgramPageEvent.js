@@ -45,7 +45,7 @@ export default function ProgramPunktEvent({ post }) {
                     {status !== "Aktivt" && (
                       <span>
                         {extraText && <span>&nbsp;|&nbsp;</span>}
-                        &nbsp;|&nbsp; text-brandpink">
+                        <span className="uppercase text-brandpink">
                           {status}
                         </span>
                       </span>
