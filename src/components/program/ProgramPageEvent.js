@@ -53,7 +53,7 @@ export default function ProgramPunktEvent({ post }) {
                     </div>
                   )}{" "}
                   {informationProgram.kortInfo && (
-                    <p className="font-normal tracking-wide leading-none">
+                    <p className="font-normal tracking-wide leading-tight">
                       {informationProgram.kortInfo}
                     </p>
                   )}
