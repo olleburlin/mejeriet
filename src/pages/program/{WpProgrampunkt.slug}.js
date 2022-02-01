@@ -47,6 +47,7 @@ export const query = graphql`
         biljettlank
         oppnar
         plats
+        status
         youtubeKlipp
         samarbetspartner {
           ... on WpSammarbetspartner {

@@ -19,6 +19,7 @@ export default function ProgrampunktPage({ post }) {
     langInfo,
     biljettlank,
     underrubrik,
+    status,
     extraText,
     typAvArrangemang,
     samarbetspartner,
@@ -41,11 +42,16 @@ export default function ProgrampunktPage({ post }) {
                   newDate="YYYY.MM.DD"
                 />
               </div>
-              {extraText && <div className="text-brandorange">{extraText}</div>}{" "}
             </header>
-
+            {status !== "Aktivt" && (
+              <span className="uppercase text-brandpink">{status}</span>
+            )}
+            {underrubrik && <div>{underrubrik}</div>}
+            {extraText && (
+              <div className="text-brandorange">{extraText}</div>
+            )}{" "}
             <div className="pb-2">
-              {biljettlank && (
+              {biljettlank && status !== "Inställt" && (
                 <Link to={biljettlank}>
                   <button className="bg-brandpurple text-white rounded-sm px-3 py-2">
                     Köp biljett

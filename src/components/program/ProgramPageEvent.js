@@ -29,10 +29,17 @@ export default function ProgramPunktEvent({ post }) {
               <div className="w-full md:w-3/4 md:border-r-4 pr-4 border-black border-dotted p-4 md:p-8">
                 <header className="flex flex-col space-y-2">
                   <span className=" font-normal tracking-wide ">
-                    <div className="block md:inline">
+                    <div className="inline">
                       <LongDate dateString={startdatum} />
                     </div>
-                    {extraText && (
+                    {/* {extraText ? (
+                      <span className=" uppercase text-brandorange">
+                        {extraText}
+                      </span>
+                    ) : (
+                      "|"
+                    )} */}
+                    {/* {extraText && (
                       <span className="">
                         <span className="hidden md:inline-block">
                           &nbsp;|&nbsp;
@@ -41,14 +48,14 @@ export default function ProgramPunktEvent({ post }) {
                           {extraText}
                         </span>
                       </span>
+                    )} */}
+                    {status !== "Aktivt" && status ? (
+                      <span>&nbsp;|&nbsp;</span>
+                    ) : (
+                      ""
                     )}
                     {status !== "Aktivt" && (
-                      <span>
-                        {extraText && <span>&nbsp;|&nbsp;</span>}
-                        <span className="uppercase text-brandpink">
-                          {status}
-                        </span>
-                      </span>
+                      <span className="uppercase text-brandpink">{status}</span>
                     )}
                   </span>
                   <h3 className="uppercase inline text-2xl md:text-3xl relative -top-2 pb-2">
