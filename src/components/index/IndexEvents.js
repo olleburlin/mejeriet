@@ -4,7 +4,6 @@ import Link from "../common/Link"
 import IndexEventFeatured from "./IndexEventFeatured"
 import ProgramPageEvent from "../program/ProgramPageEvent"
 
-import moment from "moment"
 export default function IndexEvents() {
   const data = useStaticQuery(graphql`
     query {
@@ -40,7 +39,7 @@ export default function IndexEvents() {
             status
             biljettlank
             underrubrik
-            extraText
+
             samarbetspartner {
               ... on WpSammarbetspartner {
                 id

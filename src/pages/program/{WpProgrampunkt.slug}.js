@@ -40,7 +40,7 @@ export const query = graphql`
       }
       informationProgram {
         borjar
-        extraText
+
         underrubrik
         kortInfo
         langInfo

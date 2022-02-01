@@ -20,7 +20,7 @@ export default function ProgrampunktPage({ post }) {
     biljettlank,
     underrubrik,
     status,
-    extraText,
+
     typAvArrangemang,
     samarbetspartner,
     covid19,
@@ -47,9 +47,7 @@ export default function ProgrampunktPage({ post }) {
               <span className="uppercase text-brandpink">{status}</span>
             )}
             {underrubrik && <div>{underrubrik}</div>}
-            {extraText && (
-              <div className="text-brandorange">{extraText}</div>
-            )}{" "}
+
             <div className="pb-2">
               {biljettlank && status !== "Inställt" && (
                 <Link to={biljettlank}>

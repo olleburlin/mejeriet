@@ -43,7 +43,7 @@ export default function ProgramPage() {
             covid19 {
               vaccinpass
             }
-            extraText
+
             samarbetspartner {
               ... on WpSammarbetspartner {
                 id
