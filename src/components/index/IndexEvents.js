@@ -75,7 +75,7 @@ export default function IndexEvents() {
                       gatsbyImageData(
                         placeholder: DOMINANT_COLOR
                         layout: CONSTRAINED
-                        aspectRatio: 1.8
+                        aspectRatio: 1.7
                       )
                     }
                   }
