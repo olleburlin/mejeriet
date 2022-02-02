@@ -3,15 +3,15 @@ import { graphql } from "gatsby"
 import SEO from "../../components/seo"
 import Layout from "../../components/layout"
 import ProgrampunktPage from "../../components/program/ProgrampunktPage"
-
+import { getLongDate } from "../../utils/getLongDate"
 export default function Programpunkt({ data }) {
   const post = data.wpProgrampunkt
-
+  const { startdatum } = data.wpProgrampunkt.informationProgram
   return (
     <Layout>
       <SEO
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title={post.title}
+        title={post.title + ", " + getLongDate(startdatum, "MMMM Do YYYY")}
       />
       <ProgrampunktPage post={post} />
     </Layout>
