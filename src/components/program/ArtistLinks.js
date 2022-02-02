@@ -7,23 +7,43 @@ export default function ArtistLinks({ artistLinks }) {
   return (
     <div className="flex md:flex-row space-x-4">
       {urlHomepage && (
-        <div className="  decoration-brandorange decoration-2 underline">
-          <Link to={urlHomepage}>Hemsida</Link>
+        <div>
+          <Link
+            to={urlHomepage}
+            className="decoration-brandorange decoration-2 underline"
+          >
+            Hemsida
+          </Link>
         </div>
       )}
       {urlSpotify && (
-        <div className="  decoration-brandorange decoration-2 underline">
-          <Link to={urlSpotify}>Spotify</Link>
+        <div>
+          <Link
+            to={urlSpotify}
+            className="decoration-brandorange decoration-2 underline"
+          >
+            Spotify
+          </Link>
         </div>
       )}
       {urlFacebook && (
-        <div className="  decoration-brandorange decoration-2 underline">
-          <Link to={urlFacebook}>Facebook</Link>
+        <div>
+          <Link
+            to={urlFacebook}
+            className="decoration-brandorange decoration-2 underline"
+          >
+            Facebook
+          </Link>
         </div>
       )}
       {urlFacebookevent && (
-        <div className="  decoration-brandorange decoration-2 underline">
-          <Link to={urlFacebookevent}>Facebookevent </Link>
+        <div>
+          <Link
+            to={urlFacebookevent}
+            className="decoration-brandorange decoration-2 underline"
+          >
+            Facebookevent{" "}
+          </Link>
         </div>
       )}
     </div>
