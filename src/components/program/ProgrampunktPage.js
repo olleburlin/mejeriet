@@ -130,7 +130,7 @@ export default function ProgrampunktPage({ post }) {
       <section>
         {" "}
         {covid19.vaccinpass && (
-          <div className="w-full md:w-1/2 italic text-sm border-t-4 border-white mt-4 mb-8">
+          <div className="w-full md:w-1/2 italic text-sm border-t-4 border-white py-8">
             <div className="space-y-4">
               <p>
                 Den 1 december 2021 verkställs Folkhälsomyndighetens krav på
