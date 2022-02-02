@@ -46,9 +46,9 @@ function Biljett({ post }) {
   const { status, biljettlank, startdatum } = informationProgram
   return (
     <div className="text-sm md:text-base flex flex-row justify-between items-center bg-white  uppercase text-black ">
-      <div className="flex flex-row items-center space-x-4  p-4 w-full">
+      <div className="flex flex-row items-baseline space-x-4  p-4 w-full">
         <div className=" text-brandorange ">{startdatum}</div>
-        <div className="flex-1 font-heavy ">{title}</div>
+        <div className="flex-1 font-heavy md:text-xl">{title}</div>
         <div>
           {" "}
           {status !== "Aktivt" && (
