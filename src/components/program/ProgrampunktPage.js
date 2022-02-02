@@ -115,7 +115,7 @@ export default function ProgrampunktPage({ post }) {
             {youTubeId && (
               <div className=" embed-container">
                 <iframe
-                  src={"https://www.youtube.com/embed//" + youTubeId}
+                  src={"https://www.youtube.com/embed/" + youTubeId}
                   frameborder="0"
                   allowfullscreen
                 ></iframe>
