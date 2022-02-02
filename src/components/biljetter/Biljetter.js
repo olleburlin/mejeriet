@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-
+import { getCurrentDate } from "../../utils/getCurrentDate"
 export default function Biljetter() {
   const data = useStaticQuery(graphql`
     {
@@ -12,6 +12,7 @@ export default function Biljetter() {
           id
           informationProgram {
             startdatum
+            status
           }
         }
       }
@@ -27,9 +28,13 @@ export default function Biljetter() {
           </a>
         </button>
       </div>
-      {posts.map(post => {
-        return <Biljett key={post.id} post={post} />
-      })}
+      <div className="divide-y-8 divide-black">
+        {posts
+          .filter(post => post.informationProgram.startdatum > getCurrentDate())
+          .map(post => {
+            return <Biljett key={post.id} post={post} />
+          })}
+      </div>
     </div>
   )
 }
@@ -37,13 +42,23 @@ export default function Biljetter() {
 function Biljett({ post }) {
   const { title, informationProgram } = post
   return (
-    <div className="text-base flex flex-row justify-between items-center space-x-4 p-2  uppercase bg-white text-black border-b border-black">
-      <div className="flex-none text-brandorange ">
-        {informationProgram.startdatum}
+    <div className="text-base flex flex-row justify-between items-center bg-white  uppercase text-black ">
+      <div className="flex flex-row space-x-4  p-4 w-full">
+        <div className=" text-brandorange ">
+          {informationProgram.startdatum}
+        </div>
+        <div className="flex-1 font-heavy ">{title}</div>
+        <div>
+          {" "}
+          {informationProgram.status !== "Aktivt" && (
+            <span className="uppercase text-brandpink">
+              {informationProgram.status}
+            </span>
+          )}{" "}
+        </div>
       </div>
 
-      <div className="flex-1 font-heavy ">{title}</div>
-      <div className="flex-none ">
+      <div className="flex-none  p-4 border-l-4 border-black border-dotted">
         {" "}
         <button className="bg-brandpurple text-white py-1 px-2 text-sm rounded-sm">
           Köp biljett

@@ -63,7 +63,7 @@ button {
 .form input[type="email"],
 .form input[type="date"],
 .form textarea {
-  @apply w-full p-4 text-black;
+  @apply w-full p-2 text-black;
 }
 .form input {
   @apply block mt-2;
@@ -161,4 +161,38 @@ p a {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.form.markethype div {
+  @apply mb-0;
+}
+.mhForm__control {
+  @apply w-full;
+}
+.form.markethype .mhForm {
+  @apply grid grid-cols-1 md:grid-cols-2 md:gap-4 max-w-2xl;
+}
+div.mhForm__control--text {
+  @apply col-span-2 md:col-span-1 w-full;
+}
+.mhForm__control.mhForm__control--checkbox {
+  @apply col-span-2;
+}
+.mhForm__control.mhForm__control--checkbox label {
+  @apply space-x-2 flex flex-row items-center text-xs;
+}
+
+.mhForm__checkboxLabel {
+  @apply pt-[5px];
+}
+.mhForm__validationError {
+  @apply col-span-2 w-full text-xs text-brandorange pt-2;
+}
+
+button.mhForm__button {
+  @apply bg-brandorange;
+}
+
+.mhForm__success {
+  @apply col-span-2 text-xs text-brandteal;
 }

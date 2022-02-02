@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Link from "../common/Link"
 import IndexEventFeatured from "./IndexEventFeatured"
 import ProgramPageEvent from "../program/ProgramPageEvent"
-
+import { getCurrentDate } from "../../utils/getCurrentDate"
 export default function IndexEvents() {
   const data = useStaticQuery(graphql`
     query {
@@ -98,9 +98,11 @@ export default function IndexEvents() {
       </div>
 
       <div className="grid gap-4 md:gap-6">
-        {posts.map(post => {
-          return <ProgramPageEvent key={post.id} post={post} />
-        })}
+        {posts
+          .filter(post => post.informationProgram.startdatum > getCurrentDate())
+          .map(post => {
+            return <ProgramPageEvent key={post.id} post={post} />
+          })}
       </div>
       <div className="inline-block my-6 w-full md:w-auto">
         <Link to="/program/">

@@ -83,82 +83,100 @@ export default function HyraMejeriet() {
           isSubmitting,
         }) => (
           <form className="form" onSubmit={handleSubmit}>
-            <div>
-              <Label htmlFor="yourName">
-                För- och efternamn<span className="text-brandorange">*</span>
-                <Input
-                  type="text"
-                  name="yourName"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.yourName}
-                />
-                {errors.yourName && touched.yourName ? (
-                  <div>{errors.yourName}</div>
-                ) : null}
-              </Label>
+            <div className="md:grid md:grid-cols-2 md:gap-4">
+              <div>
+                <Label htmlFor="yourName">
+                  För- och efternamn<span className="text-brandorange">*</span>
+                  <Input
+                    type="text"
+                    name="yourName"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.yourName}
+                  />
+                  {errors.yourName && touched.yourName ? (
+                    <div>{errors.yourName}</div>
+                  ) : null}
+                </Label>
+              </div>
+              <div>
+                <label htmlFor="email">
+                  E-post<span className="text-brandorange">*</span>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                  />
+                  {errors.email && touched.email ? (
+                    <div>{errors.email}</div>
+                  ) : null}
+                </label>
+              </div>
+              <div>
+                <label htmlFor="organisation">
+                  Organisation
+                  <input
+                    type="text"
+                    name="organisation"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.organisation}
+                  />
+                  {errors.organisation && touched.organisation ? (
+                    <div>{errors.organisation}</div>
+                  ) : null}
+                </label>
+              </div>
+              <div>
+                <label htmlFor="telefon">
+                  Telefon
+                  <input
+                    type="text"
+                    name="telefon"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.telefon}
+                  />
+                  {errors.telefon && touched.telefon ? (
+                    <div>{errors.telefon}</div>
+                  ) : null}
+                </label>
+              </div>
+              <div>
+                <label htmlFor="guests">
+                  Antal deltagare<span className="text-brandorange">*</span>
+                  <input
+                    type="text"
+                    name="guests"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.guests}
+                  />
+                  {errors.guests && touched.guests ? (
+                    <div>{errors.guests}</div>
+                  ) : null}
+                </label>
+              </div>
+              <div>
+                <label htmlFor="eventDate">
+                  Önskat datum<span className="text-brandorange">*</span>
+                  <input
+                    type="date"
+                    name="eventDate"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.eventDate}
+                  />
+                  {errors.eventDate && touched.eventDate ? (
+                    <div>{errors.eventDate}</div>
+                  ) : null}
+                </label>
+              </div>
             </div>
-            <div>
-              <label htmlFor="email">
-                E-post<span className="text-brandorange">*</span>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                />
-                {errors.email && touched.email ? (
-                  <div>{errors.email}</div>
-                ) : null}
-              </label>
-            </div>
-            <div>
-              <label htmlFor="organisation">
-                Organisation<span className="text-brandorange">*</span>
-                <input
-                  type="text"
-                  name="organisation"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.organisation}
-                />
-                {errors.organisation && touched.organisation ? (
-                  <div>{errors.organisation}</div>
-                ) : null}
-              </label>
-            </div>
-            <div>
-              <label htmlFor="telefon">
-                Telefon
-                <input
-                  type="text"
-                  name="telefon"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.telefon}
-                />
-                {errors.telefon && touched.telefon ? (
-                  <div>{errors.telefon}</div>
-                ) : null}
-              </label>
-            </div>
-            <div>
-              <label htmlFor="eventDate">
-                Önskat datum<span className="text-brandorange">*</span>
-                <input
-                  type="date"
-                  name="eventDate"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.eventDate}
-                />
-                {errors.eventDate && touched.eventDate ? (
-                  <div>{errors.eventDate}</div>
-                ) : null}
-              </label>
-            </div>
+
             <div>
               <label htmlFor="eventDateExtra">
                 Önskar du hyra fler datum, vänligen specificera nedan
@@ -173,21 +191,7 @@ export default function HyraMejeriet() {
                 ) : null}
               </label>
             </div>
-            <div>
-              <label htmlFor="guests">
-                Antal deltagare<span className="text-brandorange">*</span>
-                <input
-                  type="text"
-                  name="guests"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.guests}
-                />
-                {errors.guests && touched.guests ? (
-                  <div>{errors.guests}</div>
-                ) : null}
-              </label>
-            </div>
+
             <div>
               <label htmlFor="catering">
                 Önskemål om catering
