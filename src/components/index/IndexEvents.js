@@ -19,11 +19,7 @@ export default function IndexEvents() {
             node {
               localFile {
                 childImageSharp {
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    aspectRatio: 1.6
-                    width: 500
-                  )
+                  gatsbyImageData(placeholder: BLURRED, aspectRatio: 1.7)
                 }
               }
             }
@@ -87,14 +83,15 @@ export default function IndexEvents() {
       }
     }
   `)
-  const posts = data.allEvents.nodes
+  let posts = data.allEvents.nodes
 
-  const featuredPosts = data.featuredEvents
+  let featuredPosts = data.featuredEvents.missaInte.programmpunkt
+
   console.log(featuredPosts)
   return (
     <div className="mb-8">
       <div className="hidden md:block">
-        <IndexEventFeatured posts={featuredPosts} />
+        <IndexEventFeatured featuredPosts={featuredPosts} posts={posts} />
       </div>
 
       <div className="grid gap-4 md:gap-6">

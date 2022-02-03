@@ -24,7 +24,7 @@ export default function FeaturedEvent({ event }) {
                 <div className=""></div>
                 <div className="relative w-full bg-gradient-to-t from-black to-transparent">
                   <div className="relative space-y-2 p-2 md:p-4">
-                    <div className="text-base md:text-xl ">
+                    <div className="text-base md:text-xl font-bold">
                       <LongDate dateString={informationProgram.startdatum} />
                     </div>{" "}
                     <h2 className="uppercase text-xl md:text-6xl relative">

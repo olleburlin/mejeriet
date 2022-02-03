@@ -4,8 +4,9 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Slider from "react-slick"
 import FeaturedEvent from "../program/FeaturedEvent"
+import { getCurrentDate } from "../../utils/getCurrentDate"
 
-export default function IndexEventFeatured({ posts }) {
+export default function IndexEventFeatured({ posts, featuredPosts }) {
   const settings = {
     dots: false,
     fade: true,
@@ -17,13 +18,19 @@ export default function IndexEventFeatured({ posts }) {
     slidesToScroll: 1,
     arrows: false,
   }
+  console.log(featuredPosts?.length)
 
-  const featuredEvents = posts.missaInte.programmpunkt
-  console.log(featuredEvents)
+  let array =
+    featuredPosts?.length > 0
+      ? featuredPosts
+      : posts
+          .filter(post => post.informationProgram.startdatum > getCurrentDate())
+          .slice(0, 3)
+  console.log(array)
   return (
     <div className="relative flex flex-col w-full bg-black mb-4 md:mb-6 text-white">
       <Slider {...settings}>
-        {featuredEvents.map(event => {
+        {array.map(event => {
           return <FeaturedEvent key={event.id} event={event} />
         })}
       </Slider>
