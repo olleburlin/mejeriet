@@ -81,7 +81,7 @@ export default function ProgramPage() {
     { id: 6, name: "Konsert", slug: "konsert" },
   ]
   const [selected, setSelected] = useState(people[0])
-  console.log(selected)
+
   return (
     <div>
       <section className="flex flex-col mb-8 ">

@@ -11,7 +11,7 @@ export default function PersonalKategorier({ personalKategorier }) {
       {personalKategorier.map(kategori => {
         return (
           <>
-            <Disclosure as="div" className=" space-y-4 ">
+            <Disclosure as="div" className=" ">
               {({ open }) => (
                 <>
                   <Disclosure.Button className="flex flex-row items-center justify-between w-full bg-brandpurple text-white  px-4 py-2 hover:bg-opacity-80">
@@ -23,9 +23,11 @@ export default function PersonalKategorier({ personalKategorier }) {
                     />
                   </Disclosure.Button>
                   <Disclosure.Panel>
-                    <div
-                      dangerouslySetInnerHTML={{ __html: kategori.innehall }}
-                    />
+                    <div className="bg-brandpurple/25 p-4">
+                      <div
+                        dangerouslySetInnerHTML={{ __html: kategori.innehall }}
+                      />
+                    </div>
                   </Disclosure.Panel>
                 </>
               )}
