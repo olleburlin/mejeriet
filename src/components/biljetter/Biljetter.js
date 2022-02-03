@@ -47,11 +47,11 @@ function Biljett({ post }) {
   const { status, biljettlank, startdatum } = informationProgram
   return (
     <div className="text-sm md:text-base flex flex-row justify-between items-center bg-white  uppercase text-black ">
-      <div className="flex flex-row items-baseline space-x-4  p-4 w-full">
+      <div className="flex flex-col md:flex-row md:items-baseline space-y-1 md:space-y-0 md:space-x-4 px-2 py-1 md:px-4 md:py-2 w-full">
         <div className=" ">{startdatum}</div>
         <div className="flex-1 font-heavy md:text-xl">
           <Link to={uri} title={title}>
-            <span className="border-b-4 md:border-b-4 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
+            <span className="border-b-2 relative -top-[2px] md:-top-0  md:border-b-4 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all ">
               {title}
             </span>
           </Link>
@@ -66,19 +66,19 @@ function Biljett({ post }) {
         </div>
       </div>
 
-      <div className="  px-4 py-2 border-l-4 border-black border-dotted">
+      <div className=" px-2 py-1 md:px-4 md:py-2 border-l-4 border-black border-dotted">
         {" "}
         {biljettlank && status !== "Inställt" ? (
           <div className="py-1">
             <Link to={biljettlank}>
-              <button className="whitespace-nowrap bg-brandpurple text-white rounded-sm px-3 py-2">
+              <button className="whitespace-nowrap bg-brandpurple text-white  text-xs md:text-sm rounded-sm px-3 py-2">
                 Köp biljett
               </button>
             </Link>
           </div>
         ) : (
           <div className="py-1">
-            <button className="whitespace-nowrap cursor-not-allowed bg-brandpurple bg-opacity-30 text-white rounded-sm px-3 py-2">
+            <button className="whitespace-nowrap cursor-not-allowed bg-brandpurple bg-opacity-30 text-white text-xs md:text-sm  rounded-sm px-3 py-2">
               Köp biljett
             </button>
           </div>
