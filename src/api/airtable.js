@@ -21,7 +21,7 @@ const handler = (req, res) => {
       return res.status(500).json({ error: "There isn't any data." })
     }
 
-    db("Submissions").create(
+    db("Mejeriet").create(
       [
         {
           fields: {
