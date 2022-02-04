@@ -12,7 +12,7 @@ export default function AirtablePage() {
           >
             Name:
           </label>
-          <input type="text" name="name" id="name" />
+          <input name="name" id="name" />
         </div>
         <div style={{ marginBottom: `8px` }}>
           <label

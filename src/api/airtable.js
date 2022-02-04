@@ -7,7 +7,7 @@ Airtable.configure({
 })
 
 // Your Table ID from Airtable
-const db = Airtable.base("appboZGVej51EeCZ1")
+const db = Airtable.base("appyAa5uJszIRfvMU")
 
 const handler = (req, res) => {
   try {
@@ -27,7 +27,13 @@ const handler = (req, res) => {
           fields: {
             Name: data.name,
             Email: data.email,
-            Message: data.message,
+            Guardian: data.guardian,
+            GuardianEmail: data.guardianemail,
+            Telephone: data.telephone,
+            Address: data.address,
+            Instrument: data.instrument,
+            BirthYear: data.birthyear,
+            ExtraInfo: data.extrainfo,
           },
         },
       ],

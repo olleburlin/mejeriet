@@ -76,9 +76,9 @@ export default function ProgramPage() {
     { id: 1, name: "Visa allt", slug: "visa-allt" },
     { id: 2, name: "Bar", slug: "bar" },
 
-    { id: 4, name: "Humor/Scen", slug: "humor" },
-    { id: 5, name: "Klubb", slug: "klubb" },
-    { id: 6, name: "Konsert", slug: "konsert" },
+    { id: 3, name: "Humor/Scen", slug: "humor" },
+    { id: 4, name: "Klubb", slug: "klubb" },
+    { id: 5, name: "Konsert", slug: "konsert" },
   ]
   const [selected, setSelected] = useState(people[0])
 
@@ -98,8 +98,8 @@ export default function ProgramPage() {
                         selected.slug &&
                       post.informationProgram.startdatum > getCurrentDate()
                   )
-                  .map(post => {
-                    return <ProgramPageEvent key={post.id} post={post} />
+                  .map((post, i, posts) => {
+                    return <ProgramPageEvent key={i} post={post} />
                   })}
           </>
         </div>

@@ -1,5 +1,6 @@
 import React from "react"
 import HyraMejeriet from "../forms/HyraMejeriet"
+import Musikskolan from "../forms/Musikskolan"
 import FeaturedImage from "./FeaturedImage"
 import PageHeader from "./PageHeader"
 import PersonalKategorier from "./PersonalKategorier"
@@ -40,6 +41,7 @@ export default function SinglePage({ data }) {
           </div>
         )}
         {databaseId === 9148 && <HyraMejeriet />}
+        {databaseId === 9146 && <Musikskolan />}
       </div>
     </div>
   )
