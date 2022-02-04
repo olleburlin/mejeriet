@@ -35,7 +35,9 @@ export default function IndexEvents() {
             status
             biljettlank
             underrubrik
-
+            genre {
+              name
+            }
             samarbetspartner {
               ... on WpSammarbetspartner {
                 id

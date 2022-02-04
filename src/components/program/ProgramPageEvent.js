@@ -6,12 +6,14 @@ import LongDate from "../common/LongDate"
 export default function ProgramPunktEvent({ post }) {
   const { title, informationProgram, featuredImage, uri } = post
   const imageData = getImage(featuredImage?.node.localFile)
-  const { startdatum, status, underrubrik, biljettlank } = informationProgram
+  const { genre, startdatum, status, underrubrik, biljettlank } =
+    informationProgram
+
   return (
     <div className="">
       <div className="flex flex-col md:flex-row justify-between">
         {/* Left */}
-        <div className=" w-full md:w-4/12 ">
+        <div className=" w-full md:w-4/12 relative">
           <Link to={uri}>
             <GatsbyImage
               image={imageData}
@@ -19,13 +21,20 @@ export default function ProgramPunktEvent({ post }) {
               className=" dark:mix-blend-normal h-full w-full"
             />{" "}
           </Link>
+          {genre && (
+            <div className="absolute top-0 right-0 w-full flex justify-start z-20">
+              <div className="bg-brandorange text-white px-2 py-1 text-xs  uppercase tracking-wider">
+                {genre?.name}
+              </div>
+            </div>
+          )}
         </div>
         {/* Right */}
 
         <div className="w-full text-base leading-relaxed bg-white text-black flex-grow ">
           <div className=" h-full flex flex-col justify-center ">
             <div className="flex flex-row flex-grow ">
-              <div className="flex flex-col justify-center w-full md:w-3/4 md:border-r-4 pr-4 border-black border-dotted p-4 md:p-8 ">
+              <div className="relative flex flex-col justify-center w-full md:w-3/4 md:border-r-4 pr-4 border-black border-dotted p-4 md:p-8 ">
                 <div className="space-y-2">
                   <header className="font-normal tracking-wide leading-none">
                     <div className="inline">
