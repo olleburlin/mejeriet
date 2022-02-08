@@ -15,18 +15,18 @@ export default function Musikskolan() {
               style={{ display: `block`, marginBottom: `4px` }}
               htmlFor="name"
             >
-              För- och efternamn:
+              För- och efternamn*
             </label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" required />
           </div>
           <div>
             <label
               style={{ display: `block`, marginBottom: `4px` }}
               htmlFor="email"
             >
-              Email:
+              Email*
             </label>
-            <input name="email" id="email" type="email" />
+            <input name="email" id="email" type="email" required />
           </div>
           <div>
             <label

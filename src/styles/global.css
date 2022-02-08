@@ -196,3 +196,7 @@ button.mhForm__button {
 .mhForm__success {
   @apply col-span-2 text-xs text-brandteal mb-8;
 }
+
+.gatsby-image-fix {
+  transform: scale(1.01);
+}

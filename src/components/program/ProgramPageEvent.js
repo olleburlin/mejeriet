@@ -13,24 +13,14 @@ export default function ProgramPunktEvent({ post }) {
     <div className="">
       <div className="flex flex-col md:flex-row justify-between">
         {/* Left */}
-        <div className=" w-full md:w-4/12 relative">
-          <Link to={uri}>
+        <div className=" w-full md:w-4/12 relative overflow-hidden">
+          <Link to={uri} title={title} className="h-full">
             <GatsbyImage
               image={imageData}
               alt={title}
-              className=" dark:mix-blend-normal h-full w-full"
+              className=" dark:mix-blend-normal h-full w-full gatsby-image-fix"
             />{" "}
           </Link>
-          {genre && (
-            <div
-              style={{ translate: "(-100%, 0)" }}
-              className="hidden absolute left-0  justify-center bg-yellow-100 origin-top-left  -rotate-90   z-20 "
-            >
-              <div className="bg-brandorange  text-white px-2 py-1 text-xs  uppercase tracking-wider bg-opacity-80">
-                {genre?.name}
-              </div>
-            </div>
-          )}
         </div>
         {/* Right */}
 
