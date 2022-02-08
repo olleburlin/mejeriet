@@ -6,7 +6,6 @@ export default function TackPage() {
     <Layout>
       <div className="min-h-screen text-center flex flex-col justify-center items-center -mt-32 space-y-4">
         <h1 className="text-3xl md:text-5xl">Tack!</h1>
-        <p>Tack för att du vill följa oss!</p>
       </div>
     </Layout>
   )

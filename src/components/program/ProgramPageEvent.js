@@ -24,7 +24,7 @@ export default function ProgramPunktEvent({ post }) {
           {genre && (
             <div
               style={{ translate: "(-100%, 0)" }}
-              className="absolute left-0  flex justify-center bg-yellow-100 origin-top-left  -rotate-90   z-20 "
+              className="hidden absolute left-0  justify-center bg-yellow-100 origin-top-left  -rotate-90   z-20 "
             >
               <div className="bg-brandorange  text-white px-2 py-1 text-xs  uppercase tracking-wider bg-opacity-80">
                 {genre?.name}

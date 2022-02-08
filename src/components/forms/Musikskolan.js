@@ -4,60 +4,66 @@ export default function Musikskolan() {
   return (
     <div>
       {" "}
-      <form action="/api/airtable" method="POST" className="form">
-        <div>
-          <label
-            style={{ display: `block`, marginBottom: `4px` }}
-            htmlFor="name"
-          >
-            För- och efternamn:
-          </label>
-          <input type="text" name="name" id="name" />
-        </div>
-        <div>
-          <label
-            style={{ display: `block`, marginBottom: `4px` }}
-            htmlFor="email"
-          >
-            Email:
-          </label>
-          <input name="email" id="email" type="email" />
-        </div>
-        <div>
-          <label
-            style={{ display: `block`, marginBottom: `4px` }}
-            htmlFor="guardian"
-          >
-            Målsman:
-          </label>
-          <input type="text" name="guardian" id="name" />
-        </div>
-        <div>
-          <label
-            style={{ display: `block`, marginBottom: `4px` }}
-            htmlFor="guardianemail"
-          >
-            Målsmans email:
-          </label>
-          <input name="guardianemail" id="guardianemail" type="email" />
-        </div>
-        <div>
-          <label
-            style={{ display: `block`, marginBottom: `4px` }}
-            htmlFor="telephone"
-          >
-            Telefon:
-          </label>
-          <input type="text" name="telephone" id="telephone" />
-        </div>
-        <div>
-          <label
-            style={{ display: `block`, marginBottom: `4px` }}
-            htmlFor="instrument"
-          >
-            Instrument:
-          </label>
-          <input type="text" name="instrument" id="instrument" />
+      <form
+        action="https://getform.io/f/f9705e64-63b4-4262-aabb-829fc6ec511c"
+        method="POST"
+        className="form"
+      >
+        <div className="md:grid md:grid-cols-2 md:gap-4">
+          <div>
+            <label
+              style={{ display: `block`, marginBottom: `4px` }}
+              htmlFor="name"
+            >
+              För- och efternamn:
+            </label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div>
+            <label
+              style={{ display: `block`, marginBottom: `4px` }}
+              htmlFor="email"
+            >
+              Email:
+            </label>
+            <input name="email" id="email" type="email" />
+          </div>
+          <div>
+            <label
+              style={{ display: `block`, marginBottom: `4px` }}
+              htmlFor="guardian"
+            >
+              Målsman:
+            </label>
+            <input type="text" name="guardian" id="name" />
+          </div>
+          <div>
+            <label
+              style={{ display: `block`, marginBottom: `4px` }}
+              htmlFor="guardianemail"
+            >
+              Målsmans email:
+            </label>
+            <input name="guardianemail" id="guardianemail" type="email" />
+          </div>
+          <div>
+            <label
+              style={{ display: `block`, marginBottom: `4px` }}
+              htmlFor="telephone"
+            >
+              Telefon:
+            </label>
+            <input type="text" name="telephone" id="telephone" />
+          </div>
+          <div>
+            <label
+              style={{ display: `block`, marginBottom: `4px` }}
+              htmlFor="instrument"
+            >
+              Instrument:
+            </label>
+            <input type="text" name="instrument" id="instrument" />
+          </div>
         </div>
         <div>
           <label
@@ -88,7 +94,7 @@ export default function Musikskolan() {
           <textarea name="extrainfo" id="extrainfo" />
         </div>
         <div>
-          <button>Submit new person</button>
+          <button>Skicka in</button>
         </div>
       </form>
     </div>
