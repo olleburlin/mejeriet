@@ -13,7 +13,7 @@ export default function ProgramPunktEvent({ post }) {
     <div className="">
       <div className="flex flex-col md:flex-row justify-between">
         {/* Left */}
-        <div className=" w-full md:w-4/12 relative overflow-hidden">
+        <div className=" w-full md:w-6/12 relative overflow-hidden">
           <Link to={uri} title={title} className="h-full">
             <GatsbyImage
               image={imageData}

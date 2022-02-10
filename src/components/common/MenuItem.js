@@ -39,7 +39,10 @@ export default function MenuItem({ menuItem }) {
   return (
     <div className="whitespace-nowrap">
       {menuItem.children.length === 0 ? (
-        <Link className=" px-4 h-full inline-block" to={menuItem.url}>
+        <Link
+          className=" px-4 h-full inline-block hover:text-brandorange transition-all"
+          to={menuItem.url}
+        >
           {menuItem.label}
         </Link>
       ) : (
@@ -56,8 +59,8 @@ export default function MenuItem({ menuItem }) {
             <Menu.Button as="a">
               <div
                 className={`${
-                  show ? "bg-brandpurple dark:bg-gray-900" : ""
-                } cursor-pointer py-6 px-4 hover:bg-third flex flex-row items-center`}
+                  show ? "bg-brandorange/90 dark:bg-gray-900" : ""
+                } cursor-pointer py-6 px-4   flex flex-row items-center`}
               >
                 <div>{menuItem.label}</div>
                 <div className="w-6">
@@ -73,7 +76,7 @@ export default function MenuItem({ menuItem }) {
                 onMouseEnter={onMouseEnterMenu}
                 onMouseLeave={onMouseLeaveMenu}
                 static
-                className="bg-brandpurple  px-2 sm:px-0 z-40 absolute right-0  origin-top-right "
+                className="bg-brandorange/90  px-2 sm:px-0 z-40 absolute right-0  origin-top-right "
               >
                 <div className="pr-24">
                   <div className="relative z-30  bg-third pt-12 pb-8 px-8 ">

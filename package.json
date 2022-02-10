@@ -17,7 +17,7 @@
     "deepmerge": "^4.2.2",
     "fade-carousel": "^1.1.4",
     "formik": "^2.2.9",
-    "gatsby": "^4.0.2",
+    "gatsby": "^4.7.1",
     "gatsby-plugin-emotion": "^7.5.0",
     "gatsby-plugin-gatsby-cloud": "^4.0.0",
     "gatsby-plugin-image": "^2.0.0",

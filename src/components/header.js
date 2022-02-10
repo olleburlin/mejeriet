@@ -53,23 +53,22 @@ function Header() {
       <div className="bg-black py-6 md:py-8">
         <header id="top-header">
           <div className="  relative flex flex-wrap items-center justify-between max-w-screen-xl px-4 md:px-8 mx-auto">
-            <div className="flex flex-row items-center md:justify-between md:w-full">
+            <div className="flex flex-row items-center md:justify-between lg:w-full">
               <div id="logo" className=" mr-4">
                 <Link to="/">
                   <Logo color="" />
                 </Link>
               </div>
-              <div className="hidden md:flex flex-row items-center">
+              <div className="hidden lg:flex flex-row items-center">
                 <nav className="text-base xl:text-xl lg:text-lg flex flex-row items-center font-bold uppercase ">
                   {desktopMenu.map(menuItem => {
                     return <MenuItem key={menuItem.label} menuItem={menuItem} />
                   })}
                 </nav>
-                <SocialIcons fill="#ffffff" />
               </div>
             </div>
             <div className="flex flex-row items-center space-x-4 ">
-              <div className=" inline-block md:hidden z-50">
+              <div className=" inline-block lg:hidden z-50">
                 <Hamburger
                   toggled={isExpanded}
                   toggle={toggleExpansion}

@@ -14,7 +14,7 @@ function SocialLinks({ fill }) {
           },
         ].map(link => (
           <SocialIcon
-            className="block text-white md:inline-block w-2"
+            className="block text-white lg:inline-block w-2"
             key={link.title}
             url={link.url}
             network={link.network}
