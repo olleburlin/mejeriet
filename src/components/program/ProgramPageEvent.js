@@ -13,7 +13,7 @@ export default function ProgramPunktEvent({ post }) {
     <div className="">
       <div className="flex flex-col md:flex-row justify-between">
         {/* Left */}
-        <div className=" w-full md:w-6/12 relative overflow-hidden">
+        <div className="flex-none w-full md:w-4/12 relative overflow-hidden">
           <Link to={uri} title={title} className="h-full">
             <GatsbyImage
               image={imageData}
@@ -24,10 +24,10 @@ export default function ProgramPunktEvent({ post }) {
         </div>
         {/* Right */}
 
-        <div className="w-full text-base leading-relaxed bg-white text-black flex-grow ">
+        <div className=" text-base leading-relaxed bg-white text-black flex-grow ">
           <div className=" h-full flex flex-col justify-center ">
             <div className="flex flex-row flex-grow ">
-              <div className="relative flex flex-col justify-center w-full md:w-3/4 md:border-r-4 pr-4 border-black border-dotted p-4 md:p-8 ">
+              <div className="relative flex flex-col justify-center w-full md:w-3/4 md:border-r-4 pr-4 border-black border-dotted px-4 py-4 md:px-8 ">
                 <div className="space-y-2">
                   <header className="font-normal tracking-wide leading-none">
                     <div className="inline">
@@ -61,12 +61,12 @@ export default function ProgramPunktEvent({ post }) {
                   )}
                 </div>
               </div>
-              <div className="hidden flex-1 md:flex flex-col justify-center items-center text-center">
+              <div className="hidden flex-1 md:flex flex-col justify-center items-center text-center px-4">
                 <div className="">
                   <div className="">
                     {" "}
                     <Link to={biljettlank}>
-                      <button className="uppercase  bg-brandpurple   text-white py-2 px-3">
+                      <button className="uppercase  bg-brandpurple whitespace-nowrap  text-white py-2 px-3">
                         Köp biljett
                       </button>
                     </Link>

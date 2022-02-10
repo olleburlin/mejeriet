@@ -59,7 +59,7 @@ export default function MenuItem({ menuItem }) {
             <Menu.Button as="a">
               <div
                 className={`${
-                  show ? "bg-brandorange/90 dark:bg-gray-900" : ""
+                  show ? "bg-brandorange/95 dark:bg-gray-900" : ""
                 } cursor-pointer py-6 px-4   flex flex-row items-center`}
               >
                 <div>{menuItem.label}</div>
@@ -76,7 +76,7 @@ export default function MenuItem({ menuItem }) {
                 onMouseEnter={onMouseEnterMenu}
                 onMouseLeave={onMouseLeaveMenu}
                 static
-                className="bg-brandorange/90  px-2 sm:px-0 z-40 absolute right-0  origin-top-right "
+                className="bg-brandorange/95  px-2 sm:px-0 z-40 absolute right-0  origin-top-right "
               >
                 <div className="pr-24">
                   <div className="relative z-30  bg-third pt-12 pb-8 px-8 ">
