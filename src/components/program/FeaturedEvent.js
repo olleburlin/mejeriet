@@ -30,7 +30,7 @@ export default function FeaturedEvent({ event }) {
                     <h2 className="uppercase text-xl md:text-6xl relative">
                       {title}
                     </h2>
-                    <p className="text-base md:text-xl  md:w-10/12">
+                    <p className="hidden md:block text-base md:text-xl  md:w-10/12">
                       {informationProgram.kortInfo}
                     </p>
                   </div>
