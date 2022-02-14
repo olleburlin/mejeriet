@@ -12,7 +12,8 @@ function IndexPage() {
     <Layout>
       <SEO
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title="Hem"
+        title="Mejeriet – Konserter, Stand up och Bio i Lund"
+        isHome
       />
       <div className="flex flex-col">
         <section className="flex-1">
