@@ -123,7 +123,7 @@ export default function ProgrampunktPage({ post }) {
         </div>
 
         {/* Secondary column */}
-        <div className="flex-1  bg-white text-black mb-4 md:mb-8">
+        <div className="flex-1  bg-white text-black mb-8">
           <div className="w-full hidden md:block">
             <GatsbyImage image={imageData} alt={title} />
           </div>
