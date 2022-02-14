@@ -123,15 +123,17 @@ export default function ProgrampunktPage({ post }) {
         </div>
 
         {/* Secondary column */}
-        <div className="flex-1 space-y-4 md:space-y-8">
+        <div className="flex-1  bg-white text-black mb-4 md:mb-8">
           <div className="w-full hidden md:block">
             <GatsbyImage image={imageData} alt={title} />
           </div>
           {langInfo && (
-            <div
-              dangerouslySetInnerHTML={{ __html: langInfo }}
-              className="space-y-4"
-            />
+            <div className="p-8">
+              <div
+                dangerouslySetInnerHTML={{ __html: langInfo }}
+                className="space-y-4 font-normal"
+              />
+            </div>
           )}
         </div>
       </section>

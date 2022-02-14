@@ -8,7 +8,7 @@ import SocialIcons from "./common/SocialIcons"
 export default function Footer() {
   return (
     <footer className="bg-brandpurple/50 py-8 md:py-16  text-lg text-white">
-      <div className="flex flex-col lg:flex-row mx-auto items-center justify-center md:px-8 space-y-4 md:space-y-0">
+      <div className="flex flex-col lg:flex-row mx-auto items-center justify-center px-2 md:px-8 space-y-4 md:space-y-0">
         <div className="flex flex-row w-full justify-between items-center px-4">
           <div className="w-40">
             <Logo color="" />

@@ -90,7 +90,7 @@ export default function IndexEvents() {
   let featuredPosts = data.featuredEvents.missaInte.programmpunkt
 
   return (
-    <div className="mb-8">
+    <div className="">
       <div className="block">
         <IndexEventFeatured featuredPosts={featuredPosts} posts={posts} />
       </div>

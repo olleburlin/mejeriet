@@ -166,6 +166,10 @@ p a {
 .form.markethype div {
   @apply mb-0;
 }
+.form.markethype input[type="text"],
+.form.markethype input[type="email"] {
+  @apply bg-white bg-opacity-80;
+}
 .mhForm__control {
   @apply w-full;
 }
