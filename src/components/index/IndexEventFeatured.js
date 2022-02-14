@@ -18,7 +18,6 @@ export default function IndexEventFeatured({ posts, featuredPosts }) {
     slidesToScroll: 1,
     arrows: false,
   }
-  console.log(featuredPosts?.length)
 
   let array =
     featuredPosts?.length > 0
@@ -26,7 +25,7 @@ export default function IndexEventFeatured({ posts, featuredPosts }) {
       : posts
           .filter(post => post.informationProgram.startdatum > getCurrentDate())
           .slice(0, 3)
-  console.log(array)
+
   return (
     <div className="relative flex flex-col w-full bg-black mb-4 md:mb-6 text-white">
       <Slider {...settings}>
