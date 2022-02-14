@@ -23,14 +23,14 @@ export default function FeaturedEvent({ event }) {
               <div className="absolute inset-0 flex flex-col justify-between ">
                 <div className=""></div>
                 <div className="relative w-full bg-gradient-to-t from-black to-transparent">
-                  <div className="relative space-y-2 p-2 md:p-4">
+                  <div className="relative md:space-y-2 p-2 md:p-4">
                     <div className="text-base md:text-xl font-bold">
                       <LongDate dateString={informationProgram.startdatum} />
                     </div>{" "}
                     <h2 className="uppercase text-xl md:text-6xl relative">
                       {title}
                     </h2>
-                    <p className="hidden md:block text-base md:text-xl  md:w-10/12">
+                    <p className="text-base md:text-xl  md:w-10/12">
                       {informationProgram.kortInfo}
                     </p>
                   </div>

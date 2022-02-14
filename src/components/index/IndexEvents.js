@@ -92,7 +92,7 @@ export default function IndexEvents() {
   console.log(featuredPosts)
   return (
     <div className="mb-8">
-      <div className="hidden md:block">
+      <div className="block">
         <IndexEventFeatured featuredPosts={featuredPosts} posts={posts} />
       </div>
 

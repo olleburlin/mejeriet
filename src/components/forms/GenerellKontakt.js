@@ -7,7 +7,7 @@ import { navigate } from "gatsby"
 
 const URL = "https://olleburl.in/mejeriet/wp-json"
 
-const CF7_ID = "11097"
+const CF7_ID = "11098"
 // [yourName][organisation][email][telefon][eventDate][guests][additionalInfo]
 // const formSchema = Yup.object().shape({
 //   yourName: Yup.string().required("Required"),
@@ -24,12 +24,12 @@ function convertJsontoUrlencoded(obj) {
   return str.join("&")
 }
 
-export default function LostAndFound() {
+export default function GenerellKontakt() {
   const [state, setState] = React.useState(null || "")
 
   return (
     <>
-      <h4 className="text-2xl font-heavy">Borttappat</h4>
+      <h4 className="text-2xl font-heavy">Jobba hos oss</h4>
       <Formik
         initialValues={{
           yourName: "",
@@ -125,7 +125,7 @@ export default function LostAndFound() {
 
             <div>
               <label htmlFor="yourMessage">
-                Beskriv vad du har tappat bort
+                Meddelande
                 <span className="text-brandorange">*</span>
                 <textarea
                   name="yourMessage"

@@ -2,9 +2,9 @@ import React from "react"
 import Layout from "../../components/layout"
 import { useStaticQuery, graphql } from "gatsby"
 import PageHeader from "../../components/common/PageHeader"
-import { StandardForm } from "../../components/common/Forms"
+
+import FormSelector from "../../components/forms/FormSelector"
 import FeaturedImage from "../../components/common/FeaturedImage"
-import LostAndFound from "../../components/forms/LostAndFound"
 
 export default function KontaktPage() {
   const data = useStaticQuery(graphql`
@@ -51,8 +51,8 @@ export default function KontaktPage() {
                 return <Question key={question.id} question={question} />
               })}{" "}
             </div>
-            <div id="forms">
-              <LostAndFound />
+            <div id="forms" className="relative">
+              <FormSelector />
             </div>
           </div>
         </div>

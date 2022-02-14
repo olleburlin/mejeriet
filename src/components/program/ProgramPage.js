@@ -74,11 +74,9 @@ export default function ProgramPage() {
 
   const people = [
     { id: 1, name: "Visa allt", slug: "visa-allt" },
-    { id: 2, name: "Bar", slug: "bar" },
-
-    { id: 3, name: "Humor/Scen", slug: "humor" },
-    { id: 4, name: "Klubb", slug: "klubb" },
     { id: 5, name: "Konsert", slug: "konsert" },
+    { id: 4, name: "Klubb / Bar", slug: "klubb" },
+    { id: 3, name: "Humor/Scen", slug: "humor" },
   ]
   const [selected, setSelected] = useState(people[0])
 
