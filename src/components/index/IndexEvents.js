@@ -19,7 +19,7 @@ export default function IndexEvents() {
             node {
               localFile {
                 childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED, aspectRatio: 1.7)
+                  gatsbyImageData(aspectRatio: 1.6)
                 }
               }
             }
@@ -71,9 +71,9 @@ export default function IndexEvents() {
                   localFile {
                     childImageSharp {
                       gatsbyImageData(
-                        placeholder: DOMINANT_COLOR
+                        placeholder: BLURRED
                         layout: CONSTRAINED
-                        aspectRatio: 1.7
+                        aspectRatio: 1.6
                       )
                     }
                   }
