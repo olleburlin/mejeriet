@@ -8,12 +8,12 @@ import SocialIcons from "./common/SocialIcons"
 export default function Footer() {
   return (
     <footer className="bg-brandpurple/50 py-8 md:py-16  text-lg text-white">
-      <div className="flex flex-col lg:flex-row mx-auto items-center justify-center px-2 md:px-8 space-y-4 md:space-y-0">
-        <div className="flex flex-row w-full justify-between items-center px-4">
-          <div className="w-40">
+      <div className="flex flex-col lg:flex-row mx-auto items-center justify-center px-2 md:px-8 space-y-8 lg:space-y-0">
+        <div className="flex-none lg:flex-1 flex flex-row w-full justify-between items-center px-4">
+          <div className="w-40 lg:hidden">
             <Logo color="" />
           </div>
-          <div className="md:flex-1 text-left">
+          <div className="lg:flex-1 text-left">
             <p>
               Kulturmejeriet
               <br /> Stora Södergatan 64 <br />
@@ -26,14 +26,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="md:flex-none w-full md:w-auto px-4 ">
+        <div className=" w-full lg:w-1/2 px-4">
           <p className="text-center pb-4 hidden">
             Prenumerera på vårat nyhetsbrev
           </p>
           <Markethype />
         </div>
         <div className="md:flex-1 flex flex-row justify-end order-first md:order-last">
-          <div className="w-40 pb-4 md:pb-0 hidden md:block">
+          <div className="w-40 pb-4 md:pb-0 hidden lg:block">
             <Logo color="" />
           </div>
         </div>

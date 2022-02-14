@@ -7,7 +7,7 @@ const html = `
   `
 export default function Markethype() {
   return (
-    <div className="form markethype">
+    <div className="form markethype w-full ">
       <InnerHTML html={html} />
     </div>
   )
