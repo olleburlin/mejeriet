@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import PageHeader from "../../components/common/PageHeader"
 import { StandardForm } from "../../components/common/Forms"
 import FeaturedImage from "../../components/common/FeaturedImage"
+import LostAndFound from "../../components/forms/LostAndFound"
 
 export default function KontaktPage() {
   const data = useStaticQuery(graphql`
@@ -49,6 +50,9 @@ export default function KontaktPage() {
               {questions.map(question => {
                 return <Question key={question.id} question={question} />
               })}{" "}
+            </div>
+            <div id="forms">
+              <LostAndFound />
             </div>
           </div>
         </div>
