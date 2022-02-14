@@ -1,6 +1,8 @@
 import React from "react"
 import HyraMejeriet from "../forms/HyraMejeriet"
 import Musikskolan from "../forms/Musikskolan"
+import Replokal from "../forms/Replokal"
+import Volontar from "../forms/Volontar"
 import FeaturedImage from "./FeaturedImage"
 import PageHeader from "./PageHeader"
 import PersonalKategorier from "./PersonalKategorier"
@@ -42,6 +44,17 @@ export default function SinglePage({ data }) {
         )}
         {databaseId === 9148 && <HyraMejeriet />}
         {databaseId === 9146 && <Musikskolan />}
+        {databaseId === 9143 && (
+          <div className="space-y-8">
+            <div>
+              <Volontar />
+            </div>
+            <div className="border-b-4 border-white" />
+            <div>
+              <Replokal />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
