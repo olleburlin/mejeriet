@@ -22,7 +22,7 @@ export default function SinglePage({ data }) {
         <div className="relative">
           {featuredImage && <FeaturedImage image={featuredImage} />}
         </div>
-        <div className="">
+        <div className="text-lg">
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
         {kartaLight && (

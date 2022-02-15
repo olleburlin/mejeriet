@@ -50,7 +50,28 @@ export const query = graphql`
       }
       informationProgram {
         borjar
-
+        duKanskeGillar {
+          ... on WpProgrampunkt {
+            title
+            slug
+            uri
+            featuredImage {
+              node {
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(aspectRatio: 1.6)
+                  }
+                }
+              }
+            }
+            informationProgram {
+              borjar
+              kortInfo
+              underrubrik
+              startdatum
+            }
+          }
+        }
         underrubrik
         kortInfo
         langInfo

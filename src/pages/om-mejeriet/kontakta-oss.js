@@ -43,7 +43,7 @@ export default function KontaktPage() {
             <div>
               <FeaturedImage image={featuredImage} />
             </div>
-            <div className="text-xl font-heavy wp-content">
+            <div className="text-lg font-heavy wp-content">
               <div dangerouslySetInnerHTML={{ __html: content }} className="" />
             </div>
             <div className="text-sm">

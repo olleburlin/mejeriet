@@ -6,6 +6,7 @@ import { YoutubeHelper } from "../../utils/YoutubeHelper"
 import Priskategorier from "./Priskategorier"
 import ArtistLinks from "./ArtistLinks"
 import EgnaKnappar from "./EgnaKnappar"
+import DuKanskeGillar from "./DuKanskeGillar"
 
 export default function ProgrampunktPage({ post }) {
   const { title, informationProgram, featuredImage, artistLinks, knappar } =
@@ -22,10 +23,9 @@ export default function ProgrampunktPage({ post }) {
     biljettlank,
     underrubrik,
     status,
-
+    duKanskeGillar,
     typAvArrangemang,
     samarbetspartner,
-    covid19,
   } = informationProgram
 
   const youTubeId = YoutubeHelper(youtubeKlipp)
@@ -132,7 +132,7 @@ export default function ProgrampunktPage({ post }) {
             <GatsbyImage image={imageData} alt={title} />
           </div>
           {langInfo && (
-            <div className="p-4 md:p-8 bg-white ">
+            <div className="p-4 md:p-8 bg-white text-lg">
               <div
                 dangerouslySetInnerHTML={{ __html: langInfo }}
                 className="space-y-4 font-normal"
@@ -141,6 +141,14 @@ export default function ProgrampunktPage({ post }) {
           )}
         </div>
       </section>
+      {duKanskeGillar && (
+        <section className="bg-gradient-to-b from-brandorange to-brandpink my-8 p-4 md:p-8 space-y-4">
+          <h4 className="uppercase text-2xl text-center md:pb-4">
+            Du kanske också gillar
+          </h4>
+          <DuKanskeGillar events={duKanskeGillar} />
+        </section>
+      )}
     </>
   )
 }
