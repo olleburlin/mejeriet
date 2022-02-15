@@ -27,7 +27,7 @@ export default function ProgramPunktEvent({ post }) {
         <div className="text-base md:text-xl leading-relaxed bg-white text-black flex-grow ">
           <div className=" h-full flex flex-col justify-center ">
             <div className="flex flex-row flex-grow ">
-              <div className="relative flex flex-col justify-center w-full px-4 py-4 md:px-8 ">
+              <div className="relative flex flex-col justify-center w-full px-4 py-4 md:px-6 md:py-6">
                 <div className="space-y-2">
                   <header className="font-normal tracking-wide leading-none text-base">
                     <div className="inline">
@@ -54,7 +54,7 @@ export default function ProgramPunktEvent({ post }) {
                       {underrubrik}
                     </div>
                   )}{" "}
-                  <div className="flex flex-row justify-start">
+                  <div className="flex flex-row justify-start items-end">
                     {informationProgram.kortInfo && (
                       <div className="w-9/12 ">
                         <p className="font-normal tracking-normal leading-tight md:pr-4">
@@ -65,7 +65,7 @@ export default function ProgramPunktEvent({ post }) {
                     <div className="w-3/12  flex-none flex justify-end ">
                       {biljettlank && !statuses.includes(status) && (
                         <Link to={biljettlank}>
-                          <button className="uppercase  bg-brandpurple whitespace-nowrap text-lg text-white py-2 px-3">
+                          <button className="uppercase  bg-brandpurple whitespace-nowrap  text-white py-2 px-3">
                             Köp biljett
                           </button>
                         </Link>
