@@ -6,7 +6,7 @@ import LongDate from "../common/LongDate"
 export default function DuKanskeGillar({ events }) {
   return (
     <div className="grid md:grid-cols-3 gap-4 md:gap-8 auto-cols-auto">
-      {events?.map(event => {
+      {events?.slice(0, 3).map(event => {
         return <Event key={event.id} event={event} />
       })}
     </div>
