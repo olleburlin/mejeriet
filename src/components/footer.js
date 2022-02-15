@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
 
         <div className=" w-full lg:w-1/2 px-4">
-          <p className="text-center pb-4 ">Prenumerera på vårt nyhetsbrev</p>
+          <p className="text-xl pb-4 ">Prenumerera på vårt nyhetsbrev</p>
           <Markethype />
         </div>
         <div className="md:flex-1 flex flex-row justify-end order-first md:order-last">
