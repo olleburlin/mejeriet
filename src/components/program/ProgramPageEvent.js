@@ -50,11 +50,11 @@ export default function ProgramPunktEvent({ post }) {
                     </Link>
                   </h3>{" "}
                   {underrubrik && (
-                    <div className="font-bold uppercase leading-none md:w-9/12">
+                    <div className="font-bold uppercase leading-none md:w-9/12 text-base">
                       {underrubrik}
                     </div>
                   )}{" "}
-                  <div className="flex flex-row justify-start items-start">
+                  <div className="flex flex-row justify-start items-start text-base">
                     {informationProgram.kortInfo && (
                       <div className="w-full md:w-9/12 ">
                         <p className="font-normal tracking-normal leading-tight md:pr-4">
