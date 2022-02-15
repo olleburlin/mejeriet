@@ -71,7 +71,7 @@ export default function IndexEvents() {
                   localFile {
                     childImageSharp {
                       gatsbyImageData(
-                        placeholder: BLURRED
+                        placeholder: DOMINANT_COLOR
                         layout: CONSTRAINED
                         aspectRatio: 1.6
                       )
