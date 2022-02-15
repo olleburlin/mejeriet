@@ -13,7 +13,7 @@ export default function ProgramPunktEvent({ post }) {
     <div className="">
       <div className="flex flex-col md:flex-row justify-between">
         {/* Left */}
-        <div className="flex-none w-full md:w-4/12 relative overflow-hidden">
+        <div className="flex-none w-full md:w-80 relative overflow-hidden">
           <Link to={uri} title={title} className="h-full">
             <GatsbyImage
               image={imageData}
@@ -24,12 +24,12 @@ export default function ProgramPunktEvent({ post }) {
         </div>
         {/* Right */}
 
-        <div className=" text-base leading-relaxed bg-white text-black flex-grow ">
+        <div className="text-base md:text-xl leading-relaxed bg-white text-black flex-grow ">
           <div className=" h-full flex flex-col justify-center ">
             <div className="flex flex-row flex-grow ">
-              <div className="relative flex flex-col justify-center w-full md:w-3/4 md:border-r-4 pr-4 border-black border-dotted px-4 py-4 md:px-8 ">
+              <div className="relative flex flex-col justify-center w-full px-4 py-4 md:px-8 ">
                 <div className="space-y-2">
-                  <header className="font-normal tracking-wide leading-none">
+                  <header className="font-normal tracking-wide leading-none text-base">
                     <div className="inline">
                       <LongDate dateString={startdatum} />
                     </div>
@@ -54,14 +54,27 @@ export default function ProgramPunktEvent({ post }) {
                       {underrubrik}
                     </div>
                   )}{" "}
-                  {informationProgram.kortInfo && (
-                    <p className="font-normal tracking-wide leading-tight">
-                      {informationProgram.kortInfo}
-                    </p>
-                  )}
+                  <div className="flex flex-row justify-start">
+                    {informationProgram.kortInfo && (
+                      <div className="w-9/12 ">
+                        <p className="font-normal tracking-normal leading-tight md:pr-4">
+                          {informationProgram.kortInfo}
+                        </p>
+                      </div>
+                    )}
+                    <div className="w-3/12  flex-none flex justify-end ">
+                      {biljettlank && !statuses.includes(status) && (
+                        <Link to={biljettlank}>
+                          <button className="uppercase  bg-brandpurple whitespace-nowrap text-lg text-white py-2 px-3">
+                            Köp biljett
+                          </button>
+                        </Link>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="hidden flex-1 md:flex flex-col justify-center items-center text-center px-4">
+              {/* <div className="hidden flex-1 md:flex flex-col justify-center items-center text-center px-4">
                 <div className="">
                   <div className="">
                     {biljettlank && !statuses.includes(status) && (
@@ -73,7 +86,7 @@ export default function ProgramPunktEvent({ post }) {
                     )}
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
