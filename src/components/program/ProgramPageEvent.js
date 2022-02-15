@@ -8,7 +8,7 @@ export default function ProgramPunktEvent({ post }) {
   const imageData = getImage(featuredImage?.node.localFile)
   const { genre, startdatum, status, underrubrik, biljettlank } =
     informationProgram
-
+  const statuses = ["Inställt", "Slutsålt", "Fri entré"]
   return (
     <div className="">
       <div className="flex flex-col md:flex-row justify-between">
@@ -64,12 +64,13 @@ export default function ProgramPunktEvent({ post }) {
               <div className="hidden flex-1 md:flex flex-col justify-center items-center text-center px-4">
                 <div className="">
                   <div className="">
-                    {" "}
-                    <Link to={biljettlank}>
-                      <button className="uppercase  bg-brandpurple whitespace-nowrap  text-white py-2 px-3">
-                        Köp biljett
-                      </button>
-                    </Link>
+                    {biljettlank && !statuses.includes(status) && (
+                      <Link to={biljettlank}>
+                        <button className="uppercase  bg-brandpurple whitespace-nowrap  text-white py-2 px-3">
+                          Köp biljett
+                        </button>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>

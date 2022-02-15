@@ -5,9 +5,11 @@ import MomentDate from "../../utils/MomentDate"
 import { YoutubeHelper } from "../../utils/YoutubeHelper"
 import Priskategorier from "./Priskategorier"
 import ArtistLinks from "./ArtistLinks"
+import EgnaKnappar from "./EgnaKnappar"
 
 export default function ProgrampunktPage({ post }) {
-  const { title, informationProgram, featuredImage, artistLinks } = post
+  const { title, informationProgram, featuredImage, artistLinks, knappar } =
+    post
   const imageData = getImage(featuredImage?.node.localFile)
   const {
     youtubeKlipp,
@@ -51,16 +53,18 @@ export default function ProgrampunktPage({ post }) {
             <div className="uppercase font-bold">{underrubrik}</div>
           )}
 
-          {biljettlank && status !== "Inställt" && (
-            <div className="py-1">
-              <Link to={biljettlank}>
-                <button className="bg-brandpurple text-white rounded-sm px-3 py-2">
-                  Köp biljett
-                </button>
-              </Link>
-            </div>
-          )}
-
+          <div className="flex flex-row space-x-4 items-center">
+            {biljettlank && status !== "Inställt" && (
+              <div className="py-1">
+                <Link to={biljettlank}>
+                  <button className="bg-brandpurple text-white rounded-sm px-3 py-2">
+                    Köp biljett
+                  </button>
+                </Link>
+              </div>
+            )}
+            {knappar && <EgnaKnappar knappar={knappar} />}
+          </div>
           <div className="w-full block md:hidden pb-2">
             <GatsbyImage image={imageData} alt={title} />
           </div>

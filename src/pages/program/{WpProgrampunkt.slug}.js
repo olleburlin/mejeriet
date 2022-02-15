@@ -23,6 +23,16 @@ export const query = graphql`
     wpProgrampunkt(id: { eq: $id }) {
       title
       slug
+      knappar {
+        customButton {
+          buttonLink
+          buttonText
+          type
+          file {
+            sourceUrl
+          }
+        }
+      }
       featuredImage {
         node {
           localFile {
