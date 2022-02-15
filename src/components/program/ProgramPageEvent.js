@@ -54,18 +54,18 @@ export default function ProgramPunktEvent({ post }) {
                       {underrubrik}
                     </div>
                   )}{" "}
-                  <div className="flex flex-row justify-start items-end">
+                  <div className="flex flex-row justify-start items-start">
                     {informationProgram.kortInfo && (
-                      <div className="w-9/12 ">
+                      <div className="w-full md:w-9/12 ">
                         <p className="font-normal tracking-normal leading-tight md:pr-4">
                           {informationProgram.kortInfo}
                         </p>
                       </div>
                     )}
-                    <div className="w-3/12  flex-none flex justify-end ">
+                    <div className="w-3/12  flex-none md:flex justify-end items-end hidden ">
                       {biljettlank && !statuses.includes(status) && (
-                        <Link to={biljettlank}>
-                          <button className="uppercase  bg-brandpurple whitespace-nowrap  text-white py-2 px-3">
+                        <Link to={biljettlank} className="">
+                          <button className="uppercase absolute bottom-0 right-0 mx-6 mb-6 bg-brandpurple whitespace-nowrap  text-white py-2 px-3">
                             Köp biljett
                           </button>
                         </Link>
