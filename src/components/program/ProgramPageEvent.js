@@ -50,7 +50,7 @@ export default function ProgramPunktEvent({ post }) {
                     </Link>
                   </h3>{" "}
                   {underrubrik && (
-                    <div className="font-bold uppercase leading-none ">
+                    <div className="font-bold uppercase leading-none md:w-9/12">
                       {underrubrik}
                     </div>
                   )}{" "}
