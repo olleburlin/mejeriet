@@ -17,14 +17,14 @@ function Event({ event }) {
   const { title, featuredImage, informationProgram, uri } = event
   const { kortInfo, startdatum } = informationProgram
   return (
-    <div className="bg-white">
+    <div className="bg-white shadow-sm">
       <Link to={uri}>
         <div className="w-full text-base font-normal ">
           <GatsbyImage
             image={getImage(featuredImage?.node.localFile.childImageSharp)}
             alt={title}
           />
-          <div className=" text-black p-4 space-y-2">
+          <div className=" text-black p-4 space-y-1">
             <div>
               {" "}
               <LongDate dateString={startdatum} />
