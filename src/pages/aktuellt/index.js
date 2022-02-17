@@ -25,6 +25,7 @@ export const query = graphql`
         status
         content
         excerpt
+        uri
       }
     }
   }

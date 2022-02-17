@@ -54,11 +54,40 @@ export default function IndexEvents() {
         id
         missaInte {
           programmpunkt {
+            ... on WpPost {
+              id
+              title
+              uri
+              nodeType
+              featuredImage {
+                node {
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(
+                        placeholder: DOMINANT_COLOR
+                        layout: CONSTRAINED
+                        aspectRatio: 1.5
+                      )
+                    }
+                  }
+                }
+              }
+              pushNyheter {
+                rubrikTillPushPaFramsidan
+              }
+            }
+            ... on WpProgrampunkt {
+              id
+              title
+            }
+          }
+          programmpunkt {
             ... on WpProgrampunkt {
               id
               title
               slug
               uri
+              nodeType
               informationProgram {
                 startdatum
                 borjar

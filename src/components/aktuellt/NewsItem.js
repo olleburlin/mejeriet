@@ -1,14 +1,17 @@
 import React from "react"
 import { getLongDate } from "../../utils/getLongDate"
+import Link from "../common/Link"
 
 export default function NewsItem({ post }) {
-  const { title, date, content } = post
+  const { title, date, content, uri } = post
   const newsDate = getLongDate(date, "Do MMMM, YYYY")
   return (
     <article className="s p-8 space-y-4 wp-content">
       <div className=" text-brandorange uppercase">{newsDate}</div>
 
-      <h3 className="text-3xl uppercase">{title}</h3>
+      <Link to={"/aktuellt" + uri} title={title}>
+        <h3 className="text-3xl uppercase">{title}</h3>
+      </Link>
 
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </article>

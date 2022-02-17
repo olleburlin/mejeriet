@@ -4,12 +4,23 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import LongDate from "../common/LongDate"
 
 export default function FeaturedEvent({ event }) {
-  const { title, informationProgram, featuredImage, uri } = event
-  const imageData = getImage(featuredImage.node.localFile)
+  const {
+    title,
+    nodeType,
+    informationProgram,
+    featuredImage,
+    uri,
+    pushNyheter,
+  } = event
+  const imageData = getImage(featuredImage?.node.localFile)
   return (
     <>
       <div className="p-2 md:p-4   bg-gradient-to-b from-brandorange to-brandpink flex flex-col justify-end    space-y-2 md:text-xl ">
-        <Link to={uri} title={title} className="relative z-40">
+        <Link
+          to={nodeType === "Programpunkt" ? uri : "/aktuellt" + uri}
+          title={title}
+          className="relative z-40"
+        >
           <div className="">
             <div className="relative">
               <div className="block md:hidden z-30 bg-brandorange pb-2 uppercase text-lg right-0 text-right font tracking-wide font-heavy">
@@ -27,13 +38,15 @@ export default function FeaturedEvent({ event }) {
                 <div className="relative w-full bg-gradient-to-t from-black to-transparent">
                   <div className="relative md:space-y-2 p-2 md:p-4">
                     <div className="text-base md:text-xl font-normal md:font-bold">
-                      <LongDate dateString={informationProgram.startdatum} />
+                      <LongDate dateString={informationProgram?.startdatum} />
                     </div>{" "}
                     <h2 className="uppercase text-xl md:text-6xl relative">
-                      {title}
+                      {pushNyheter?.rubrikTillPushPaFramsidan
+                        ? pushNyheter?.rubrikTillPushPaFramsidan
+                        : title}
                     </h2>
                     <p className="hidden md:block text-base md:text-xl  md:w-10/12">
-                      {informationProgram.kortInfo}
+                      {informationProgram?.kortInfo}
                     </p>
                   </div>
                 </div>
