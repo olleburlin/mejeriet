@@ -22,10 +22,10 @@ export default function FeaturedEvent({ event }) {
                   className="object-cover relative opacity-90 md:aspect-video"
                 />
               </div>
-              <div className="md:absolute inset-0 flex flex-col justify-between ">
+              <div className="absolute inset-0 flex flex-col justify-between ">
                 <div className=""></div>
-                <div className="relative w-full md:bg-gradient-to-t md:from-black to-transparent">
-                  <div className="relative md:space-y-2 pt-2 md:p-4">
+                <div className="relative w-full bg-gradient-to-t from-black to-transparent">
+                  <div className="relative md:space-y-2 p-2 md:p-4">
                     <div className="text-base md:text-xl font-normal md:font-bold">
                       <LongDate dateString={informationProgram.startdatum} />
                     </div>{" "}
