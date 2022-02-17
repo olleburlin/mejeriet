@@ -11,9 +11,9 @@ export default function ProgramPunktEvent({ post }) {
   const statuses = ["Inställt", "Slutsålt", "Fri entré"]
   return (
     <div className="">
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-col md:flex-row justify-between">
         {/* Left */}
-        <div className="flex-none w-36 md:w-80 relative overflow-hidden">
+        <div className="flex-none w-full md:w-80 relative overflow-hidden">
           <Link to={uri} title={title} className="h-full">
             <GatsbyImage
               image={imageData}
@@ -27,9 +27,9 @@ export default function ProgramPunktEvent({ post }) {
         <div className="text-base md:text-xl leading-relaxed bg-white text-black flex-grow ">
           <div className=" h-full flex flex-col justify-center ">
             <div className="flex flex-row flex-grow ">
-              <div className="relative flex flex-col justify-center w-full px-2 py-2 md:px-6 md:py-6">
-                <div className="space-y-1 md:space-y-2">
-                  <header className="font-normal tracking-wide leading-none text-xs md:text-base">
+              <div className="relative flex flex-col justify-center w-full px-4 py-4 md:px-6 md:py-6">
+                <div className="space-y-2">
+                  <header className="font-normal tracking-wide leading-none text-base">
                     <div className="inline">
                       <LongDate dateString={startdatum} />
                     </div>
@@ -42,9 +42,9 @@ export default function ProgramPunktEvent({ post }) {
                       <span className="uppercase text-brandpink">{status}</span>
                     )}
                   </header>
-                  <h3 className="uppercase  text-base md:text-3xl relative md:-top-1 pb-1">
+                  <h3 className="uppercase  text-2xl md:text-3xl relative -top-1 pb-1">
                     <Link to={uri}>
-                      <span className="border-b-[2px] md:border-b-4 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
+                      <span className="border-b-4 md:border-b-4 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
                         {title}
                       </span>
                     </Link>
@@ -54,10 +54,10 @@ export default function ProgramPunktEvent({ post }) {
                       {underrubrik}
                     </div>
                   )}{" "}
-                  <div className="flex flex-row justify-start items-start text-xs md:text-base">
+                  <div className="flex flex-row justify-start items-start text-base">
                     {informationProgram.kortInfo && (
                       <div className="w-full md:w-9/12 ">
-                        <p className="font-normal tracking-normal leading-tight md:leading-normal md:pr-4">
+                        <p className="font-normal tracking-normal leading-tight md:pr-4">
                           {informationProgram.kortInfo}
                         </p>
                       </div>
