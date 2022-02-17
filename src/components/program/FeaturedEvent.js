@@ -12,14 +12,16 @@ export default function FeaturedEvent({ event }) {
         <Link to={uri} title={title} className="relative z-40">
           <div className="">
             <div className="relative">
+              <div className="block md:hidden z-30 bg-brandorange pb-2 uppercase text-lg right-0 text-right font tracking-wide font-heavy">
+                Missa inte
+              </div>
               <div className="">
                 <GatsbyImage
                   image={imageData}
                   alt={title}
-                  className="object-cover relative"
+                  className="object-cover relative opacity-90"
                 />
               </div>
-
               <div className="md:absolute inset-0 flex flex-col justify-between ">
                 <div className=""></div>
                 <div className="relative w-full md:bg-gradient-to-t md:from-black to-transparent">
