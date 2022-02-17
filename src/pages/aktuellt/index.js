@@ -25,6 +25,15 @@ export const query = graphql`
         status
         content
         excerpt
+        featuredImage {
+          node {
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
         uri
       }
     }

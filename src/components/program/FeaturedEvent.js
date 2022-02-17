@@ -26,11 +26,11 @@ export default function FeaturedEvent({ event }) {
               <div className="block md:hidden z-30 bg-brandorange pb-2 uppercase text-lg right-0 text-right font tracking-wide font-heavy">
                 Missa inte
               </div>
-              <div className="">
+              <div className=" md:aspect-w-16 md:aspect-h-9">
                 <GatsbyImage
                   image={imageData}
                   alt={title}
-                  className="object-cover relative opacity-90 md:aspect-video"
+                  className="object-cover relative opacity-90"
                 />
               </div>
               <div className="absolute inset-0 flex flex-col justify-between ">
