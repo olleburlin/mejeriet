@@ -8,7 +8,7 @@ export default function FeaturedEvent({ event }) {
   const imageData = getImage(featuredImage.node.localFile)
   return (
     <>
-      <div className="p-2 md:p-4  inset-0 h-full  bg-gradient-to-b from-brandorange to-brandpink/50 flex flex-col justify-end    space-y-2 md:text-xl ">
+      <div className="p-2 md:p-4   bg-gradient-to-b from-brandorange to-brandpink flex flex-col justify-end    space-y-2 md:text-xl ">
         <Link to={uri} title={title} className="relative z-40">
           <div className="">
             <div className="relative">
@@ -20,11 +20,11 @@ export default function FeaturedEvent({ event }) {
                 />
               </div>
 
-              <div className="absolute inset-0 flex flex-col justify-between ">
+              <div className="md:absolute inset-0 flex flex-col justify-between ">
                 <div className=""></div>
-                <div className="relative w-full bg-gradient-to-t from-black to-transparent">
-                  <div className="relative md:space-y-2 p-2 md:p-4">
-                    <div className="text-base md:text-xl font-bold">
+                <div className="relative w-full md:bg-gradient-to-t md:from-black to-transparent">
+                  <div className="relative md:space-y-2 pt-2 md:p-4">
+                    <div className="text-base md:text-xl font-normal md:font-bold">
                       <LongDate dateString={informationProgram.startdatum} />
                     </div>{" "}
                     <h2 className="uppercase text-xl md:text-6xl relative">

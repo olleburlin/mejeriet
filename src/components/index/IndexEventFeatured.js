@@ -27,7 +27,7 @@ export default function IndexEventFeatured({ posts, featuredPosts }) {
           .slice(0, 3)
 
   return (
-    <div className="relative flex flex-col w-full bg-black mb-4 md:mb-6 text-white">
+    <div className="relative flex flex-col items-stretch w-full  text-white">
       <Slider {...settings}>
         {array.map(event => {
           return <FeaturedEvent key={event.id} event={event} />
