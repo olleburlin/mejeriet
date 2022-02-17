@@ -7,7 +7,7 @@ export default function NewsItem({ post }) {
   const { title, date, content, uri, featuredImage } = post
   const newsDate = getLongDate(date, "Do MMMM, YYYY")
   return (
-    <article className="s p-8 space-y-4 wp-content">
+    <article className="py-8 space-y-4 wp-content">
       <div className=" text-brandorange uppercase">{newsDate}</div>
 
       <Link to={"/aktuellt" + uri} title={title}>
