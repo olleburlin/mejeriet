@@ -19,7 +19,7 @@ export default function FeaturedEvent({ event }) {
                 <GatsbyImage
                   image={imageData}
                   alt={title}
-                  className="object-cover relative opacity-90"
+                  className="object-cover relative opacity-90 md:aspect-video"
                 />
               </div>
               <div className="md:absolute inset-0 flex flex-col justify-between ">
