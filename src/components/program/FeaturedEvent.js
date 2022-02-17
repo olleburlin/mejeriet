@@ -15,7 +15,7 @@ export default function FeaturedEvent({ event }) {
   const imageData = getImage(featuredImage?.node.localFile)
   return (
     <>
-      <div className="p-2 md:p-4   bg-gradient-to-b from-brandorange to-brandpink flex flex-col justify-end    space-y-2 md:text-xl ">
+      <div className="p-2 md:p-4   bg-gradient-to-b from-brandorange to-brandpink flex flex-col justify-end    space-y-2 md:text-xl overflow-hidden">
         <Link
           to={nodeType === "Programpunkt" ? uri : "/aktuellt" + uri}
           title={title}
