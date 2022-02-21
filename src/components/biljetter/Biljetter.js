@@ -66,7 +66,7 @@ function Biljett({ post }) {
         </div>
       </div>
 
-      <div className=" px-2 py-1 md:px-4 md:py-2 border-l-4 border-black border-dotted">
+      <div className=" px-2 py-1 md:px-4 md:py-2">
         {" "}
         {biljettlank && status !== "Inställt" ? (
           <div className="py-1">
