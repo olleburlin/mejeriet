@@ -122,7 +122,7 @@ export default function IndexEvents() {
 
   return (
     <div className="flex flex-col">
-      <div className="block bg-red-200 h-full mb-4 md:mb-6">
+      <div className="block  h-full mb-4 md:mb-6">
         <IndexEventFeatured featuredPosts={featuredPosts} posts={posts} />
       </div>
 
