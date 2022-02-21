@@ -19,7 +19,7 @@ export default function IndexEvents() {
             node {
               localFile {
                 childImageSharp {
-                  gatsbyImageData(aspectRatio: 1.6)
+                  gatsbyImageData(aspectRatio: 1.6, sizes: "1500")
                 }
               }
             }
