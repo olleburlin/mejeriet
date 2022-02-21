@@ -67,6 +67,7 @@ export default function IndexEvents() {
                         placeholder: DOMINANT_COLOR
                         layout: CONSTRAINED
                         aspectRatio: 1.5
+                        sizes: "1500"
                       )
                     }
                   }
@@ -103,6 +104,7 @@ export default function IndexEvents() {
                         placeholder: DOMINANT_COLOR
                         layout: CONSTRAINED
                         aspectRatio: 1.5
+                        sizes: "1500"
                       )
                     }
                   }
