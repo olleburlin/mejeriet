@@ -37,9 +37,12 @@ export default function FeaturedEvent({ event }) {
                 <div className=""></div>
                 <div className="relative w-full bg-gradient-to-t from-black to-transparent">
                   <div className="relative md:space-y-2 p-2 md:p-4">
-                    <div className="text-base md:text-xl font-normal md:font-bold">
-                      <LongDate dateString={informationProgram?.startdatum} />
-                    </div>{" "}
+                    {nodeType === "Programpunkt" && (
+                      <div className="text-base md:text-xl font-normal md:font-bold">
+                        <LongDate dateString={informationProgram?.startdatum} />
+                      </div>
+                    )}
+
                     <h2 className="uppercase text-xl md:text-6xl relative">
                       {pushNyheter?.rubrikTillPushPaFramsidan
                         ? pushNyheter?.rubrikTillPushPaFramsidan
