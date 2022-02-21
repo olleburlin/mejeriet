@@ -17,7 +17,6 @@ export default function IndexEventFeatured({ posts, featuredPosts }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    lazyLoad: "progressive",
   }
 
   let array =

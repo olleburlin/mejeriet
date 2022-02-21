@@ -85,6 +85,9 @@ button {
 .wp-content p {
   @apply mb-4;
 }
+.wp-content h2 {
+  @apply text-2xl;
+}
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;
