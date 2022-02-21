@@ -32,7 +32,7 @@ export default function ProgrampunktPage({ post }) {
 
   return (
     <>
-      <section className="grid md:grid-cols-2 gap-8 md:gap-x-16 md:py-8">
+      <section className="grid md:grid-cols-2 gap-8 md:gap-x-16 py-4 md:py-8">
         {/* Primary column */}
 
         <div className="flex flex-col space-y-4">
