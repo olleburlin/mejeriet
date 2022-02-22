@@ -1,13 +1,3 @@
-// exports.createPages = async ({ actions }) => {
-//   const { createPage } = actions
-//   createPage({
-//     path: "/using-dsg",
-//     component: require.resolve("./src/templates/using-dsg.js"),
-//     context: {},
-//     defer: true,
-//   })
-// }
-
 const path = require(`path`)
 const { slash } = require(`gatsby-core-utils`)
 
@@ -29,8 +19,23 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+  const {
+    data: {
+      allWpProgrampunkt: { nodes: allProgram },
+    },
+  } = await graphql(`
+    query {
+      allWpProgrampunkt {
+        nodes {
+          id
+          uri
+        }
+      }
+    }
+  `)
 
   const postTemplate = path.resolve(`./src/templates/page-template.js`)
+  const programTemplate = path.resolve(`./src/templates/program-template.js`)
 
   allPages.forEach(page => {
     createPage({
@@ -38,6 +43,19 @@ exports.createPages = async ({ graphql, actions }) => {
       path: page.uri,
       // specify the component template of your choice
       component: slash(postTemplate),
+      // In the ^template's GraphQL query, 'id' will be available
+      // as a GraphQL variable to query for this post's data.
+      context: {
+        id: page.id,
+      },
+    })
+  })
+  allProgram.forEach(page => {
+    createPage({
+      // will be the url for the page
+      path: page.uri,
+      // specify the component template of your choice
+      component: slash(programTemplate),
       // In the ^template's GraphQL query, 'id' will be available
       // as a GraphQL variable to query for this post's data.
       context: {

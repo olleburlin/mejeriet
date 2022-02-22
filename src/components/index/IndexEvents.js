@@ -9,7 +9,6 @@ export default function IndexEvents() {
     query {
       allEvents: allWpProgrampunkt(
         sort: { fields: informationProgram___startdatum, order: ASC }
-        limit: 10
       ) {
         nodes {
           title
@@ -129,6 +128,7 @@ export default function IndexEvents() {
       <div className="grid gap-4 md:gap-6">
         {posts
           .filter(post => post.informationProgram.startdatum > getCurrentDate())
+          .slice(0, 10)
           .map(post => {
             return <ProgramPageEvent key={post.id} post={post} />
           })}

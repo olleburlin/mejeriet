@@ -42,7 +42,7 @@ export default function ProgramPunktEvent({ post }) {
                       <span className="uppercase text-brandpink">{status}</span>
                     )}
                   </header>
-                  <h3 className="uppercase  text-lg md:text-3xl relative md:-top-1 pb-1">
+                  <h3 className="uppercase  text-lg md:text-3xl relative md:-top-1 pb-1 w-full md:w-9/12">
                     <Link to={uri}>
                       <span className="border-b-2 md:border-b-4 border-brandorange hover:border-black dark:hover:border-white hover:text-brandorange transition-all leading-relaxed">
                         {title}
