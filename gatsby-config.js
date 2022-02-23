@@ -26,7 +26,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `https://olleburl.in/mejeriet/graphql/`,
+        url: `http://cms.mejeriet.net/graphql/`,
       },
     },
     `gatsby-plugin-sharp`,
