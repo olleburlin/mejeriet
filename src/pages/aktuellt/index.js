@@ -2,11 +2,13 @@ import React from "react"
 import News from "../../components/aktuellt/News"
 import Layout from "../../components/layout"
 import { graphql } from "gatsby"
+import SEO from "../../components/seo"
 
 export default function AktuelltPage({ data }) {
   const posts = data.allWpPost.nodes
   return (
     <Layout>
+      <SEO keywords={[`Mejeriet`, `Biljetter`, `Konserter`]} title="Aktuellt" />
       <News posts={posts} />
     </Layout>
   )
