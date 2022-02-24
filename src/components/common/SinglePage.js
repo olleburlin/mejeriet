@@ -2,6 +2,7 @@ import React from "react"
 import HyraMejeriet from "../forms/HyraMejeriet"
 import Musikskolan from "../forms/Musikskolan"
 import Korsang from "../forms/Korsang"
+import Spela from "../forms/Spela"
 import Replokal from "../forms/Replokal"
 import Volontar from "../forms/Volontar"
 import FeaturedImage from "./FeaturedImage"
@@ -46,6 +47,7 @@ export default function SinglePage({ data }) {
         {databaseId === 9148 && <HyraMejeriet />}
         {databaseId === 11396 && <Musikskolan />}
         {databaseId === 11399 && <Korsang />}
+        {databaseId === 11402 && <Spela />}
         {databaseId === 9143 && (
           <div className="space-y-8">
             <div>
