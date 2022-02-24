@@ -28,24 +28,7 @@ export default function Musikskolan() {
             </label>
             <input name="email" id="email" type="email" required />
           </div>
-          <div>
-            <label
-              style={{ display: `block`, marginBottom: `4px` }}
-              htmlFor="guardian"
-            >
-              Målsman:
-            </label>
-            <input type="text" name="guardian" id="name" />
-          </div>
-          <div>
-            <label
-              style={{ display: `block`, marginBottom: `4px` }}
-              htmlFor="guardianemail"
-            >
-              Målsmans email:
-            </label>
-            <input name="guardianemail" id="guardianemail" type="email" />
-          </div>
+
           <div className="flex flex-row gap-4 items-center">
             <label
               className="order-last block relative top-1"
@@ -62,14 +45,15 @@ export default function Musikskolan() {
             />
           </div>
         </div>
+
         <div>
           <label
             style={{ display: `block`, marginBottom: `4px` }}
-            htmlFor="birthyear"
+            htmlFor="instrument"
           >
-            Födelseår:
+            Instrument:
           </label>
-          <input type="text" name="birthyear" id="birthyear" />
+          <input type="text" name="instrument" id="instrument" />
         </div>
         <div>
           <label
