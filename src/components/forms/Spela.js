@@ -5,7 +5,7 @@ export default function Musikskolan() {
     <div>
       {" "}
       <form
-        action="https://getform.io/f/48832b87-2218-45a3-aae9-5ff692f2b590"
+        action="https://getform.io/f/6a42ffec-8810-44ef-80e1-e150c75a4948"
         method="POST"
         className="form"
       >
