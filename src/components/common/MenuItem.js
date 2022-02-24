@@ -56,7 +56,7 @@ export default function MenuItem({ menuItem }) {
             tabIndex="0"
             className="z-40 relative"
           >
-            <Menu.Button as="a">
+            <Menu.Button as="div">
               <div
                 className={`${
                   show ? "bg-brandorange/95 dark:bg-gray-900" : ""
