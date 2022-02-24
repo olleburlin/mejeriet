@@ -46,7 +46,7 @@ export default function KontaktPage() {
             <div className="text-lg font-heavy wp-content">
               <div dangerouslySetInnerHTML={{ __html: content }} className="" />
             </div>
-            <div className="text-sm">
+            <div className="text-lg">
               {questions.map(question => {
                 return <Question key={question.id} question={question} />
               })}{" "}
@@ -64,7 +64,7 @@ export default function KontaktPage() {
 function Question({ question }) {
   const { fraga, svar } = question
   return (
-    <div className="my-4 text-xl">
+    <div className="my-4 ">
       <div className="font-bold">
         <p className="">{fraga}</p>
       </div>
