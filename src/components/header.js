@@ -8,7 +8,6 @@ import { flatListToHierarchical } from "../utils/flatListToHierarchical"
 import MenuItem from "./common/MenuItem"
 import { Disclosure } from "@headlessui/react"
 import { ChevronUpIcon } from "@heroicons/react/outline"
-import SocialIcons from "../components/common/SocialIcons"
 function Header() {
   const data = useStaticQuery(graphql`
     {
