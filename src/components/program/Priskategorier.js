@@ -13,13 +13,15 @@ export default function Priskategorier({ prices }) {
 
 function Priskategori({ price }) {
   return (
-    <div className="flex flex-row space-x-2">
-      <div>
-        {price.priceDescription + ":"}
-        {price.price && ""}
+    <div className="flex flex-row ">
+      <div className="space-x-2">
+        <span>
+          {price.priceDescription ? price.priceDescription + ": " : ""}
+        </span>
+        <span>{price.price && ""}</span>
       </div>
 
-      <div>{price.price ? price.price + "kr" : "fri entré"}</div>
+      <div>{price.price ? price.price + "kr" : "Fri entré"}</div>
     </div>
   )
 }
