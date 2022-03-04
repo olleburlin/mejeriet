@@ -127,7 +127,7 @@ export default function IndexEvents() {
 
       <div className="grid gap-4 md:gap-6">
         {posts
-          .filter(post => post.informationProgram.startdatum > getCurrentDate())
+          .filter(post => post.informationProgram.startdatum >= getCurrentDate())
           .slice(0, 10)
           .map(post => {
             return <ProgramPageEvent key={post.id} post={post} />
