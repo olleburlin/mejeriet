@@ -69,7 +69,7 @@ export default function ProgramPage() {
   `)
 
   const posts = data.allWpProgrampunkt.nodes.filter(
-    post => post.informationProgram.startdatum > getCurrentDate()
+    post => post.informationProgram.startdatum >= getCurrentDate()
   )
 
   const people = [
