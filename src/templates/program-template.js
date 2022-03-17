@@ -53,6 +53,7 @@ export const query = graphql`
         duKanskeGillar {
           ... on WpProgrampunkt {
             title
+            id
             slug
             uri
             featuredImage {
