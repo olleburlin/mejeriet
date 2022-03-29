@@ -17,6 +17,7 @@ export default function ProgrampunktPage({ post }) {
     plats,
     prices,
     oppnar,
+    slutar,
     borjar,
     aldersgrans,
     langInfo,
@@ -92,6 +93,12 @@ export default function ProgrampunktPage({ post }) {
               <div className="font-heavy">
                 Börjar:&nbsp;
                 <span className="font-normal"> {borjar}</span>
+              </div>
+            )}
+            {slutar && (
+              <div className="font-heavy">
+                Slutar&nbsp;
+                <span className="font-normal"> {slutar}</span>
               </div>
             )}
             {plats && (
