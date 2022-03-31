@@ -22,6 +22,7 @@
     "gatsby-plugin-gatsby-cloud": "^4.0.0",
     "gatsby-plugin-gdpr-cookies": "^2.0.8",
     "gatsby-plugin-google-analytics": "^4.9.0",
+    "gatsby-plugin-google-gtag": "^4.11.0",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-manifest": "^4.0.0",
     "gatsby-plugin-offline": "^5.0.0",
