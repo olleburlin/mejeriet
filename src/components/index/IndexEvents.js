@@ -8,6 +8,7 @@ export default function IndexEvents() {
   const data = useStaticQuery(graphql`
     query {
       allEvents: allWpProgrampunkt(
+        filter: { status: { eq: "publish" } }
         sort: { fields: informationProgram___startdatum, order: ASC }
       ) {
         nodes {
