@@ -71,7 +71,7 @@ module.exports = {
         // Any additional optional fields
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: "example.com",
+        cookieDomain: "kulturmejeriet.se",
         // defaults to false
         enableWebVitalsTracking: true,
       },
