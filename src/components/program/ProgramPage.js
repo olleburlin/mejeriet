@@ -14,6 +14,7 @@ export default function ProgramPage() {
         }
       }
       allWpProgrampunkt(
+        filter: { status: { eq: "publish" } }
         sort: { fields: informationProgram___startdatum, order: ASC }
       ) {
         nodes {
