@@ -80,6 +80,7 @@ export const query = graphql`
         oppnar
         plats
         status
+        aldersgrans
         youtubeKlipp
         samarbetspartner {
           ... on WpSammarbetspartner {

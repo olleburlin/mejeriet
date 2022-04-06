@@ -109,7 +109,8 @@ export default function ProgrampunktPage({ post }) {
             )}
             {aldersgrans && (
               <div className="font-heavy">
-                Åldersgräns:&nbsp;<span className="font-normal">13 år</span>
+                Åldersgräns:&nbsp;
+                <span className="font-normal">{aldersgrans}</span>
               </div>
             )}
           </div>
