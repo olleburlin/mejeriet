@@ -3,11 +3,13 @@ import { Listbox, Transition, Fragment } from "@headlessui/react"
 import { SelectorIcon } from "@heroicons/react/solid"
 import LostAndFound from "../../components/forms/LostAndFound"
 import GenerellKontakt from "./GenerellKontakt"
+import Ovrigt from "./Ovrigt"
 
 export default function FormSelector() {
   const forms = [
-    { id: 1, name: "Jobba hos oss", slug: "generell" },
-    { id: 2, name: "Borttappat", slug: "borttappat" },
+    { id: 1, name: "Övriga frågor", slug: "ovrigt" },
+    { id: 2, name: "Jobba hos oss", slug: "generell" },
+    { id: 3, name: "Borttappat", slug: "borttappat" },
   ]
   const [selectedForm, setSelectedForm] = React.useState(forms[0])
 
@@ -62,6 +64,7 @@ export default function FormSelector() {
       </div>
       <div>{selectedForm.slug === "generell" && <GenerellKontakt />}</div>
       <div>{selectedForm.slug === "borttappat" && <LostAndFound />}</div>
+      <div>{selectedForm.slug === "ovrigt" && <Ovrigt />}</div>
     </div>
   )
 }
