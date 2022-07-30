@@ -38,7 +38,7 @@ export default function ProgrampunktPage({ post }) {
 
         <div className="flex flex-col space-y-4">
           <header className="flex flex-col">
-            <h1 className="uppercase text-5xl">{title}</h1>
+            <h1 className="uppercase text-2xl md:text-5xl">{title}</h1>
             <div className="flex md:flex-row flex-wrap  ">
               <MomentDate
                 dateString={informationProgram.startdatum}
