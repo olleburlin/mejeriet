@@ -5,7 +5,7 @@ import { Formik } from "formik"
 
 import { navigate } from "gatsby"
 
-const URL = "http://cms.mejeriet.net/wp-json"
+const URL = "https://olleburl.in/mejeriet/wp-json"
 
 const CF7_ID = "11616"
 // [yourName][organisation][email][telefon][eventDate][guests][additionalInfo]
