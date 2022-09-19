@@ -7,7 +7,7 @@ import { navigate } from "gatsby"
 
 const URL = "https://olleburl.in/mejeriet/wp-json"
 
-const CF7_ID = "11616"
+const CF7_ID = "11371"
 // [yourName][organisation][email][telefon][eventDate][guests][additionalInfo]
 // const formSchema = Yup.object().shape({
 //   yourName: Yup.string().required("Required"),
