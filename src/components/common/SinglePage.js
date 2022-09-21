@@ -61,6 +61,7 @@ export default function SinglePage({ data }) {
             </div>
           </div>
         )}
+        <div className="embed-container"></div>
       </div>
     </div>
   )
