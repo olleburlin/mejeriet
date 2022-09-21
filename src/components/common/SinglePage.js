@@ -8,6 +8,7 @@ import Volontar from "../forms/Volontar"
 import FeaturedImage from "./FeaturedImage"
 import PageHeader from "./PageHeader"
 import PersonalKategorier from "./PersonalKategorier"
+import StreetView from "./StreetView"
 export default function SinglePage({ data }) {
   const { content, featuredImage, kartor, personal, synlighet, databaseId } =
     data.wpPage
@@ -45,6 +46,7 @@ export default function SinglePage({ data }) {
           </div>
         )}
         {databaseId === 9148 && <HyraMejeriet />}
+        {databaseId === 9148 && <StreetView />}
         {databaseId === 11396 && <Musikskolan />}
         {databaseId === 11399 && <Korsang />}
         {databaseId === 11402 && <Spela />}
