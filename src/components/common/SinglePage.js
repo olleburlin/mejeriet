@@ -46,7 +46,7 @@ export default function SinglePage({ data }) {
           </div>
         )}
         {databaseId === 9148 && <HyraMejeriet />}
-        {databaseId === 9148 && <StreetView />}
+
         {databaseId === 11396 && <Musikskolan />}
         {databaseId === 11399 && <Korsang />}
         {databaseId === 11402 && <Spela />}
