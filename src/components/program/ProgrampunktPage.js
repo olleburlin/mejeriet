@@ -97,7 +97,7 @@ export default function ProgrampunktPage({ post }) {
             )}
             {slutar && (
               <div className="font-heavy">
-                Slutar&nbsp;
+                Stänger:&nbsp;
                 <span className="font-normal"> {slutar}</span>
               </div>
             )}
