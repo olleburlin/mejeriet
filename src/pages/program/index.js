@@ -3,14 +3,14 @@ import Layout from "../../components/layout"
 import ProgramPage from "../../components/program/ProgramPage"
 import SEO from "../../components/seo"
 
-export default function index() {
+export default function index({ location }) {
   return (
     <Layout>
       <SEO
         keywords={[`Mejeriet`, `Program`, `Konsert`, `Lund`]}
         title="Program"
       />
-      <ProgramPage />
+      <ProgramPage location={location} />
     </Layout>
   )
 }

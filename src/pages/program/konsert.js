@@ -86,6 +86,7 @@ export default function KonsertPage({ props }) {
         keywords={[`Mejeriet`, `Program`, `Konsert`, `Lund`]}
         title="Program"
       />
+
       <ProgramGenrePage posts={posts} props={props} />
     </Layout>
   )
