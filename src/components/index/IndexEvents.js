@@ -9,7 +9,10 @@ export default function IndexEvents() {
     query {
       allEvents: allWpProgrampunkt(
         filter: { status: { eq: "publish" } }
-        sort: { fields: informationProgram___startdatum, order: ASC }
+        sort: {
+          order: [ASC, ASC]
+          fields: [informationProgram___startdatum, informationProgram___oppnar]
+        }
       ) {
         nodes {
           title
