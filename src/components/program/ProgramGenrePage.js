@@ -4,6 +4,7 @@ import ProgramPageEvent from "./ProgramPageEvent"
 import { Listbox, Transition } from "@headlessui/react"
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid"
 import { getCurrentDate } from "../../utils/getCurrentDate"
+import { Menu } from "@headlessui/react"
 
 export default function ProgramGenrePage({ posts }) {
   const people = [
@@ -12,12 +13,39 @@ export default function ProgramGenrePage({ posts }) {
     { id: 4, name: "Klubb / Bar", slug: "klubb" },
     { id: 3, name: "Humor/Scen", slug: "humor" },
   ]
-  const initialSelected = people[1]
-  const [selected, setSelected] = useState(initialSelected)
+
+  const links = [
+    { href: "/program", label: "Visa Allt" },
+    { href: "/program/konsert", label: "Konsert" },
+    { href: "/program/klubb", label: "Kllubb" },
+    { href: "/program/humor", label: "Humor" },
+  ]
+
+  const [selected, setSelected] = useState(people[0])
 
   return (
     <div>
       <section className="flex flex-col mb-8 ">
+        <Menu>
+          <Menu.Button>Options</Menu.Button>
+          <Menu.Items>
+            {links.map(link => (
+              /* Use the `active` state to conditionally style the active item. */
+              <Menu.Item key={link.href} as={Fragment}>
+                {({ active }) => (
+                  <a
+                    href={link.href}
+                    className={`${
+                      active ? "bg-blue-500 text-white" : "bg-white text-black"
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                )}
+              </Menu.Item>
+            ))}
+          </Menu.Items>
+        </Menu>
         <div className="w-full grid gap-4 md:gap-6">
           <>
             {selected.slug === "visa-allt"

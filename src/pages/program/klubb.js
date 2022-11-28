@@ -5,7 +5,7 @@ import { useStaticQuery, graphql, navigate } from "gatsby"
 import { getCurrentDate } from "../../utils/getCurrentDate"
 import ProgramGenrePage from "../../components/program/ProgramGenrePage"
 
-export default function KonsertPage({ props }) {
+export default function KlubbPage({ props }) {
   const data = useStaticQuery(graphql`
     {
       allWpProgramkategori {
@@ -21,7 +21,7 @@ export default function KonsertPage({ props }) {
         }
         filter: {
           status: { eq: "publish" }
-          informationProgram: { typAvArrangemang: { slug: { eq: "konsert" } } }
+          informationProgram: { typAvArrangemang: { slug: { eq: "klubb" } } }
         }
       ) {
         nodes {
