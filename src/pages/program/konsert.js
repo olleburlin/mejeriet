@@ -90,11 +90,10 @@ export default function KonsertPage({ props }) {
     <Layout>
       <SEO
         keywords={[`Mejeriet`, `Program`, `Konsert`, `Lund`]}
-        title="Program"
+        title="Program - Konsert"
       />
-      <button onClick={() => handleChange("/program/klubb")}>Konserter</button>
-      {navLocation}
-      <ProgramGenrePage posts={posts} props={props} />
+
+      <ProgramGenrePage posts={posts} props={props} programIndex={1} />
     </Layout>
   )
 }
