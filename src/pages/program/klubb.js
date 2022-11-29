@@ -79,12 +79,6 @@ export default function KlubbPage({ props }) {
   const posts = data.allWpProgrampunkt.nodes.filter(
     post => post.informationProgram.startdatum >= getCurrentDate()
   )
-  const [navLocation, setNavLocation] = React.useState("/program")
-
-  function handleChange(loc) {
-    setNavLocation(loc)
-    navigate(loc)
-  }
 
   return (
     <Layout>
@@ -92,8 +86,7 @@ export default function KlubbPage({ props }) {
         keywords={[`Mejeriet`, `Program`, `Konsert`, `Lund`]}
         title="Program"
       />
-      <button onClick={() => handleChange("/program/klubb")}>Konserter</button>
-      {navLocation}
+
       <ProgramGenrePage posts={posts} props={props} />
     </Layout>
   )
