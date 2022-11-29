@@ -77,7 +77,7 @@ export default function ProgramPage({ location }) {
     post => post.informationProgram.startdatum >= getCurrentDate()
   )
   let initialType = location.search.substring(5)
-  console.log(initialType)
+
   const people = [
     { id: 1, name: "Visa allt", slug: "visa-allt" },
     { id: 5, name: "Konsert", slug: "konsert" },
