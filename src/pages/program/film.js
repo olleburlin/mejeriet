@@ -5,7 +5,7 @@ import { useStaticQuery, graphql, navigate } from "gatsby"
 import { getCurrentDate } from "../../utils/getCurrentDate"
 import ProgramGenrePage from "../../components/program/ProgramGenrePage"
 
-export default function KonsertPage() {
+export default function FilmPage() {
   const data = useStaticQuery(graphql`
     {
       allWpProgramkategori {
@@ -21,7 +21,7 @@ export default function KonsertPage() {
         }
         filter: {
           status: { eq: "publish" }
-          informationProgram: { typAvArrangemang: { slug: { eq: "konsert" } } }
+          informationProgram: { typAvArrangemang: { slug: { eq: "film" } } }
         }
       ) {
         nodes {
@@ -79,21 +79,15 @@ export default function KonsertPage() {
   const posts = data.allWpProgrampunkt.nodes.filter(
     post => post.informationProgram.startdatum >= getCurrentDate()
   )
-  const [navLocation, setNavLocation] = React.useState("/program")
-
-  function handleChange(loc) {
-    setNavLocation(loc)
-    navigate(loc)
-  }
 
   return (
     <Layout>
       <SEO
         keywords={[`Mejeriet`, `Program`, `Konsert`, `Lund`]}
-        title="Program - Konsert"
+        title="Program - Film"
       />
 
-      <ProgramGenrePage posts={posts} programIndex={1} />
+      <ProgramGenrePage posts={posts} programIndex={4} />
     </Layout>
   )
 }

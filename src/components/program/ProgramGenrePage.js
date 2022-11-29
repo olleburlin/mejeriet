@@ -18,8 +18,9 @@ export default function ProgramGenrePage({ posts, programIndex }) {
   const links = [
     { href: "/program", label: "Visa Allt" },
     { href: "/program/konsert", label: "Konsert" },
-    { href: "/program/klubb", label: "Klubb" },
-    { href: "/program/humor", label: "Humor" },
+    { href: "/program/klubb", label: "Klubb / Bar" },
+    { href: "/program/humor", label: "Humor / Scen" },
+    { href: "/program/film", label: "Film" },
   ]
 
   const [selected, setSelected] = useState(links[programIndex])
@@ -28,12 +29,14 @@ export default function ProgramGenrePage({ posts, programIndex }) {
     <div>
       <section className="flex flex-col mb-8 ">
         <div className="w-full grid gap-4 md:gap-6">
-          {posts && (
+          {posts.length > 0 ? (
             <>
               {posts.map(post => {
                 return <ProgramPageEvent key={post.id} post={post} />
               })}
             </>
+          ) : (
+            <div>Inga arrangemang för denna kategorin för tillfället</div>
           )}
         </div>
 
