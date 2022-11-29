@@ -87,7 +87,7 @@ export default function KlubbPage({ props }) {
         title="Program - Humor"
       />
 
-      <ProgramGenrePage posts={posts} programIndex={2} />
+      <ProgramGenrePage posts={posts} programIndex={3} />
     </Layout>
   )
 }
