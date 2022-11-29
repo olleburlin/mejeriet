@@ -51,14 +51,17 @@ export default function ProgramGenrePage({ posts, programIndex }) {
                     />
                   </span>
                 </Menu.Button>
-                <Menu.Items>
-                  <div className="flex flex-col bg-brandpurple">
+                <Menu.Items
+                  as="div"
+                  className="ring-1 ring-brandpurple ring-opacity-5 focus:outline-none"
+                >
+                  <div className="flex flex-col bg-brandpurple  ring-1 ring-brandpurple ring-opacity-5 focus:outline-none">
                     {links.map(link => (
                       /* Use the `active` state to conditionally style the active item. */
                       <Menu.Item
                         key={link.href}
                         as={Fragment}
-                        className="cursor-pointer select-none relative py-2 pl-3 pr-4 uppercase  font-heavy hover:bg-white hover:text-brandpurple"
+                        className="cursor-pointer select-none relative py-2 pl-3 pr-4 uppercase  font-heavy hover:bg-white hover:text-brandpurple ring-1 ring-brandpurple ring-opacity-5 focus:outline-none"
                       >
                         {({ active }) => (
                           <Link
