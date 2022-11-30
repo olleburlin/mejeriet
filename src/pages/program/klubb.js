@@ -84,7 +84,7 @@ export default function KlubbPage({ props }) {
     <Layout>
       <SEO
         keywords={[`Mejeriet`, `Program`, `Konsert`, `Lund`]}
-        title="Program - Klubb"
+        title="Program - Klubb / Bar"
       />
 
       <ProgramGenrePage posts={posts} programIndex={2} />
