@@ -47,6 +47,7 @@
     "slick-carousel": "^1.8.1",
     "swiper": "^7.3.2",
     "twin.macro": "^2.8.2",
+    "use-query-params": "^2.1.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {

@@ -4,7 +4,8 @@ import ProgramPageEvent from "./ProgramPageEvent"
 import { Listbox, Transition } from "@headlessui/react"
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid"
 import { getCurrentDate } from "../../utils/getCurrentDate"
-export default function ProgramPage() {
+
+export default function ProgramPage({ location }) {
   const data = useStaticQuery(graphql`
     {
       allWpProgramkategori {
@@ -75,6 +76,7 @@ export default function ProgramPage() {
   const posts = data.allWpProgrampunkt.nodes.filter(
     post => post.informationProgram.startdatum >= getCurrentDate()
   )
+  let initialType = location.search.substring(5)
 
   const people = [
     { id: 1, name: "Visa allt", slug: "visa-allt" },

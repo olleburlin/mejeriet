@@ -5,7 +5,7 @@ import { useStaticQuery, graphql, navigate } from "gatsby"
 import { getCurrentDate } from "../../utils/getCurrentDate"
 import ProgramGenrePage from "../../components/program/ProgramGenrePage"
 
-export default function ProgramIndexPage() {
+export default function FilmPage() {
   const data = useStaticQuery(graphql`
     {
       allWpProgramkategori {
@@ -19,7 +19,10 @@ export default function ProgramIndexPage() {
           order: [ASC, ASC]
           fields: [informationProgram___startdatum, informationProgram___oppnar]
         }
-        filter: { status: { eq: "publish" } }
+        filter: {
+          status: { eq: "publish" }
+          informationProgram: { typAvArrangemang: { slug: { eq: "film" } } }
+        }
       ) {
         nodes {
           title
@@ -81,10 +84,10 @@ export default function ProgramIndexPage() {
     <Layout>
       <SEO
         keywords={[`Mejeriet`, `Program`, `Konsert`, `Lund`]}
-        title="Program"
+        title="Program - Film"
       />
 
-      <ProgramGenrePage posts={posts} programIndex={0} />
+      <ProgramGenrePage posts={posts} programIndex={4} />
     </Layout>
   )
 }
