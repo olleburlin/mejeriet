@@ -85,7 +85,7 @@ function MobileMenu({ menuItems }) {
   const mobileMenu = flatListToHierarchical(mobileMenuItems)
   return (
     <div className="fixed top-0 left-0 overflow-x-hidden z-40 bg-black inset-0 h-screen ">
-      <div className="relative h-full    text-white  pt-6 mb-24 ">
+      <div className="relative h-full    text-white  pt-6 mb-32 ">
         <div className="pl-4">
           <Link to="/">
             <Logo color="" />
