@@ -62,9 +62,13 @@ export default function MenuItem({ menuItem }) {
                   show ? "bg-brandorange/95 dark:bg-gray-900" : ""
                 } cursor-pointer py-6 px-4   flex flex-row items-center`}
               >
-                <div>
-                  <Link to={menuItem.url}>{menuItem.label}</Link>
-                </div>
+                {menuItem.url !== "#" ? (
+                  <Link to={menuItem.url}>
+                    <div>{menuItem.label}</div>
+                  </Link>
+                ) : (
+                  <div>{menuItem.label}</div>
+                )}
                 <div className="w-6">
                   <ChevronDownIcon />
                 </div>
