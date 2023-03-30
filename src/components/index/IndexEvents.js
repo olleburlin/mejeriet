@@ -70,7 +70,8 @@ export default function IndexEvents() {
                         placeholder: DOMINANT_COLOR
                         layout: CONSTRAINED
                         aspectRatio: 1.5
-                        width: 1500
+
+                        quality: 100
                       )
                     }
                   }
