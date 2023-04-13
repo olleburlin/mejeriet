@@ -28,6 +28,16 @@ export default function Musikskolan() {
             </label>
             <input name="email" id="email" type="email" required />
           </div>
+          <div>
+            <label
+              style={{ display: `block`, marginBottom: `4px` }}
+              htmlFor="telefon"
+            >
+              Telefonnummer*
+            </label>
+            <input type="text" name="telefon" id="telefon" required />
+          </div>
+
           <div className="col-span-2">
             Fyll i nedan om du är intresserad av att vara med på våra
             Vuxenkollon som arrangeras under sommaren eller om din anmälan avser
