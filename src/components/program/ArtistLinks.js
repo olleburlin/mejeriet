@@ -3,7 +3,7 @@ import Link from "../common/Link"
 
 export default function ArtistLinks({ artistLinks }) {
   const { urlFacebook, urlFacebookevent, urlHomepage, urlSpotify } = artistLinks
-  console.log(artistLinks)
+
   return (
     <div className="flex md:flex-row space-x-4">
       {urlHomepage && (

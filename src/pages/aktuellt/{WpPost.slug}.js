@@ -3,7 +3,6 @@ import NewsItem from "../../components/aktuellt/NewsItem"
 import Layout from "../../components/layout"
 import { graphql } from "gatsby"
 export default function WpPost({ data }) {
-  console.log(data)
   return (
     <Layout>
       <div className="min-h-[80vh]">

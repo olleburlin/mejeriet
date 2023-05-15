@@ -79,7 +79,7 @@ export default Header
 
 function MobileMenu({ menuItems }) {
   useLockBodyScroll()
-  console.log(menuItems)
+
   const mobileMenuItems = menuItems
 
   const mobileMenu = flatListToHierarchical(mobileMenuItems)
