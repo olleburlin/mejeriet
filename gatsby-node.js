@@ -48,7 +48,6 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         id: page.id,
       },
-      defer: true,
     })
   })
   allProgram.forEach(page => {
