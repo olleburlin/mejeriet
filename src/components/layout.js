@@ -22,7 +22,7 @@ function Layout({ children }) {
         <CookieConsent
           // disableStyles
           // location="bottom"
-          debug
+
           buttonText="Jag förstår"
           cookieName="myAwesomeCookieName2"
           style={{ background: "#2f255b" }}
@@ -31,7 +31,7 @@ function Layout({ children }) {
             background: "#ffffff",
             fontSize: "13px",
           }}
-          expires={150}
+          // expires={150}
         >
           Kulturmejeriet.se använder cookies för att optimera dess
           funktionalitet samtidigt som det hjälper oss att utveckla och
