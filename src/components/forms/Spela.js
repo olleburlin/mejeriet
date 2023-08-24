@@ -74,6 +74,16 @@ export default function Musikskolan() {
                 value="ja"
               />
             </div>
+            <div className="inline-flex gap-x-2">
+              <label
+                className="order-last block relative top-1"
+                style={{ display: `block`, marginBottom: `4px` }}
+                htmlFor="kor"
+              >
+                Kör
+              </label>
+              <input type="checkbox" name="kor" id="kor" value="ja" />
+            </div>
           </div>
         </div>
 
